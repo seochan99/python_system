@@ -7,7 +7,7 @@ BOARDHEIGHT = 4 # number of rows in the board
 TILESIZE = 80
 WINDOWWIDTH = 640
 WINDOWHEIGHT = 480
-FPS = 30
+FPS = 60
 BLANK = None
 
 #                 R    G    B
@@ -36,7 +36,8 @@ LEFT = 'left'
 RIGHT = 'right'
 
 def main():
-        global FPSCLOCK, DISPLAYSURF, BASICFONT, RESET_SURF, RESET_RECT, NEW_SURF, NEW_RECT, SOLVE_SURF, SOLVE_RECT
+    global FPSCLOCK, DISPLAYSURF, BASICFONT, RESET_SURF, RESET_RECT, NEW_SURF, NEW_RECT, SOLVE_SURF, SOLVE_RECT
+
     pygame.init()
     FPSCLOCK = pygame.time.Clock()
     DISPLAYSURF=pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT))
@@ -56,7 +57,7 @@ def main():
     while True: # main Game Loop
         slideTo = None # 플레이어가 어느 방향으로 타일을 미뤘는지 기록
         msg = "Click tile or press arrow keys to slide" # 왼쪽 상단 구석에 보여주자
-        if mainBoard = SOLVEDBOARD:
+        if mainBoard == SOLVEDBOARD:
             msg = "Solved !!! "
 
         drawBoard(mainBoard,msg) #DISPLAYSURF surface 객체 상에 반영
@@ -117,7 +118,7 @@ def checkForQuit():
         terminate()
     for event in pygame.event.get(KEYUP): 
         if event.key == K_ESCAPE:
-            terminate() : # esc keyup event end program
+            terminate()
         pygame.event.post(event) #다른 keyup 이벤트 객체는 다시 돌려준다. 
 
 def getStartingBoard():
@@ -151,7 +152,7 @@ def makeMove(board,move):
     if move == UP:
         board[blankx][blanky], board[blankx][blanky+1] = board[blankx][blanky+1],board[blankx][blanky] 
         #빈칸을 위로 올리고 숫자였던 카드를 빈칸으로, 빈칸을 숫자로 바꾼다 .
-    elif move = DOWN:
+    elif move == DOWN:
         board[blankx][blanky], board[blankx][blanky-1] = board[blankx][blanky-1],board[blankx][blanky]
     elif move == LEFT:
         board[blankx][blanky], board[blankx + 1][blanky] = board[blankx + 1][blanky], board[blankx][blanky]
@@ -188,7 +189,7 @@ def getLeftTopOfTile(tileX,tileY):
 def getSpotClicked(board,x,y):
     # x,y 픽셀 좌표를 게임판 좌표로 변환한다.
     for tileX in range(len(board)):
-        for tileY in rnage(len(board[0])):
+        for tileY in range(len(board[0])):
             left, top = getLeftTopOfTile(tileX,tileY)
             tileRect = pygame.Rect(left,top,TILESIZE,TILESIZE)
             if tileRect.collidepoint(x,y):
@@ -198,9 +199,9 @@ def getSpotClicked(board,x,y):
 def drawTile(tilex,tiley,number,adjx=0,adjy=0):
     #게임판의 타일 좌표에 타일을 그린다
     #adjx adjy 의 값으로 타일을 그리는 좌표 조정 가능 
-    left, top - getLeftTopOfTile(tilex,tiley)
-    pygmae.draw.rect(DISPLAYSURF,TILECOLOR,(left+ajdx,top+adjy,TILESIZE,TILESIZE))
-    textSurf = BASICFONT.render(str(numbrt),True ,TEXTCOLOR)
+    left, top = getLeftTopOfTile(tilex,tiley)
+    pygame.draw.rect(DISPLAYSURF,TILECOLOR,(left+adjx,top+adjy,TILESIZE,TILESIZE))
+    textSurf = BASICFONT.render(str(number),True ,TEXTCOLOR)
     textRect = textSurf.get_rect()
     textRect.center = left +int(TILESIZE/2) + adjx, top + int(TILESIZE/2)+adjy
     DISPLAYSURF.blit(textSurf,textRect)
@@ -217,10 +218,10 @@ def drawBoard(board,message):
     if message:
         textSurf, textRect = makeText(message,MESSAGECOLOR,BGCOLOR,5,5)
         DISPLAYSURF.blit(textSurf,textRect)
-        for tilex in range(len(board)):
-            for tiley in range(len(board[0])):
-                if board[tilex][tiley]:
-                    drawTile(tilex,tiley, board[tilex][tiley])
+    for tilex in range(len(board)):
+        for tiley in range(len(board[0])):
+            if board[tilex][tiley]:
+               drawTile(tilex,tiley, board[tilex][tiley])
     
     left, top = getLeftTopOfTile(0,0)
     width = BOARDWIDTH * TILESIZE
@@ -235,7 +236,7 @@ def slideAnimation(board,direction,message,animationSpeed):
     #주의 : 이 함수는 타일의 움직임이 유효한지 체크 x 
 
     blankx,blanky = getBlankPosition(board)
-    if direction == up:
+    if direction == UP:
         movex = blankx
         movey = blanky + 1
     elif direction == DOWN :
@@ -279,7 +280,7 @@ def generateNewPuzzle(numSlides):
     pygame.display.update()
     pygame.time.wait(500)
     lastMove = None
-    for i in ragne(numSlides):
+    for i in range(numSlides):
         move = getRandomMove(board,lastMove)
         slideAnimation(board,move,"Generationg new Puzzle....",animationSpeed=int(TILESIZE/3))
         makeMove(board,move)
