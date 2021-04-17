@@ -120,7 +120,7 @@ def main():
             elif (clickedButton  and clickedButton != pattern[currentStep]) or (currentStep!=0 and time.time()-TIMEOUT > lastClickTime):
                 #버튼을 잘못눌렀거나 시간 초과
                 gameOverAnimation()
-                #reset for new game
+                #reset for new game 
                 pattern=[]
                 currentStep= 0
                 waitingForInput = False
