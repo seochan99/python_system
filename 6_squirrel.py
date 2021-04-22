@@ -71,7 +71,7 @@ def main():
     FPSCLOCK = pygame.time.Clock()
     pygame.display.set_icon(pygame.image.load('gameicon.png'))
     DISPLAYSURF = pygame.display.set_mode((WINWIDTH, WINHEIGHT))
-    pygame.display.set_caption('Squirrel Eat Squirrel')
+    pygame.display.set_caption('Chans Squirrel Eat Squirrel')
     BASICFONT = pygame.font.Font('freesansbold.ttf', 32)
 
     # load the image files
