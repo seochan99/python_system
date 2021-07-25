@@ -268,32 +268,32 @@
 
 #9020 : 골드바흐의 추측 
 
-# def prime_list(n): #소수 판독기 
-#     n+=1 #n이하의 숫자를 확인해야하므로 ! 
-#     # 에라토스테네스의 체 초기화: n개 요소에 True 설정(소수로 간주)
-#     primeList = [True] * n
-#     # n의 최대 약수가 sqrt(n) 이하이므로 i=sqrt(n)까지 검사
-#     m = int(n ** 0.5)
-#     for i in range(2, m + 1):
-#         if primeList[i] == True:           # i가 소수인 경우 참 
-#             for j in range(2*i, n, i): # i이후 i의 배수들을 False 판정
-#                 primeList[j] = False
+def prime_list(n): #소수 판독기 
+    n+=1 #n이하의 숫자를 확인해야하므로 ! 
+    # 에라토스테네스의 체 초기화: n개 요소에 True 설정(소수로 간주)
+    primeList = [True] * n
+    # n의 최대 약수가 sqrt(n) 이하이므로 i=sqrt(n)까지 검사
+    m = int(n ** 0.5)
+    for i in range(2, m + 1):
+        if primeList[i] == True:           # i가 소수인 경우 참 
+            for j in range(2*i, n, i): # i이후 i의 배수들을 False 판정
+                primeList[j] = False
 
-#     return [i for i in range(2,n) if primeList[i]==True] #소수반환  
+    return [i for i in range(2,n) if primeList[i]==True] #소수반환  
     
 
-# def total(n):
-#     li = prime_list(n)
-#     idx = max([i for i in range(len(li)) if li[i]<=n/2]) #최댓값 li길이 만큼 for 실행 그런데..n/2이하일경우 최대인 인덱스값 출력 
-#     for i in range(idx,-1,-1): #인덱스 이하의 배열 요소 접근 
-#         for j in range(i,len(li)): #i이상의 배열 요소 접근 
-#             if li[i]+li[j]==n: #합 비교 
-#                 return [li[i],li[j]] #소수 찾기 성공 
+def total(n):
+    list = prime_list(n)
+    idx = max([i for i in range(len(list)) if list[i]<=n/2]) #최댓값 list길이 만큼 for 실행 그런데..n/2이하일경우 최대인 인덱스값 출력 
+    for i in range(idx,-1,-1): #인덱스 이하의 배열 요소 접근 
+        for j in range(i,len(list)): #i이상의 배열 요소 접근 
+            if list[i]+list[j]==n: #합 비교 
+                return [list[i],list[j]] #소수 찾기 성공 
 
-# test = int(input()) 
-# for _ in range(test):
-#     a = int(input())
-#     print(" ".join(map(str,total(a)))) #join으로 나타내주기 
+test = int(input()) 
+for _ in range(test):
+    a = int(input())
+    print(" ".join(map(str,total(a)))) #join으로 나타내주기 
 
 #1085
 # x,y,w,h = map(int,input().split()) # x,y,w,h 값 입력받기 
@@ -373,10 +373,23 @@
 
 #10870 : 피보나치수열 
 
-def fibo(n):
-    if n<=1:
-        return n
-    return fibo(n-2)+fibo(n-1)
+# def fibo(n):
+#     if n<=1:
+#         return n
+#     return fibo(n-2)+fibo(n-1)
 
-num = int(input())
-print(fibo(num))
+# num = int(input())
+# print(fibo(num))
+
+#2447
+n, m = map(int,input().split())
+arr = list(map(int,input().split()))
+total = 0
+for i in range(n):
+    for j in range(i+1,n):
+        for k in range(j+1,n):
+            if arr[i]+arr[j]+arr[k]>m:
+                continue
+            else :
+                total = max(total,arr[i]+arr[j]+arr[k])
+print(total)
