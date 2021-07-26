@@ -239,30 +239,30 @@
 #     else:
 #         print((num*2)+1)
 
-# #4948
-# def prime_list(k,n):
-#     n+=1 #n이하의 숫자를 확인해야하므로 ! 
-#     # 에라토스테네스의 체 초기화: n개 요소에 True 설정(소수로 간주)
-#     sieve = [True] * n
-#     # n의 최대 약수가 sqrt(n) 이하이므로 i=sqrt(n)까지 검사
-#     m = int(n ** 0.5)
-#     count=0
-#     for i in range(2, m + 1):
-#         if sieve[i] == True:           # i가 소수인 경우 참 
-#             for j in range(2*i, n, i): # i이후 i의 배수들을 False 판정
-#                 sieve[j] = False
+#4948
+def prime_list(k,n):
+    n+=1 #n이하의 숫자를 확인해야하므로 ! 
+    # 에라토스테네스의 체 초기화: n개 요소에 True 설정(소수로 간주)
+    sieve = [True] * n
+    # n의 최대 약수가 sqrt(n) 이하이므로 i=sqrt(n)까지 검사
+    m = int(n ** 0.5)
+    count=0
+    for i in range(2, m + 1):
+        if sieve[i] == True:           # i가 소수인 경우 참 
+            for j in range(2*i, n, i): # i이후 i의 배수들을 False 판정
+                sieve[j] = False
     
-#     for i in range(k,n):
-#         if i>1 and sieve[i]==True:
-#             count+=1
-#     print(count)
+    for i in range(k,n):
+        if i>1 and sieve[i]==True:
+            count+=1
+    print(count)
 
-# while True:
-#     num = int(input())
-#     if num == 0 :
-#         break
-#     else :
-#         prime_list(num+1,num*2)
+while True:
+    num = int(input())
+    if num == 0 :
+        break
+    else :
+        prime_list(num+1,num*2)
 
 
 
@@ -283,7 +283,7 @@ def prime_list(n): #소수 판독기
     
 
 def total(n):
-    list = prime_list(n)
+    list = prime_list(n) #15 2,3,5,7,11,13
     idx = max([i for i in range(len(list)) if list[i]<=n/2]) #최댓값 list길이 만큼 for 실행 그런데..n/2이하일경우 최대인 인덱스값 출력 
     for i in range(idx,-1,-1): #인덱스 이하의 배열 요소 접근 
         for j in range(i,len(list)): #i이상의 배열 요소 접근 
@@ -296,66 +296,66 @@ for _ in range(test):
     print(" ".join(map(str,total(a)))) #join으로 나타내주기 
 
 #1085
-# x,y,w,h = map(int,input().split()) # x,y,w,h 값 입력받기 
-# print(min(x,y,h-y,w-x))
+x,y,w,h = map(int,input().split()) # x,y,w,h 값 입력받기 
+print(min(x,y,h-y,w-x))
 
 #3009 
 
-# xList=[]
-# yList=[]
-# #x,y리스트받기 
-# for i in range(3):
-#     x,y = map(int,input().split())
-#     xList.append(x)
-#     yList.append(y)
+xList=[]
+yList=[]
+#x,y리스트받기 
+for i in range(3):
+    x,y = map(int,input().split())
+    xList.append(x)
+    yList.append(y)
 
-# for i in range(3):
-#     if xList.count(xList[i]) == 1: #x 1개인 요소 찾기 
-#         x = xList[i]
-#     if yList.count(yList[i]) == 1: #y 1개인 요소 찾기 
-#         y = yList[i]
+for i in range(3):
+    if xList.count(xList[i]) == 1: #x 1개인 요소 찾기 
+        x = xList[i]
+    if yList.count(yList[i]) == 1: #y 1개인 요소 찾기 
+        y = yList[i]
 
-# print(f"{x} {y}")
+print(f"{x} {y}")
 
 #4153
 
-# while True :
-#     length = list(map(int,input().split()))
-#     if sum(length)==0:
-#         break
-#     max_len = max(length)
-#     length.remove(max_len) #긴 길이 지우기 
-#     if (length[0]**2 + length[1]**2 == max_len**2):
-#         print("right")
-#     else:
-#         print("wrong")
+while True :
+    length = list(map(int,input().split()))
+    if sum(length)==0:
+        break
+    max_len = max(length)
+    length.remove(max_len) #긴 길이 지우기 
+    if (length[0]**2 + length[1]**2 == max_len**2):
+        print("right")
+    else:
+        print("wrong")
 
 #3053
-# import math 
-# r = int(input())
-# print(r*r*math.pi)
-# print(r*r*2)
+import math 
+r = int(input())
+print(r*r*math.pi)
+print(r*r*2)
 
 #1002 
 
-# test = int(input())
-# for _ in range(test):
-#     x1,y1,r1,x2,y2,r2 = map(int,input().split())
-#     distance = ((x1-x2)**2 +(y1-y2)**2)**(1/2)
-#     maxR=r1+r2
-#     minR=abs(r1-r2) 
-#     if distance==0:
-#         if r1 == r2: #원이 겹치는 경우 
-#             print(-1) 
-#         else : #원이 접하지 않는 경우 
-#             print(0)
-#     else:
-#         if distance == maxR or distance == minR:
-#             print(1)
-#         elif distance<maxR and distance > minR: # 
-#             print(2)
-#         else : #아예 딴 곳 
-#             print(0) 
+test = int(input())
+for _ in range(test):
+    x1,y1,r1,x2,y2,r2 = map(int,input().split())
+    distance = ((x1-x2)**2 +(y1-y2)**2)**(1/2)
+    maxR=r1+r2
+    minR=abs(r1-r2) 
+    if distance==0:
+        if r1 == r2: #원이 겹치는 경우 
+            print(-1) 
+        else : #원이 접하지 않는 경우 
+            print(0)
+    else:
+        if distance == maxR or distance == minR:
+            print(1)
+        elif distance<maxR and distance > minR: # 
+            print(2)
+        else : #아예 딴 곳 
+            print(0) 
 
 
 #10872 : 팩토리얼 
