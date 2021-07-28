@@ -393,3 +393,36 @@
 #             else :
 #                 total = max(total,arr[i]+arr[j]+arr[k])
 # print(total)
+
+#2447
+# num = int(input())
+# arr = [["*"]*num for _ in range(num)] 
+# v = num 
+# count =0 #3의 몇승인지 구하기 
+
+# while v != 1: #입력받은 num이 3의 몇승인지 구하기
+#     v/=3
+#     count+=1 
+
+# for count_ in range(count):
+#     idx = [i for i in range(num) if (i//3**count_)%3 == 1]
+#     #빈칸 채울 행열 인덱스 
+#     for i in idx:
+#         for j in idx:
+#             arr[i][j] = " "
+
+# print('\n'.join([''.join([str(i) for i in row]) for row in arr]))
+
+#11729 : 하노이 탑 이동 순서 
+def HanoiTowerMove(num,_from,by,to):
+    #이동해야 할 원반의 수가 1개일 경우 재귀 탈출 
+    if(num==1):
+        print(f"{_from} {to}")
+    else :
+        HanoiTowerMove(num-1,_from,to,by) #n-1개 옮기기 
+        print(f"{_from} {to}")
+        HanoiTowerMove(num-1,by,_from,to)
+
+num=int(input())
+print(2**num-1) # 하노이탑 최소이동횟수 : 2^num - 1 
+HanoiTowerMove(num,1,2,3)
