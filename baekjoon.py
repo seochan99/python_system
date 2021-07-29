@@ -467,13 +467,17 @@
 #     print(count+1, end=' ')
 
 #1436
-n = int(input())
-count = 0 
-sixsixsix= 666
-while True:
-    if '666' in str(sixsixsix):
-        count+=1
-    if count == n:
-        print(sixsixsix)
-        break
-    sixsixsix+=1
+# n = int(input())
+# count = 0 
+# sixsixsix= 666
+# while True:
+#     if '666' in str(sixsixsix):
+#         count+=1
+#     if count == n:
+#         print(sixsixsix)
+#         break
+#     sixsixsix+=1
+
+#3046 : R2
+R1, S = map(int,input().split())
+print(S*2 - R1)
