@@ -479,5 +479,39 @@
 #     sixsixsix+=1
 
 #3046 : R2
-R1, S = map(int,input().split())
-print(S*2 - R1)
+# R1, S = map(int,input().split())
+# print(S*2 - R1)
+
+#2163
+# n, m = map(int,input().split())
+# print(n*m-1)
+
+#10699 : 오늘 날짜
+# from datetime import datetime
+# print(datetime.today().strftime("%Y-%m-%d"))
+
+#7287 : 등록 
+# print("80\n")
+# print("gmlcks0513")
+
+# 2525 : 오븐 시계
+a, b, c= map(int,input().split())
+t = int(input()) #걸리는 시간(초단위)
+
+c+= t%60
+t = t//60
+if c>=60:
+    b+=1
+    c-=60
+
+b+=t%60
+t = t//60
+if b>=60:
+    a+=1
+    b-=60
+
+a+=t%24
+if a>=24:
+    a-=24
+print(a,b,c)
+
