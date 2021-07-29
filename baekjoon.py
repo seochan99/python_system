@@ -394,35 +394,86 @@
 #                 total = max(total,arr[i]+arr[j]+arr[k])
 # print(total)
 
-#2447
+#2447 : 별찍기 
+# def MakeStarList(n):
+#     arr=[]
+#     #num == 9일때 len(n) == 3 
+#     for i in range(3*len(n)):
+#         if i//len(n)==1: #몫이 1일때 
+#             arr.append(n[i%len(n)]+" "*len(n)+n[i%len(n)])
+#         else : # 몫이 다른 값일 경우 stars로 채움 
+#             arr.append(n[i%len(n)]*3) 
+#     return (list(arr))
+
+# stars=["***","* *","***"]  #디폴트 패턴 
+
 # num = int(input())
-# arr = [["*"]*num for _ in range(num)] 
-# v = num 
-# count =0 #3의 몇승인지 구하기 
+# count = 0
+# while num != 3:
+#     num = int(num/3)
+#     count+=1 #제곱수 - 1 구하기 
 
-# while v != 1: #입력받은 num이 3의 몇승인지 구하기
-#     v/=3
-#     count+=1 
+# for _ in range(count):
+#     stars = MakeStarList(stars)
 
-# for count_ in range(count):
-#     idx = [i for i in range(num) if (i//3**count_)%3 == 1]
-#     #빈칸 채울 행열 인덱스 
-#     for i in idx:
-#         for j in idx:
-#             arr[i][j] = " "
+# for i in stars:
+#     print(i) 
 
 # print('\n'.join([''.join([str(i) for i in row]) for row in arr]))
 
-#11729 : 하노이 탑 이동 순서 
-def HanoiTowerMove(num,_from,by,to):
-    #이동해야 할 원반의 수가 1개일 경우 재귀 탈출 
-    if(num==1):
-        print(f"{_from} {to}")
-    else :
-        HanoiTowerMove(num-1,_from,to,by) #n-1개 옮기기 
-        print(f"{_from} {to}")
-        HanoiTowerMove(num-1,by,_from,to)
+# #11729 : 하노이 탑 이동 순서 
+# def HanoiTowerMove(num,_from,by,to):
+#     #이동해야 할 원반의 수가 1개일 경우 재귀 탈출 
+#     if(num==1):
+#         print(f"{_from} {to}")
+#     else :
+#         HanoiTowerMove(num-1,_from,to,by) #n-1개 옮기기 
+#         print(f"{_from} {to}")
+#         HanoiTowerMove(num-1,by,_from,to)
 
-num=int(input())
-print(2**num-1) # 하노이탑 최소이동횟수 : 2^num - 1 
-HanoiTowerMove(num,1,2,3)
+# num=int(input())
+# print(2**num-1) # 하노이탑 최소이동횟수 : 2^num - 1 
+# HanoiTowerMove(num,1,2,3)
+
+#2231 : 분해합
+#브루트포스 무식 하게 
+# num = int(input())
+
+# BunHaeHap = 0 #분해합 
+
+# for i in range(1,num+1):
+#     con = list(map(int,str(i))) #i의 각자리수 리스트에 삽입 
+#     BunHaeHap = i + sum(con) # 분해합 
+#     if BunHaeHap == num :
+#         print(i)
+#         break
+#     if i==num:
+#         print(0)
+
+#7568
+# num = int(input())
+# all_list =[[0]*2 for i in range(num)]  #리스트생성 
+
+# for i in range(num):
+#     x_, y_ = map(int,input().split())
+#     all_list[i][0] = x_
+#     all_list[i][1] = y_
+
+# for i in range(0,num):
+#     count = 0
+#     for j in range(0,num):
+#         if all_list[i][0] < all_list[j][0] and all_list[i][1] < all_list[j][1]:
+#             count+=1
+#     print(count+1, end=' ')
+
+#1436
+n = int(input())
+count = 0 
+sixsixsix= 666
+while True:
+    if '666' in str(sixsixsix):
+        count+=1
+    if count == n:
+        print(sixsixsix)
+        break
+    sixsixsix+=1
