@@ -536,7 +536,8 @@
 #             elif arr[i] == '%':
 #                 ans +=5
 #     print('%0.2f' %ans)
-arr=[]
+
+#2935
 a=int(input())
 b=input()
 c=int(input())
