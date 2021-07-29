@@ -515,6 +515,24 @@
 #     a-=24
 # print(a,b,c)
 
-# 2914 : 저작궈
-a, i = map(int,input().split())
-print(a*(i-1)+1)
+# 2914 : 저작권 
+# a, i = map(int,input().split())
+# print(a*(i-1)+1)
+
+#5355 : 화성 수학 
+# @ = *3 % +5 #=-7
+test = int(input())
+for _ in range(test):
+    arr = list(map(str,input().split())) #배열로 입력받기
+    ans = 0
+    for i in range(len(arr)):
+        if i==0:
+            ans+=float(arr[i])
+        else :
+            if arr[i] == '#':
+                ans-=7
+            elif arr[i] == '@':
+                ans *=3
+            elif arr[i] == '%':
+                ans +=5
+    print('%0.2f' %ans)
