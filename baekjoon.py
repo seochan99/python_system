@@ -521,18 +521,27 @@
 
 #5355 : 화성 수학 
 # @ = *3 % +5 #=-7
-test = int(input())
-for _ in range(test):
-    arr = list(map(str,input().split())) #배열로 입력받기
-    ans = 0
-    for i in range(len(arr)):
-        if i==0:
-            ans+=float(arr[i])
-        else :
-            if arr[i] == '#':
-                ans-=7
-            elif arr[i] == '@':
-                ans *=3
-            elif arr[i] == '%':
-                ans +=5
-    print('%0.2f' %ans)
+# test = int(input())
+# for _ in range(test):
+#     arr = list(map(str,input().split())) #배열로 입력받기
+#     ans = 0
+#     for i in range(len(arr)):
+#         if i==0:
+#             ans+=float(arr[i])
+#         else :
+#             if arr[i] == '#':
+#                 ans-=7
+#             elif arr[i] == '@':
+#                 ans *=3
+#             elif arr[i] == '%':
+#                 ans +=5
+#     print('%0.2f' %ans)
+arr=[]
+a=int(input())
+b=input()
+c=int(input())
+
+if b=="*":
+    print(a*c)
+else:
+    print(a+c)
