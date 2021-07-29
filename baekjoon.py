@@ -495,23 +495,26 @@
 # print("gmlcks0513")
 
 # 2525 : 오븐 시계
-a, b, c= map(int,input().split())
-t = int(input()) #걸리는 시간(초단위)
+# a, b, c= map(int,input().split())
+# t = int(input()) #걸리는 시간(초단위)
 
-c+= t%60
-t = t//60
-if c>=60:
-    b+=1
-    c-=60
+# c+= t%60
+# t = t//60
+# if c>=60:
+#     b+=1
+#     c-=60
 
-b+=t%60
-t = t//60
-if b>=60:
-    a+=1
-    b-=60
+# b+=t%60
+# t = t//60
+# if b>=60:
+#     a+=1
+#     b-=60
 
-a+=t%24
-if a>=24:
-    a-=24
-print(a,b,c)
+# a+=t%24
+# if a>=24:
+#     a-=24
+# print(a,b,c)
 
+# 2914 : 저작궈
+a, i = map(int,input().split())
+print(a*(i-1)+1)
