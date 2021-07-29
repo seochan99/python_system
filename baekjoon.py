@@ -538,11 +538,34 @@
 #     print('%0.2f' %ans)
 
 #2935
-a=int(input())
-b=input()
-c=int(input())
+# a=int(input())
+# b=input()
+# c=int(input())
 
-if b=="*":
-    print(a*c)
-else:
-    print(a+c)
+# if b=="*":
+#     print(a*c)
+# else:
+#     print(a+c)
+
+#10817
+# arr = list(map(int,input().split()))
+# arr.sort()
+# print(arr[1])
+
+#1789 
+# num = int(input())
+# n=1
+# while n*(n+1)/2<=num:
+#     n+=1
+# print(n-1)
+
+#10039 
+arr=[0,0,0,0,0]
+sum=0
+for i in range(5):
+    arr[i]= int(input())
+    if arr[i]<=40:
+        arr[i]=40
+    sum+=arr[i]
+print(sum//5)
+
