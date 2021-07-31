@@ -560,12 +560,24 @@
 # print(n-1)
 
 #10039 
-arr=[0,0,0,0,0]
-sum=0
-for i in range(5):
-    arr[i]= int(input())
-    if arr[i]<=40:
-        arr[i]=40
-    sum+=arr[i]
-print(sum//5)
+# arr=[0,0,0,0,0]
+# sum=0
+# for i in range(5):
+#     arr[i]= int(input())
+#     if arr[i]<=40:
+#         arr[i]=40
+#     sum+=arr[i]
+# print(sum//5)
 
+
+
+def gcd(a, b):
+    return gcd(b, a % b) if b else a
+def lcm(a, b):
+    return a * b // gcd(a, b)
+
+test = int(input())
+for i in range(test):
+    a,b = map(int,input().split())
+    print(lcm(a, b))
+# 최소공배수 = 두 수 곱 / 최대 공약수 
