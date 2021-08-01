@@ -451,20 +451,39 @@
 #         print(0)
 
 #7568
+#1 왜 안될까.... 하 
 # num = int(input())
-# all_list =[[0]*2 for i in range(num)]  #리스트생성 
+# all_list =[[0]*2 for i in range(num)]  #리스트표현식 
+# #[0,0] 을 넘만큼 생성한 list = all_list 
+
+# #무게,키 넣기 
+# for i in range(num):
+#     x, y = map(int,input().split())
+#     all_list[i][0] = x
+#     all_list[i][1] = y
 
 # for i in range(num):
-#     x_, y_ = map(int,input().split())
-#     all_list[i][0] = x_
-#     all_list[i][1] = y_
-
-# for i in range(0,num):
 #     count = 0
-#     for j in range(0,num):
-#         if all_list[i][0] < all_list[j][0] and all_list[i][1] < all_list[j][1]:
+#     for j in range(num):
+#         if all_list[i][0]<all_list[j][0] and all_list[i][1]<all_list[j][1] :
+#             count += 1
+#     print(count+1,end=' ')
+
+#2 append 
+# test = int(input())
+# arr = []
+# for i in range(test):
+#     x, y = map(int,input().split())
+#     arr.append((x,y))
+
+# for i in arr: #리스트 직접접근 
+#     count = 0
+#     for j in arr:
+#         if i[0]<j[0] and i[1] < j[1]:
 #             count+=1
-#     print(count+1, end=' ')
+#     print(count+1,end =' ') 
+
+    
 
 #1436
 # n = int(input())
@@ -571,13 +590,13 @@
 
 
 #1934
-def gcd(a, b):
-    return gcd(b, a % b) if b else a
-def lcm(a, b):
-    return a * b // gcd(a, b)
+# def gcd(a, b):
+#     return gcd(b, a % b) if b else a
+# def lcm(a, b):
+#     return a * b // gcd(a, b)
 
-test = int(input())
-for i in range(test):
-    a,b = map(int,input().split())
-    print(lcm(a, b))
-# 최소공배수 = 두 수 곱 / 최대 공약수 
+# test = int(input())
+# for i in range(test):
+#     a,b = map(int,input().split())
+#     print(lcm(a, b))
+# # 최소공배수 = 두 수 곱 / 최대 공약수 
