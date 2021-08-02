@@ -691,19 +691,33 @@
 #         print("do not advertise")
 
 #10102 : 개표 
-num = int(input())
-arr = list(str(input()))
+# num = int(input())
+# arr = list(str(input()))
 
-a=0 ; b=0
+# a=0 ; b=0
 
-for i in range(num):
-    if arr[i]=='A':
-        a+=1
-    elif arr[i]=='B':
-        b+=1
-if a>b:
-    print('A')        
-elif b>a:
-    print('B')
+# for i in range(num):
+#     if arr[i]=='A':
+#         a+=1
+#     elif arr[i]=='B':
+#         b+=1
+# if a>b:
+#     print('A')        
+# elif b>a:
+#     print('B')
+# else :
+#     print("Tie")
+
+# 10886 : 준희야
+n = int(input())
+cute = 0 ; notCute=0
+for _ in range(n):
+    ppl=int(input())
+    if ppl ==0:
+        notCute+=1
+    elif ppl == 1:
+        cute += 1
+if cute>notCute:
+    print("Junhee is cute!")
 else :
-    print("Tie")
+    print("Junhee is not cute!")
