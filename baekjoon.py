@@ -709,15 +709,22 @@
 #     print("Tie")
 
 # 10886 : 준희야
-n = int(input())
-cute = 0 ; notCute=0
-for _ in range(n):
-    ppl=int(input())
-    if ppl ==0:
-        notCute+=1
-    elif ppl == 1:
-        cute += 1
-if cute>notCute:
-    print("Junhee is cute!")
+# n = int(input())
+# cute = 0 ; notCute=0
+# for _ in range(n):
+#     ppl=int(input())
+#     if ppl ==0:
+#         notCute+=1
+#     elif ppl == 1:
+#         cute += 1
+# if cute>notCute:
+#     print("Junhee is cute!")
+# else :
+#     print("Junhee is not cute!")
+
+# 10988 : 펠린드롬인지 확인하기
+word = list(str(input()))
+if list(reversed(word))==word :
+    print(1)
 else :
-    print("Junhee is not cute!")
+    print(0)
