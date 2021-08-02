@@ -634,10 +634,25 @@
 #         print("No")
 
 #10156 : 과자
-while True:
-    k,n,m = map(int,input().split())
-    cracker = k*n
-    if cracker>m:
-        print(cracker-m)
+
+# k,n,m = map(int,input().split())
+# cracker = k*n
+# if cracker>m:
+#     print(cracker-m)
+# else :
+#     print(0)
+
+#2476 : 주사위 게임
+n = int(input())
+maxN=[0]*n
+for i in range(n) :
+    arr = list(map(int,input().split()))
+    if arr[0]==arr[1]==arr[2] :
+        maxN[i]=10000+arr[0]*1000
+    elif arr[0]==arr[1] or arr[0]==arr[2] :
+        maxN[i]=1000+arr[0]*100
+    elif arr[1]==arr[2] :
+        maxN[i]=1000+arr[1]*100
     else :
-        print(0)
+        maxN[i]=max(arr)*100
+print(max(maxN))
