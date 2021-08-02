@@ -600,3 +600,25 @@
 #     a,b = map(int,input().split())
 #     print(lcm(a, b))
 # # 최소공배수 = 두 수 곱 / 최대 공약수 
+
+#1018 : 체 스 으 .. 
+# n, m = map(int,input().split()) #세로 가로
+# arr =[[0]*m for i in range(n)] 
+# count=0
+# for i in range(n):
+#     arr[i]=input() #BW 입력 받기     
+#     for j in range(0,m):
+#         if arr[i][j] == arr[i][j+1]:
+#             count+=1
+# print(count)
+
+#2480
+arr = list(map(int,input().split()))
+if arr[0]==arr[1]==arr[2] :
+    print(10000+arr[0]*1000)
+elif arr[0]==arr[1] or arr[0]==arr[2] :
+    print(1000+arr[0]*100)
+elif arr[1]==arr[2] :
+    print(1000+arr[1]*100)
+else :
+    print(max(arr)*100)
