@@ -669,11 +669,23 @@
 # print(grade[input()])
 
 #7567 : 그릇 
-arr = list(str(input()))
-length=10
-for i in range(1,len(arr)):
-    if arr[i-1]==arr[i]:
-        length+=5
+# arr = list(str(input()))
+# length=10
+# for i in range(1,len(arr)):
+#     if arr[i-1]==arr[i]:
+#         length+=5
+#     else :
+#         length+=10
+# print(length)
+
+#5063 : TGN
+test = int(input())
+for _ in range(test):
+    r,e,c = map(int,input().split())
+    inv = e-c
+    if inv>r :
+        print("advertise")
+    elif inv == r :
+        print("does not matter")
     else :
-        length+=10
-print(length)
+        print("do not advertise")
