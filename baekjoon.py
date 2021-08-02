@@ -679,13 +679,31 @@
 # print(length)
 
 #5063 : TGN
-test = int(input())
-for _ in range(test):
-    r,e,c = map(int,input().split())
-    inv = e-c
-    if inv>r :
-        print("advertise")
-    elif inv == r :
-        print("does not matter")
-    else :
-        print("do not advertise")
+# test = int(input())
+# for _ in range(test):
+#     r,e,c = map(int,input().split())
+#     inv = e-c
+#     if inv>r :
+#         print("advertise")
+#     elif inv == r :
+#         print("does not matter")
+#     else :
+#         print("do not advertise")
+
+#10102 : 개표 
+num = int(input())
+arr = list(str(input()))
+
+a=0 ; b=0
+
+for i in range(num):
+    if arr[i]=='A':
+        a+=1
+    elif arr[i]=='B':
+        b+=1
+if a>b:
+    print('A')        
+elif b>a:
+    print('B')
+else :
+    print("Tie")
