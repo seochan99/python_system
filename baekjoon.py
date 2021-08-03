@@ -723,8 +723,8 @@
 #     print("Junhee is not cute!")
 
 # 10988 : 펠린드롬인지 확인하기
-word = list(str(input()))
-if list(reversed(word))==word :
+lang = list(str(input()))
+if list(reversed(lang))==lang :
     print(1)
 else :
     print(0)
