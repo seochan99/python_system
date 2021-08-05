@@ -452,21 +452,21 @@
 
 #7568
 #1 왜 안될까.... 하 
-num = int(input())
-all_list =[[0]*2 for i in range(num)]  
+# num = int(input())
+# all_list =[[0]*2 for i in range(num)]  
 
-#무게,키 넣기 
-for i in range(num):
-    x, y = map(int,input().split())
-    all_list[i][0] = x
-    all_list[i][1] = y
+# #무게,키 넣기 
+# for i in range(num):
+#     x, y = map(int,input().split())
+#     all_list[i][0] = x
+#     all_list[i][1] = y
 
-for i in range(num):
-    count = 0
-    for j in range(num):
-        if all_list[i][0]<all_list[j][0] and all_list[i][1]<all_list[j][1] :
-            count += 1
-    print(count+1,end=' ')
+# for i in range(num):
+#     count = 0
+#     for j in range(num):
+#         if all_list[i][0]<all_list[j][0] and all_list[i][1]<all_list[j][1] :
+#             count += 1
+#     print(count+1,end=' ')
 
 #2 append 
 # test = int(input())
@@ -601,15 +601,16 @@ for i in range(num):
 # # 최소공배수 = 두 수 곱 / 최대 공약수 
 
 #1018 : 체 스 으 .. 
-n, m = map(int,input().split()) #세로 가로
-arr =[[0]*m for i in range(n)] 
-count=0
-for i in range(n):
-    arr[i]=input() #BW 입력 받기     
-    for j in range(0,m):
-        if arr[i][j] == arr[i][j+1]:
-            count+=1
-print(count)
+# n, m = map(int,input().split()) #세로 가로
+# arr =[[0]*m for i in range(n)] 
+# count=0
+# for i in range(n):
+#     arr[i]=input() #BW 입력 받기     
+#     for j in range(0,m):
+#         if arr[i][j] == arr[i][j+1]:
+#             count+=1
+# #쪼개기 (N-7),(M-7)
+# print(count)
 
 #2480
 # arr = list(map(int,input().split()))
