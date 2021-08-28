@@ -730,9 +730,21 @@
 #     print(0)
 
 #
-while True:
-    m,n = map(int,input().split())
-    if m==0 and n==0 :
-        break 
-    print(m+n)
+# while True:
+#     m,n = map(int,input().split())
+#     if m==0 and n==0 :
+#         break 
+#     print(m+n)
     
+
+#5086 : 배수와 약수 
+while True :
+    m,n = map(int,input().split())
+    if m==0 and n==0 : #탈출 
+        break 
+    if n%m==0 :
+        print("factor")
+    elif m%n==0 :
+        print("multiple")
+    else :
+        print("neither")
