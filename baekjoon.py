@@ -738,13 +738,30 @@
     
 
 #5086 : 배수와 약수 
-while True :
-    m,n = map(int,input().split())
-    if m==0 and n==0 : #탈출 
-        break 
-    if n%m==0 :
-        print("factor")
-    elif m%n==0 :
-        print("multiple")
+# while True :
+#     m,n = map(int,input().split())
+#     if m==0 and n==0 : #탈출 
+#         break 
+#     if n%m==0 :
+#         print("factor")
+#     elif m%n==0 :
+#         print("multiple")
+#     else :
+#         print("neither")
+
+#9610 : 사분면
+t = int(input())
+q1 = 0 ; q2 =0 ; q3 =0 ; q4=0 ; axis =0
+for i in range(t):
+    x,y = map(int,input().split())
+    if x>0 and y>0 :
+        q1+=1
+    elif x<0 and y<0 :
+        q3+=1
+    elif x<0 and y>0 : 
+        q2+=1
+    elif x>0 and y<0 :
+        q4 += 1
     else :
-        print("neither")
+        axis +=1 
+print(f"Q1: {q1} \nQ2: {q2} \nQ3: {q3} \nQ4: {q4} \nAXIS: {axis}")
