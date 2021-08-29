@@ -781,17 +781,17 @@
 #         print(m,"is Not perfect")
 
 #10162 : 전자레인지
-time = int(input()) # 시간입력 받기 
-a = 0 ; b = 0 ; c = 0
-c = time//300 
-time = time%300 
-b = time // 60 
-time = time%60 
+# time = int(input())
+# if time%10:
+#     print(-1)
+# else:
+#     A = B = C = 0
+#     A = time//300
+#     B = (time%300) // 60
+#     C = (time%300) % 60 // 10
+#     print(A, B, C)
 
-c = time//10 
-time = time%10
-if time != 0 :
-    print(-1)
-else :
-    print(a,b,c)
-
+#2558 : A + B - 2
+a = int(input())
+b = int(input())
+print(a+b)
