@@ -767,15 +767,31 @@
 # print(f"Q1: {q1} \nQ2: {q2} \nQ3: {q3} \nQ4: {q4} \nAXIS: {axis}")
 
 #9506 : ㅇㅑㄱ ㅅㅜ드ㄹㅢ 합  
-while True :
-    m = int(input())
-    if m== -1 :
-        break 
-    arr=[] #약수 리스트 선언 
-    for i in range(1,m):
-        if m%i == 0:
-            arr.append(i) # i 추가하기 리스트에 
-    if sum(arr)==m:
-        print(m," = "," + ".join(str(i) for i in arr), sep="")
-    else :
-        print(m,"is Not perfect")
+# while True :
+#     m = int(input())
+#     if m== -1 :
+#         break 
+#     arr=[] #약수 리스트 선언 
+#     for i in range(1,m):
+#         if m%i == 0:
+#             arr.append(i) # i 추가하기 리스트에 
+#     if sum(arr)==m:
+#         print(m," = "," + ".join(str(i) for i in arr), sep="")
+#     else :
+#         print(m,"is Not perfect")
+
+#10162 : 전자레인지
+time = int(input()) # 시간입력 받기 
+a = 0 ; b = 0 ; c = 0
+c = time//300 
+time = time%300 
+b = time // 60 
+time = time%60 
+
+c = time//10 
+time = time%10
+if time != 0 :
+    print(-1)
+else :
+    print(a,b,c)
+
