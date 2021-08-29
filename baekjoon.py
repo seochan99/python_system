@@ -750,18 +750,32 @@
 #         print("neither")
 
 #9610 : 사분면
-t = int(input())
-q1 = 0 ; q2 =0 ; q3 =0 ; q4=0 ; axis =0
-for i in range(t):
-    x,y = map(int,input().split())
-    if x>0 and y>0 :
-        q1+=1
-    elif x<0 and y<0 :
-        q3+=1
-    elif x<0 and y>0 : 
-        q2+=1
-    elif x>0 and y<0 :
-        q4 += 1
+# t = int(input())
+# q1 = 0 ; q2 =0 ; q3 =0 ; q4=0 ; axis =0
+# for i in range(t):
+#     x,y = map(int,input().split())
+#     if x>0 and y>0 :
+#         q1+=1
+#     elif x<0 and y<0 :
+#         q3+=1
+#     elif x<0 and y>0 : 
+#         q2+=1
+#     elif x>0 and y<0 :
+#         q4 += 1
+#     else :
+#         axis +=1 
+# print(f"Q1: {q1} \nQ2: {q2} \nQ3: {q3} \nQ4: {q4} \nAXIS: {axis}")
+
+#9506 : ㅇㅑㄱ ㅅㅜ드ㄹㅢ 합  
+while True :
+    m = int(input())
+    if m== -1 :
+        break 
+    arr=[] #약수 리스트 선언 
+    for i in range(1,m):
+        if m%i == 0:
+            arr.append(i) # i 추가하기 리스트에 
+    if sum(arr)==m:
+        print(m," = "," + ".join(str(i) for i in arr), sep="")
     else :
-        axis +=1 
-print(f"Q1: {q1} \nQ2: {q2} \nQ3: {q3} \nQ4: {q4} \nAXIS: {axis}")
+        print(m,"is Not perfect")
