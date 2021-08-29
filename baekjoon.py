@@ -809,15 +809,29 @@
 # print(nScore)
 
 # 10214 : BaseBall 
+# T = int(input())
+# y = 0 ; k =0 
+# for _ in range(T):
+#     for __ in range(9):
+#         m,n = map(int,input().split())
+#         y+=m ; k+=n 
+#     if y>k :
+#         print("Yonsei")
+#     elif k>y :
+#         print("Korea")
+#     else :
+#         print("Draw")
+
+# 11557 : 양조장의 해 
 T = int(input())
-y = 0 ; k =0 
-for _ in range(T):
-    for __ in range(9):
-        m,n = map(int,input().split())
-        y+=m ; k+=n 
-    if y>k :
-        print("Yonsei")
-    elif k>y :
-        print("Korea")
-    else :
-        print("Draw")
+for __ in range(T):
+    dictionary = {}
+    maxA = 0 
+    numSchool = int(input()) 
+    for i in range(numSchool):
+        a, b = input().split()
+        dictionary[int(b)] = a
+    for j in dictionary.keys():
+        if maxA<j :
+            maxA = j
+    print(dictionary[maxA]) 
