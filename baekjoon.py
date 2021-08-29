@@ -791,7 +791,33 @@
 #     C = (time%300) % 60 // 10
 #     print(A, B, C)
 
-#2558 : A + B - 2
-a = int(input())
-b = int(input())
-print(a+b)
+# #2558 : A + B - 2
+# a = int(input())
+# b = int(input())
+# print(a+b)
+
+#10103 : 주사위 게임 
+# round = int(input())
+# mScore=100; nScore = 100 
+# for _ in range(1,round+1):
+#     m, n = map(int,input().split())
+#     if m>n :
+#         nScore-=m
+#     elif m<n :
+#         mScore-=n
+# print(mScore)
+# print(nScore)
+
+# 10214 : BaseBall 
+T = int(input())
+y = 0 ; k =0 
+for _ in range(T):
+    for __ in range(9):
+        m,n = map(int,input().split())
+        y+=m ; k+=n 
+    if y>k :
+        print("Yonsei")
+    elif k>y :
+        print("Korea")
+    else :
+        print("Draw")
