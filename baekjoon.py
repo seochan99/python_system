@@ -823,15 +823,20 @@
 #         print("Draw")
 
 # 11557 : 양조장의 해 
-T = int(input())
-for __ in range(T):
-    dictionary = {}
-    maxA = 0 
-    numSchool = int(input()) 
-    for i in range(numSchool):
-        a, b = input().split()
-        dictionary[int(b)] = a
-    for j in dictionary.keys():
-        if maxA<j :
-            maxA = j
-    print(dictionary[maxA]) 
+# T = int(input())
+# for __ in range(T):
+#     dictionary = {}
+#     maxA = 0 
+#     numSchool = int(input()) 
+#     for i in range(numSchool):
+#         a, b = input().split()
+#         dictionary[int(b)] = a
+#     for j in dictionary.keys():
+#         if maxA<j :
+#             maxA = j
+#     print(dictionary[maxA]) 
+
+import math 
+a,b = map(int,input().split())
+print(math.gcd(a,b)) #최대공약수 
+print(a*b//math.gcd(a,b) ) #최소공배수
