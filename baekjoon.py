@@ -836,7 +836,25 @@
 #             maxA = j
 #     print(dictionary[maxA]) 
 
-import math 
-a,b = map(int,input().split())
-print(math.gcd(a,b)) #최대공약수 
-print(a*b//math.gcd(a,b) ) #최소공배수
+# import math 
+# a,b = map(int,input().split())
+# print(math.gcd(a,b)) #최대공약수 
+# print(a*b//math.gcd(a,b) ) #최소공배수
+
+#최소공배수 
+# lcm = a*b// math.gcd(a,b) 
+# #최소공배수 = 두 수 곱하기 나누기 두수 최대공약수 
+# 세 수 곱하기 나누기 세 수 최대공약수...?
+jaesan = 1000
+count = 0
+array = [500,100,50,10,5,1]
+
+money = int(input())
+jaesan -= money
+for coin in array:
+    count += jaesan // coin 
+    jaesan %= coin 
+print(count)
+
+
+
