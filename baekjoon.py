@@ -845,16 +845,51 @@
 # lcm = a*b// math.gcd(a,b) 
 # #최소공배수 = 두 수 곱하기 나누기 두수 최대공약수 
 # 세 수 곱하기 나누기 세 수 최대공약수...?
-jaesan = 1000
-count = 0
-array = [500,100,50,10,5,1]
 
-money = int(input())
-jaesan -= money
-for coin in array:
-    count += jaesan // coin 
-    jaesan %= coin 
+# jaesan = 1000
+# count = 0
+# array = [500,100,50,10,5,1]
+
+# money = int(input())
+# jaesan -= money
+# for coin in array:
+#     count += jaesan // coin 
+#     jaesan %= coin 
+# print(count)
+
+#1463 
+# 3으로 나눈다 -> 2로 나눈다 -> 1뺀다 
+# 3  나눠서 나머지가 0이 아니면 2로 나누는데 나머지가 0이 아니면 1뺀다
+# 무한반복 1이 될때 가지 
+# .. 10일때 옝하 발생 
+# 각 인덱스 값에 1로 만들 수 있는 값을 저장한다
+#  필요할때 꺼내 쓴다 
+# Dp = dynamic Programming 
+# num = int(input())
+# arr = [0,0]
+
+# for i in range(2,num+1):
+#     #arr[2]부터 2를 나누는것이니깐 1의 값을 가진다 
+#     # arr[i] = arr[i-1]+1 #1빼기를 선택했을 때의 경우의 수 
+#      arr.append(arr[i-1]+1)
+#     if i%3 == 0:
+#         arr[i] = min(arr[i],arr[i//3]+1)
+#     if i%2 == 0:
+#         arr[i] = min(arr[i],arr[i//2]+1)
+# print(arr[num])
+
+#11047
+n,k = map(int,input().split())
+count = 0 
+values = [0]*n
+
+for i in range(n):
+    values[i] = int(input())
+
+values.sort(reverse = True)
+for coin in values:
+    count += k // coin 
+    k %= coin 
 print(count)
-
 
 
