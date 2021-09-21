@@ -933,19 +933,36 @@
 # print(total)    
 
 #1541 : 잃어버린 괄호 
-arr = input().split('-')
-firstIndexSum =0
-minusSum = 0
+# arr = input().split('-')
+# firstIndexSum =0
+# minusSum = 0
 
-#첫번째 요소 합구함 
-for i in arr[0].split('+'):
-    firstIndexSum += int(i)
+# #첫번째 요소 합구함 
+# for i in arr[0].split('+'):
+#     firstIndexSum += int(i)
 
-#이후 마이너스 요소들 합구해서 빼줘야함 
-for piece in arr[1:]:
-    for splits in piece.split('+') :
-        minusSum+=int(splits) 
+# #이후 마이너스 요소들 합구해서 빼줘야함 
+# for piece in arr[1:]:
+#     for splits in piece.split('+') :
+#         minusSum+=int(splits) 
 
-print(firstIndexSum-minusSum)
+# print(firstIndexSum-minusSum)
+
+#13305 : 주유소 
+city = int(input())
+length = list(map(int,input().split())) # 길이 
+value = list(map(int,input().split())) #마지막 도시 가격 상관 x 
+sum = 0
+
+minVal = value[0]
+
+for i in range(city-1):
+    if(value[i]<minVal):
+        minVal = value[i]
+    sum += length[i]*minVal
+
+print(sum)
+    
+
 
 
