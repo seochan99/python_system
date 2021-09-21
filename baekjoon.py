@@ -921,13 +921,31 @@
 
 # 11399 : ATM 
 
-n = int(input()) #총 사람의 수 입력 받기 
-arr = list(map(int,input().split())) #시간 입력 받기 
-total = 0 # 총 합 시간 
-personalTime = 0 #매번 갱신되는 개인의 시간 
-arr.sort() #시간 낮은 대로 정렬 
+# n = int(input()) #총 사람의 수 입력 받기 
+# arr = list(map(int,input().split())) #시간 입력 받기 
+# total = 0 # 총 합 시간 
+# personalTime = 0 #매번 갱신되는 개인의 시간 
+# arr.sort() #시간 낮은 대로 정렬 
 
-for time in arr:
-    personalTime+=time 
-    total+=personalTime
-print(total)    
+# for time in arr:
+#     personalTime+=time 
+#     total+=personalTime
+# print(total)    
+
+#1541 : 잃어버린 괄호 
+arr = input().split('-')
+firstIndexSum =0
+minusSum = 0
+
+#첫번째 요소 합구함 
+for i in arr[0].split('+'):
+    firstIndexSum += int(i)
+
+#이후 마이너스 요소들 합구해서 빼줘야함 
+for piece in arr[1:]:
+    for splits in piece.split('+') :
+        minusSum+=int(splits) 
+
+print(firstIndexSum-minusSum)
+
+
