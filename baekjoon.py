@@ -879,17 +879,55 @@
 # print(arr[num])
 
 #11047
-n,k = map(int,input().split())
-count = 0 
-values = [0]*n
+# n,k = map(int,input().split())
+# count = 0 
+# values = [0]*n
 
-for i in range(n):
-    values[i] = int(input())
+# for i in range(n):
+#     values[i] = int(input())
 
-values.sort(reverse = True)
-for coin in values:
-    count += k // coin 
-    k %= coin 
-print(count)
+# values.sort(reverse = True)
+# for coin in values:
+#     count += k // coin 
+#     k %= coin 
+# print(count)
 
+#최 대 
+# data = input()
+# sum = int(data[0]) #change string to number 
+# for i in range(1,len(data)):
+#     num = int(data[i])
+#     if num <=1 or sum <=1 :
+#         sum += num 
+#     else :
+#         sum *= num 
+# print(sum)
 
+# 모험가 길 드  
+# n = int(input())
+# data = list(map(int,input().split()))
+# data.sort()
+
+# result = 0 
+# cnt = 0 
+
+# for i in data :
+#     cnt +=1 
+#     if cnt>=i :
+#         result+=1
+#         cnt  =0 
+
+# print(result)
+
+# 11399 : ATM 
+
+n = int(input()) #총 사람의 수 입력 받기 
+arr = list(map(int,input().split())) #시간 입력 받기 
+total = 0 # 총 합 시간 
+personalTime = 0 #매번 갱신되는 개인의 시간 
+arr.sort() #시간 낮은 대로 정렬 
+
+for time in arr:
+    personalTime+=time 
+    total+=personalTime
+print(total)    
