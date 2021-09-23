@@ -993,19 +993,68 @@
 
 
 # print(queue.pop()) # 오른쪽 반환 및 제거 
+
+#11866
+# import sys 
+
+# n,k = map(int,sys.stdin.readline().split()) # n,k 입력받기 
+# arr = [i for i in range(1,n+1)]
+
+# ppl = []
+# idx = 0 
+
+# for i in range(n):
+#     idx += k-1
+#     if(idx>=len(arr)):
+#         idx = idx%len(arr)
+
+#     ppl.append(str(arr.pop(idx)))
+
+# print("<",", ".join(ppl),">",sep="")
+
+#10866
 import sys 
+from collections import deque
+test = int(sys.stdin.readline())
 
-n,k = map(int,sys.stdin.readline().split()) # n,k 입력받기 
-arr = [i for i in range(1,n+1)]
+queue = deque()
 
-ppl = []
-idx = 0 
+def empty():
+    if len(queue)==0:
+        return 1
+    else :
+        return 0 
 
-for i in range(n):
-    idx += k-1
-    if(idx>=len(arr)):
-        idx = idx%len(arr)
-
-    ppl.append(str(arr.pop(idx)))
-
-print("<",", ".join(ppl),">",sep="")
+for _ in range(test):
+    wn = list(sys.stdin.readline().split())
+    if wn[0] == 'push_front':
+        queue.appendleft(wn[1])
+    elif wn[0] =='push_back':
+        queue.append(wn[1])
+    elif wn[0] == 'pop_front':
+        if(empty()):
+            print("-1")
+        else :
+            print(queue.popleft())
+    elif wn[0] == 'pop_back':
+        if(empty()):
+            print("-1")
+        else :
+            print(queue.pop())
+    elif wn[0] == 'size':
+        print(len(queue))
+    elif wn[0] == 'empty':
+        if(empty()):
+            print("1")
+        else :
+            print("0")
+    elif wn[0] == 'front':
+        if(empty()):
+            print("-1")
+        else :
+            print(queue[0])
+    elif wn[0] == 'back':
+        if(empty()):
+            print("-1")
+        else :
+            print(queue[-1])
