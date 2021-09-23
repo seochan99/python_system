@@ -949,20 +949,33 @@
 # print(firstIndexSum-minusSum)
 
 #13305 : 주유소 
-city = int(input())
-length = list(map(int,input().split())) # 길이 
-value = list(map(int,input().split())) #마지막 도시 가격 상관 x 
-sum = 0
+# city = int(input())
+# length = list(map(int,input().split())) # 길이 
+# value = list(map(int,input().split())) #마지막 도시 가격 상관 x 
+# sum = 0
 
-minVal = value[0]
+# minVal = value[0]
 
-for i in range(city-1):
-    if(value[i]<minVal):
-        minVal = value[i]
-    sum += length[i]*minVal
+# for i in range(city-1):
+#     if(value[i]<minVal):
+#         minVal = value[i]
+#     sum += length[i]*minVal
 
-print(sum)
+# print(sum)
     
+#2217 : 로프 
+num = int(input())
+arr=[0]*num 
+for i in range(num):
+    arr[i]=int(input()) 
+
+
+#arr 정렬 
+arr.sort(reverse=True) #내림차순 
+for i in range(num):
+    arr[i] = arr[i]*(i+1)
+
+print(max(arr))
 
 
 
