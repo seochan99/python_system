@@ -978,19 +978,34 @@
 # print(max(arr))
 
 # 2164 : 카드 2
+# import sys 
+# from collections import deque # 덱 불러오기 
+# num = int(sys.stdin.readline())
+# queue = deque() 
+
+# for i in range(num):
+#     queue.append(i+1)
+
+# while len(queue)!=1:
+#     temp = queue.popleft() #왼쪽 반환 및 제거 
+#     print(temp, end=" ")
+#     queue.append(queue.popleft())
+
+
+# print(queue.pop()) # 오른쪽 반환 및 제거 
 import sys 
-from collections import deque # 덱 불러오기 
-num = int(sys.stdin.readline())
-queue = deque() 
 
-for i in range(num):
-    queue.append(i+1)
+n,k = map(int,sys.stdin.readline().split()) # n,k 입력받기 
+arr = [i for i in range(1,n+1)]
 
-while len(queue)!=1:
-    temp = queue.popleft() #왼쪽 반환 및 제거 
-    print(temp, end=" ")
-    queue.append(queue.popleft())
+ppl = []
+idx = 0 
 
+for i in range(n):
+    idx += k-1
+    if(idx>=len(arr)):
+        idx = idx%len(arr)
 
-print(queue.pop()) # 오른쪽 반환 및 제거 
+    ppl.append(str(arr.pop(idx)))
 
+print("<",", ".join(ppl),">",sep="")
