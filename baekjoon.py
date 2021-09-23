@@ -964,18 +964,33 @@
 # print(sum)
     
 #2217 : 로프 
-num = int(input())
-arr=[0]*num 
+# num = int(input())
+# arr=[0]*num 
+# for i in range(num):
+#     arr[i]=int(input()) 
+
+
+# #arr 정렬 
+# arr.sort(reverse=True) #내림차순 
+# for i in range(num):
+#     arr[i] = arr[i]*(i+1)
+
+# print(max(arr))
+
+# 2164 : 카드 2
+import sys 
+from collections import deque # 덱 불러오기 
+num = int(sys.stdin.readline())
+queue = deque() 
+
 for i in range(num):
-    arr[i]=int(input()) 
+    queue.append(i+1)
+
+while len(queue)!=1:
+    temp = queue.popleft() #왼쪽 반환 및 제거 
+    print(temp, end=" ")
+    queue.append(queue.popleft())
 
 
-#arr 정렬 
-arr.sort(reverse=True) #내림차순 
-for i in range(num):
-    arr[i] = arr[i]*(i+1)
-
-print(max(arr))
-
-
+print(queue.pop()) # 오른쪽 반환 및 제거 
 
