@@ -1060,7 +1060,54 @@
 #             print(queue[-1])
 #dequeue
 
-n,k = map(int,input().split())
-arr = list(map(int,input().split()))
-arr.sort()
-print(arr[k-1])
+# n,k = map(int,input().split())
+# arr = list(map(int,input().split()))
+# arr.sort()
+# print(arr[k-1])
+
+
+#에라토스테네스의 체 
+# n = 1000
+# a = [False,False]+[True]*(n-1)
+# primes = [] #소수배열 
+
+# for i in range(2,n+1):
+#     if a[i]:
+#         primes.append(i)
+#         for j in range(2*i,n+1,i): #2+i부터 n+1까지 i간격 
+#             a[j] = False 
+# print(primes)
+
+# print(str(100))
+# print(str(100)[::-1])
+
+# 1747 : 소수&팰린드롬 
+
+import math 
+
+#prime func
+def primeNumber(x):
+    for i in range(2,int(math.sqrt(x))+1):
+        if x % i ==0:
+            return False 
+    return True #소수당 
+
+n = int(input())
+
+max = 1000001 
+cnt =0 
+
+for i in range(n,max):
+    if i == 1:
+        continue
+    if str(i)==str(i)[::-1]: #펠
+        if primeNumber(i) :
+            cnt = i 
+            break 
+
+if cnt == 0 :
+    cnt = 1003001 
+print(cnt)
+
+
+
