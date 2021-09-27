@@ -1110,42 +1110,94 @@
 # print(cnt)
 
 # 1652 :누울 자리를 찾아라 
-n = int(input())
+# n = int(input())
 
-space_w = 0 ; total_w=0
-space_h = 0 ; total_h =0
+# space_w = 0 ; total_w=0
+# space_h = 0 ; total_h =0
 
-arr = []
-for _ in range(n):
-    arr.append(input())
+# arr = []
+# for _ in range(n):
+#     arr.append(input())
 
-#가로 눕기 가능한 수 구하기 
-for i in arr:
-    for j in i: #가로 한 줄 체크 
-        if j=='.':
-            space_w +=1
-        else :
-            if space_w>1:
-                total_w+=1
-            space_w = 0 # 초기화 
-    #전부 .일경우 
-    if space_w>1:
-        total_w+=1
-    space_w=0 #초기화 
+# #가로 눕기 가능한 수 구하기 
+# for i in arr:
+#     for j in i: #가로 한 줄 체크 
+#         if j=='.':
+#             space_w +=1
+#         else :
+#             if space_w>1:
+#                 total_w+=1
+#             space_w = 0 # 초기화 
+#     #전부 .일경우 
+#     if space_w>1:
+#         total_w+=1
+#     space_w=0 #초기화 
 
-#세로 눕기 가능한 수 구하기 
+# #세로 눕기 가능한 수 구하기 
+
+# for i in range(n):
+#     for j in range(n):
+#         if arr[j][i]=='.':
+#             space_h+=1
+#         else :
+#             if space_h>1:
+#                 total_h+=1
+#             space_h=0 
+#     if space_h>1:
+#         total_h+=1
+#     space_h=0 
+
+# print(total_w,end=" ") #가로 눕기 
+# print(total_h) #세로 눕기
+
+#2621
+# import sys  
+
+# numArr=[0]*10
+# r=0;b=0;y=0;g=0
+
+
+# for i in range(5):
+#     arr = list(sys.stdin.readline().split())
+#     numArr[int(arr[1])]+=1 
+#     if arr[0]=='B':
+#         b+=1
+#     elif arr[0]=='R':
+#         r+=1
+#     elif arr[0]=='Y':
+#         y+=1
+#     else : #green 
+#         g+=1
+
+# print(r,b,y,g)
+# print(numArr)
+# #조건1
+# if(b==5 or r==5 or y==5 or g ==5):
+#     print(max(numArr)+900)
+
+# #조건1 
+
+
+# 8979 : 올림픽 
+import sys 
+input = sys.stdin.readline
+
+n,k = map(int,input().split())
+arr=[]
 
 for i in range(n):
-    for j in range(n):
-        if arr[j][i]=='.':
-            space_h+=1
-        else :
-            if space_h>1:
-                total_h+=1
-            space_h=0 
-    if space_h>1:
-        total_h+=1
-    space_h=0 
+    arr.append(list(map(int,input().split())))
 
-print(total_w,end=" ") #가로 눕기 
-print(total_h) #세로 눕기
+
+arr.sort(key = lambda x :(-x[1],-x[2],-x[3])) #내림차순 정렬 
+
+for i in range(n):
+    if arr[i][0] == k:
+        idx = i 
+
+#공동등수가 될 수 있으므로 
+for i in range(n):
+    if arr[i][1:] == arr[idx][1:]: #메달 같은데 더 앞에 있는거 ! = 등수 땡겨 ! 
+        print(i+1)
+        break 
+
