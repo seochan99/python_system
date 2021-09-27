@@ -1083,31 +1083,69 @@
 
 # 1747 : 소수&팰린드롬 
 
-import math 
+# import math 
 
-#prime func
-def primeNumber(x):
-    for i in range(2,int(math.sqrt(x))+1):
-        if x % i ==0:
-            return False 
-    return True #소수당 
+# #prime func
+# def primeNumber(x):
+#     for i in range(2,int(math.sqrt(x))+1):
+#         if x % i ==0:
+#             return False 
+#     return True #소수당 
 
+# n = int(input())
+
+# max = 1000001 
+# cnt =0 
+
+# for i in range(n,max):
+#     if i == 1:
+#         continue
+#     if str(i)==str(i)[::-1]: #펠
+#         if primeNumber(i) :
+#             cnt = i 
+#             break 
+
+# if cnt == 0 :
+#     cnt = 1003001 
+# print(cnt)
+
+# 1652 :누울 자리를 찾아라 
 n = int(input())
 
-max = 1000001 
-cnt =0 
+space_w = 0 ; total_w=0
+space_h = 0 ; total_h =0
 
-for i in range(n,max):
-    if i == 1:
-        continue
-    if str(i)==str(i)[::-1]: #펠
-        if primeNumber(i) :
-            cnt = i 
-            break 
+arr = []
+for _ in range(n):
+    arr.append(input())
 
-if cnt == 0 :
-    cnt = 1003001 
-print(cnt)
+#가로 눕기 가능한 수 구하기 
+for i in arr:
+    for j in i: #가로 한 줄 체크 
+        if j=='.':
+            space_w +=1
+        else :
+            if space_w>1:
+                total_w+=1
+            space_w = 0 # 초기화 
+    #전부 .일경우 
+    if space_w>1:
+        total_w+=1
+    space_w=0 #초기화 
 
+#세로 눕기 가능한 수 구하기 
 
+for i in range(n):
+    for j in range(n):
+        if arr[j][i]=='.':
+            space_h+=1
+        else :
+            if space_h>1:
+                total_h+=1
+            space_h=0 
+    if space_h>1:
+        total_h+=1
+    space_h=0 
 
+print(total_w,end=" ") #가로 눕기 
+print(total_h) #세로 눕기
