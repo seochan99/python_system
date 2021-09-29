@@ -1179,26 +1179,29 @@
 
 
 # 8979 : 올림픽 
-import sys 
-input = sys.stdin.readline
+# import sys 
+# input = sys.stdin.readline
 
-n,k = map(int,input().split())
-arr=[]
+# n,k = map(int,input().split())
+# arr=[]
 
-for i in range(n):
-    arr.append(list(map(int,input().split())))
+# for i in range(n):
+#     arr.append(list(map(int,input().split())))
 
 
-#################
-arr.sort(key = lambda x :(-x[1],-x[2],-x[3])) #내림차순 정렬 
+# #################
+# arr.sort(key = lambda x :(-x[1],-x[2],-x[3])) #내림차순 정렬 
 
-for i in range(n):
-    if arr[i][0] == k:
-        idx = i 
+# for i in range(n):
+#     if arr[i][0] == k:
+#         idx = i 
 
-#공동등수가 될 수 있으므로 
-for i in range(n):
-    if arr[i][1:] == arr[idx][1:]: #메달 같은데 더 앞에 있는거 ! = 등수 땡겨 ! 
-        print(i+1)
-        break 
+# #공동등수가 될 수 있으므로 
+# for i in range(n):
+#     if arr[i][1:] == arr[idx][1:]: #메달 같은데 더 앞에 있는거 ! = 등수 땡겨 ! 
+#         print(i+1)
+#         break 
+
+
+#2816 : 디지털티비 
 
