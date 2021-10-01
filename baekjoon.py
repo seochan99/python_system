@@ -1205,4 +1205,22 @@
 
 #2816 : 디지털티비 
 
-print(2//3)
+from os import remove
+
+num = int(input())
+ch = []
+for i in range(num):
+    ch.append(input()) #채널입력받기
+     
+kbs1Idx=ch.index('KBS1')
+ch.remove('KBS1')
+kbs2Idx=ch.index('KBS2')
+
+#KBS1 이 KBS2보다 아래 
+#KBS1이 아래로 올것이니깐 ! 
+# if kbs1Idx>kbs2Idx:
+    # kbs2Idx+=1 
+
+#kbs1 Idx => 0으로 
+#kbs2 Idx => 1로 
+print('1'*kbs1Idx + '4'*kbs1Idx + '1'+'1'*kbs2Idx+'4'*kbs2Idx)

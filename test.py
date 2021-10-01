@@ -35,7 +35,7 @@ if __name__=="__main__":
     main()
 
 
-############4############
+############4##########
 def main(): 
     arr = list(input().split(';'))
     print(arr)
