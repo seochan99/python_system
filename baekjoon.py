@@ -1083,31 +1083,31 @@
 
 # 1747 : 소수&팰린드롬 
 
-# import math 
+import math 
 
-# #prime func
-# def primeNumber(x):
-#     for i in range(2,int(math.sqrt(x))+1):
-#         if x % i ==0:
-#             return False 
-#     return True #소수당 
+#prime func
+def primeNumber(x):
+    for i in range(2,int(math.sqrt(x))+1):
+        if x % i ==0:
+            return False 
+    return True #소수당 
 
-# n = int(input())
+n = int(input())
 
-# max = 1000001 
-# cnt =0 
+max = 1000001 
+cnt =0 
 
-# for i in range(n,max):
-#     if i == 1:
-#         continue
-#     if str(i)==str(i)[::-1]: #펠
-#         if primeNumber(i) :
-#             cnt = i 
-#             break 
+for i in range(n,max):
+    if i == 1:
+        continue
+    if str(i)==str(i)[::-1]: #펠
+        if primeNumber(i) :
+            cnt = i 
+            break 
 
-# if cnt == 0 :
-#     cnt = 1003001 
-# print(cnt)
+if cnt == 0 :
+    cnt = 1003001 
+print(cnt)
 
 # 1652 :누울 자리를 찾아라 
 # n = int(input())
@@ -1205,22 +1205,115 @@
 
 #2816 : 디지털티비 
 
-from os import remove
+# from os import remove
 
-num = int(input())
-ch = []
-for i in range(num):
-    ch.append(input()) #채널입력받기
+# num = int(input())
+# ch = []
+# for i in range(num):
+#     ch.append(input()) #채널입력받기
      
-kbs1Idx=ch.index('KBS1')
-ch.remove('KBS1')
-kbs2Idx=ch.index('KBS2')
+# kbs1Idx=ch.index('KBS1')
+# ch.remove('KBS1')
+# kbs2Idx=ch.index('KBS2')
 
-#KBS1 이 KBS2보다 아래 
-#KBS1이 아래로 올것이니깐 ! 
-# if kbs1Idx>kbs2Idx:
-    # kbs2Idx+=1 
+# #KBS1 이 KBS2보다 아래 
+# #KBS1이 아래로 올것이니깐 ! 
+# # if kbs1Idx>kbs2Idx:
+#     # kbs2Idx+=1 
 
-#kbs1 Idx => 0으로 
-#kbs2 Idx => 1로 
-print('1'*kbs1Idx + '4'*kbs1Idx + '1'+'1'*kbs2Idx+'4'*kbs2Idx)
+# #kbs1 Idx => 0으로 
+# #kbs2 Idx => 1로 
+# print('1'*kbs1Idx + '4'*kbs1Idx + '1'+'1'*kbs2Idx+'4'*kbs2Idx)
+
+#2621:카드게임 
+# allCard={} #dict #카드
+
+# num_cnt =[0 for _ in range(10)] #빈도 
+
+# nums = set() #save number
+
+# for _ in range(5):
+#     color,num =input().split()
+#     if color in allCard:
+#         allCard[color].append(int(num))
+#     else :
+#         allCard[color] = [int(num)]
+
+#     num_cnt[int(num)] +=1 #카드 카운트
+#     nums.add(int(num)) #set => 집합 => 중복되는 숫자 저장x
+
+# nums=sorted(list(nums)) #set -> list로 전환 
+
+
+
+# #같은색깔 
+# def all_same_color(allCard):
+#     #딕셔너리는 벨류값에 따라 길이가 정해진다. 
+#     if len(allCard)==1:
+#         return True
+#     else :
+#         return False 
+
+
+# #연속체크 
+# def continue_num(num_cnt):
+#     idx=0
+#     for i in range(1,10):
+#         if num_cnt[i] != 1:
+#             if num_cnt[i] !=0:
+#                 #2번이상 
+#                 return False 
+#         else:
+#             if idx==0:
+#                 idx = i 
+#             else : #이미 인덱스 하나 들어옴 
+#                 if idx+1 != i: #연속쫑 
+#                     return False 
+#                 else :
+#                     idx = i #idx값 초기화
+#     return True 
+
+# #같은숫자
+# def cnt_same_num(num_cnt):
+#     cnts = sorted(num_cnt, reverse=True)
+#     if cnts[0]==4: #4장같은 숫자
+#         return 8
+#     elif cnts[0]==3:
+#         if cnts[1]==2:
+#             return 7 #3장,2장같은 숫자 
+#         else:
+#             return 4 #3장만 같은 숫자 
+#     elif cnts[0]==2:
+#         if cnts[1]==2: 
+#             return 3 #2,2
+#         else :
+#             return 2 #2
+
+# #nums = 제일큰숫자
+# res = 100 + nums[-1] # condition 9
+# if all_same_color(allCard):
+#     if continue_num(num_cnt):
+#         res = max(res,900+nums[-1])  # condition 1
+#     else : 
+#         res = max(res,600+nums[-1]) # condition 4 
+# else :
+#     if continue_num(num_cnt): #condition 5 
+#         res = max(res,500+nums[-1])
+
+# cnt_same_num = cnt_same_num(num_cnt)
+# if cnt_same_num == 8:
+#     res = max(res,800+num_cnt.index(4)) # condition 2
+# elif cnt_same_num == 7:
+#     res = max(res,700+10*num_cnt.index(3)+num_cnt.index(2)) #3,2장같은거, condition 3
+# elif cnt_same_num == 4:
+#     res = max(res,400+num_cnt.index(3)) # condition 6
+# elif cnt_same_num == 3:
+#     idx1 = num_cnt.index(2)
+#     idx2 = num_cnt.index(2,idx1+1,10)
+#     res = max(res,300+10*idx2+idx1) # condition 7
+# elif cnt_same_num == 2:
+#     res = max(res,200+num_cnt.index(2)) #condition 9
+
+# print(res)
+
+
