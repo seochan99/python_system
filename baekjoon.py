@@ -1083,31 +1083,31 @@
 
 # 1747 : 소수&팰린드롬 
 
-import math 
+# import math 
 
-#prime func
-def primeNumber(x):
-    for i in range(2,int(math.sqrt(x))+1):
-        if x % i ==0:
-            return False 
-    return True #소수당 
+# #prime func
+# def primeNumber(x):
+#     for i in range(2,int(math.sqrt(x))+1):
+#         if x % i ==0:
+#             return False 
+#     return True #소수당 
 
-n = int(input())
+# n = int(input())
 
-max = 1000001 
-cnt =0 
+# max = 1000001 
+# cnt =0 
 
-for i in range(n,max):
-    if i == 1:
-        continue
-    if str(i)==str(i)[::-1]: #펠
-        if primeNumber(i) :
-            cnt = i 
-            break 
+# for i in range(n,max):
+#     if i == 1:
+#         continue
+#     if str(i)==str(i)[::-1]: #펠
+#         if primeNumber(i) :
+#             cnt = i 
+#             break 
 
-if cnt == 0 :
-    cnt = 1003001 
-print(cnt)
+# if cnt == 0 :
+#     cnt = 1003001 
+# print(cnt)
 
 # 1652 :누울 자리를 찾아라 
 # n = int(input())
@@ -1133,7 +1133,7 @@ print(cnt)
 #         total_w+=1
 #     space_w=0 #초기화 
 
-# #세로 눕기 가능한 수 구하기 
+# # #세로 눕기 가능한 수 구하기 
 
 # for i in range(n):
 #     for j in range(n):
@@ -1177,7 +1177,6 @@ print(cnt)
 
 # #조건1 
 
-
 # 8979 : 올림픽 
 # import sys 
 # input = sys.stdin.readline
@@ -1189,14 +1188,16 @@ print(cnt)
 #     arr.append(list(map(int,input().split())))
 
 
+# print(arr)
 # #################
 # arr.sort(key = lambda x :(-x[1],-x[2],-x[3])) #내림차순 정렬 
+# print(arr)
 
 # for i in range(n):
 #     if arr[i][0] == k:
 #         idx = i 
 
-# #공동등수가 될 수 있으므로 
+# # #공동등수가 될 수 있으므로 
 # for i in range(n):
 #     if arr[i][1:] == arr[idx][1:]: #메달 같은데 더 앞에 있는거 ! = 등수 땡겨 ! 
 #         print(i+1)
@@ -1315,5 +1316,66 @@ print(cnt)
 #     res = max(res,200+num_cnt.index(2)) #condition 9
 
 # print(res)
+
+
+#11764 : 연결요소
+# import sys
+
+# sys.setrecursionlimit(10**6) #python 의 재귀 깊이 제한은 1000으로 매우 얕으므로 재귀 한계 설정은 선택이 아닌 필수 
+# input = sys.stdin.readline
+
+# n,m = map(int,input().split())
+
+# visited=[0 for _ in range(n+1)]
+
+
+# def DFS(start):
+#     visited[start] = 1
+#     for k in range(1,n+1):
+#         if 
+#DFS -> Stack
+# 
+# import sys 
+# import operator as op 
+# from functools import reduce
+
+# def nCk(n,k):
+#     k = min(k,n-k)
+#     numerator = reduce(op.mul,range(n,n-k,-1),1)
+#     denominator = reduce(op.mul,range(1,k+1),1)
+#     return numerator//denominator
+
+
+# input = sys.stdin.readline
+# n,k = map(int,input().split())
+
+# com = nCk(n,k)
+# print(com%1000000007)
+
+
+# 1629 : 곱셈 
+import sys
+input = sys.stdin.readline
+
+a,b,c = map(int,input().split())
+
+def divCon(a,b):
+    if b==1:
+        return a%c 
+    else:
+        div = divCon(a,b//2)
+
+        if b%2==0: #짝수 
+            return div*div%c 
+        else : #홀수 
+            return div*div*a%c 
+
+print(divCon(a,b))
+
+
+
+        
+
+
 
 
