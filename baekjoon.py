@@ -1355,27 +1355,46 @@
 
 # 1629 : 곱셈 
 import sys
-input = sys.stdin.readline
+# input = sys.stdin.readline
 
-a,b,c = map(int,input().split())
+# a,b,c = map(int,input().split())
 
+# def divCon(a,b):
+#     if b==1:
+#         return a%c 
+#     else:
+#         div = divCon(a,b//2)
+
+#         if b%2==0: #짝수 
+#             return div*div%c 
+#         else : #홀수 
+#             return div*div*a%c 
+
+# print(divCon(a,b))
+
+# 1140 : 이항계수 3
+from math import factorial
+#제곱 분할정복 함수 
 def divCon(a,b):
     if b==1:
-        return a%c 
+        return a%p
     else:
         div = divCon(a,b//2)
 
         if b%2==0: #짝수 
-            return div*div%c 
+            return div*div%p
         else : #홀수 
-            return div*div*a%c 
+            return div*div*a%p
 
-print(divCon(a,b))
+n,k = map(int,input().split())
+p = 1000000007
 
+# fact = [1 for _ in range(n+1)]
+# #factorial 계산 
+# for i in range(2,n+1):
+#     fact[i]=fact[i-1]*i%p
 
+A = factorial(n)
+B = factorial(n-k)*factorial(k)%p 
 
-        
-
-
-
-
+print((A%p)*(divCon(B,p-2)%p)%p)
