@@ -1402,26 +1402,39 @@ import sys
 # 11051 : 이항계수 2
 
 #제곱 분할정복 함수 
-def divCon(a,b):
-    if b==1:
-        return a%p
-    else:
-        div = divCon(a,b//2)
+# def divCon(a,b):
+#     if b==1:
+#         return a%p
+#     else:
+#         div = divCon(a,b//2)
 
-        if b%2==0: #짝수 
-            return div*div%p
-        else : #홀수 
-            return div*div*a%p
+#         if b%2==0: #짝수 
+#             return div*div%p
+#         else : #홀수 
+#             return div*div*a%p
 
-n,k = map(int,input().split())
-p = 10007
+# n,k = map(int,input().split())
+# p = 10007
 
-fact = [1 for _ in range(n+1)]
-#factorial 계산 
-for i in range(2,n+1):
-    fact[i]=fact[i-1]*i%p
+# fact = [1 for _ in range(n+1)]
+# #factorial 계산 
+# for i in range(2,n+1):
+#     fact[i]=fact[i-1]*i%p
 
-A = fact[n]
-B = fact[n-k]*fact[k]%p 
+# A = fact[n]
+# B = fact[n-k]*fact[k]%p 
 
-print((A%p)*(divCon(B,p-2)%p)%p)
+# print((A%p)*(divCon(B,p-2)%p)%p)
+
+#2749 : 피보 3 
+mod = 1000000
+p = mod // 10*15
+
+num = int(input())
+
+pivo =[0,1]
+
+for i in range(2,p):
+    pivo.append(pivo[i-1]+pivo[i-2]) ##피보
+    pivo[i] %=mod 
+print(pivo[num%p])
