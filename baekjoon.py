@@ -1427,14 +1427,24 @@ import sys
 # print((A%p)*(divCon(B,p-2)%p)%p)
 
 #2749 : 피보 3 
-mod = 1000000
-p = mod // 10*15
+# mod = 1000000
+# p = mod // 10*15
+
+# num = int(input())
+
+# pivo =[0,1]
+
+# for i in range(2,p):
+#     pivo.append(pivo[i-1]+pivo[i-2]) ##피보
+#     pivo[i] %=mod 
+# print(pivo[])
+
+#10826 : 피보 4
 
 num = int(input())
 
 pivo =[0,1]
 
-for i in range(2,p):
+for i in range(2,num+1):
     pivo.append(pivo[i-1]+pivo[i-2]) ##피보
-    pivo[i] %=mod 
-print(pivo[num%p])
+print(pivo[num])
