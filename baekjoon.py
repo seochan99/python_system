@@ -1439,12 +1439,122 @@ import sys
 #     pivo[i] %=mod 
 # print(pivo[])
 
-#10826 : 피보 4
+#10826 : 피보 4,1,2,5
 
-num = int(input())
+# num = int(input())
 
-pivo =[0,1]
+# pivo =[0,1]
 
-for i in range(2,num+1):
-    pivo.append(pivo[i-1]+pivo[i-2]) ##피보
-print(pivo[num])
+# for i in range(2,num+1):
+#     pivo.append(pivo[i-1]+pivo[i-2]) ##피보
+# print(pivo[num])
+
+#11724 : 연결 요소의 개수
+# 
+#######dfs  
+# import sys 
+# sys.setrecursionlimit(10**6) #깊이제한 늘리기 
+# input = sys.stdin.readline
+
+# def dfs(v):
+#     visited[v]=1
+
+#     for i in range(1,n+1):
+#         if visited[i]==0 and graph[v][i]==1:
+#             dfs(i)
+
+
+# n,m = map(int,input().split()) #n,m 입력 
+# graph = [[0]*(n+1) for _ in range(n+1)]
+# visited =[0 for _ in range(n+1)]
+# cnt =0
+
+# for i in range(m):
+#     u,v = map(int,input().split())
+#     graph[u][v]=1
+#     graph[v][u]=1
+
+# for i in range(1,n+1):
+#     if visited[i]!=1:
+#         dfs(i)
+#         cnt+=1
+
+# print(cnt)
+
+####bfs 
+# import sys 
+# from collections import deque
+# sys.setrecursionlimit(10**6) #깊이제한 늘리기 
+# input = sys.stdin.readline
+
+# def bfs(v):
+#     queue =deque()
+#     queue.append(v)
+#     visited[v]=1
+#     while(queue):
+#         v = queue[0]
+#         queue.popleft()
+
+#         for i in range(1,n+1):
+#             if visited[i]==0 and graph[v][i]==1:
+#                 queue.append(i)
+#                 visited[i]=1
+
+
+# n,m = map(int,input().split()) #n,m 입력 
+# graph = [[0]*(n+1) for _ in range(n+1)]
+# visited =[0 for _ in range(n+1)]
+# cnt =0
+
+# for i in range(m):
+#     u,v = map(int,input().split())
+#     graph[u][v]=1
+#     graph[v][u]=1
+
+# for i in range(1,n+1):
+#     if visited[i]!=1:
+#         bfs(i)
+#         cnt+=1
+
+# print(cnt)
+
+
+#1260 :DFS BFS 
+# from collections import deque
+# import sys 
+# input = sys.stdin.readline
+
+# def dfs(v):
+#     print(v,end=' ')
+#     visited[v]=1
+
+#     for i in range(1,n+1):
+#         if visited[i]==0 and matrix[v][i]==1:
+#             dfs(i)
+
+# def bfs(v):
+#     queue =deque()
+#     queue.append(v)
+#     visited[v]=0
+#     while(queue):
+#         v = queue[0]
+#         print(queue.popleft(),end=' ')
+
+#         for i in range(1,n+1):
+#             if visited[i]==1 and matrix[v][i]==1:
+#                 queue.append(i)
+#                 visited[i]=0
+
+
+# n,m,v = map(int,input().split())
+# matrix = [[0]*(n+1) for _ in range(n+1)] #인접행렬 생성
+# visited = [0 for _ in range(n+1)]
+
+# for i in range(m):
+#     x,y = map(int,input().split())
+#     matrix[x][y]=1
+#     matrix[y][x]=1
+
+# dfs(v)
+# print()
+# bfs(v)
