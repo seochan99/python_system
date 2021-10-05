@@ -1451,7 +1451,7 @@ import sys
 
 #11724 : 연결 요소의 개수
 # 
-#######dfs  
+# #######dfs  
 # import sys 
 # sys.setrecursionlimit(10**6) #깊이제한 늘리기 
 # input = sys.stdin.readline
@@ -1558,3 +1558,34 @@ import sys
 # dfs(v)
 # print()
 # bfs(v)
+
+#2606 : 바이러스 
+#######dfs  
+import sys 
+input = sys.stdin.readline
+
+def dfs(v):
+    global cnt
+    visited[v]=1
+    for i in range(1,n+1):
+        if visited[i]==0 and graph[v][i]==1:
+            dfs(i)
+            cnt+=1 #1번은 제외 
+
+
+n = int(input()) # computer 
+m = int(input()) # network 
+
+graph = [[0]*(n+1) for _ in range(n+1)]
+visited =[0 for _ in range(n+1)]
+cnt =0
+
+#컴터연결 
+for i in range(m):
+    u,v = map(int,input().split())
+    graph[u][v]=1
+    graph[v][u]=1
+
+dfs(1)
+
+print(cnt)
