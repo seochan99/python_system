@@ -1561,31 +1561,160 @@ import sys
 
 #2606 : 바이러스 
 #######dfs  
-import sys 
-input = sys.stdin.readline
+# import sys 
+# input = sys.stdin.readline
 
-def dfs(v):
-    global cnt
-    visited[v]=1
-    for i in range(1,n+1):
-        if visited[i]==0 and graph[v][i]==1:
-            dfs(i)
-            cnt+=1 #1번은 제외 
+# def dfs(v):
+#     global cnt
+#     visited[v]=1
+#     for i in range(1,n+1):
+#         if visited[i]==0 and graph[v][i]==1:
+#             dfs(i)
+#             cnt+=1 #1번
 
 
-n = int(input()) # computer 
-m = int(input()) # network 
+# n = int(input()) # computer 
+# m = int(input()) # network 
 
-graph = [[0]*(n+1) for _ in range(n+1)]
-visited =[0 for _ in range(n+1)]
-cnt =0
+# graph = [[0]*(n+1) for _ in range(n+1)]
+# visited =[0 for _ in range(n+1)]
+# cnt =0
 
-#컴터연결 
+# #컴터연결 
+# for i in range(m):
+#     u,v = map(int,input().split())
+#     graph[u][v]=1
+#     graph[v][u]=1
+
+# dfs(1)
+
+# print(cnt)
+
+#1012 : 유기농 배추 
+# import sys 
+# input = sys.stdin.readline
+
+# def bfs(x,y):
+#     queue =[[x,y]]
+#     while queue:
+#         a,b = queue[0][0],queue[0][1]
+#         del queue[0]
+#         for i in range(4):
+#             cx = a+dx[i]
+#             cy = b+dy[i]
+#             if 0<=cx<n  and 0<=cy<m and graph[cx][cy]==1:
+#                 graph[cx][cy]=0
+#                 queue.append([cx,cy])
+
+
+# test = int(input()) # computer 
+
+# #방향벡터 
+# dx = [1,-1,0,0]
+# dy = [0,0,-1,1]
+
+
+# for _ in range(test):
+#     # n:세로 m:가로
+#     m,n,k= map(int,input().split())
+#     graph = [[0]*m for _ in range(n)]
+#     cnt=0 #지렁지렁 
+    
+#     #배추
+#     for i in range(k):
+#         a,b = map(int,input().split())
+#         graph[b][a]=1
+#     for j in range(n):
+#         for k in range(m):
+#             if graph[j][k]==1:
+#                 bfs(j,k)
+#                 graph[j][k]=0
+#                 cnt+=1
+# print(cnt)
+# import sys 
+# input=sys.stdin.readline
+
+# n = int(input())
+# arr = input().split()
+# strA = ''.join(arr)
+
+# m = int(input())
+
+# for _ in range(m):
+#     idx1,idx2=map(int,input().split())
+#     strNum = strA[idx1-1:idx2]
+#     if strNum==strNum[::-1]:
+#         print(1)
+#     else:
+#         print(0)
+
+# #펠린?
+# import sys 
+# input=sys.stdin.readline
+
+# n = int(input())
+# arr = list(input().split())
+# m = int(input())
+
+# dp = [[0 for _ in range(n)]for _ in range(n)]
+
+# for i in range(n):
+#     dp[i][i] = 1 #길이 1 전부 펠린 
+
+# for i in range(n-1): 
+#     if arr[i]==arr[i+1]:#길이 2인데 같은 숫자 펠린 
+#         dp[i][i+1]=1 
+# for i in range(2,n):
+#     for j in range(n-i):
+#         if arr[j] == arr[i+j] and dp[j+1][i+j-1]==1:
+#             dp[j][i+j]=1
+
+# for i in range(m):
+#     idx1,idx2 = map(int,input().split())
+#     print(dp[idx1-1][idx2-1])
+
+#10815 : 숫자카드
+def bs(target,data):
+    data.sort()
+    start = 0
+    end = len(data)-1
+
+    while start<=end:
+        mid = (start+end)//2 
+
+        if data[mid] == target:
+            print(1,end=' ')
+            return 1
+        elif data[mid]<target:
+            start = mid + 1 
+        else :
+            end = mid -1 
+    return None 
+
+# import sys 
+# sys.setrecursionlimit(10**9)
+
+# def bsr(target,start,end,data):
+#     if start>end :
+#         return None 
+#     mid = (start+end)//2
+#     if data[mid]==target:
+#         return 1
+#     elif data[mid]>target:
+#         end = mid -1
+#     else:
+#         start = mid + 1
+#     return bsr(target,start,end,data)
+
+n = int(input())
+arr1 = list(map(int,input().split()))
+m = int(input())
+arr2 = list(map(int,input().split()))
+
 for i in range(m):
-    u,v = map(int,input().split())
-    graph[u][v]=1
-    graph[v][u]=1
-
-dfs(1)
-
-print(cnt)
+    # if bsr(arr2[i],0,n-1,arr1):
+    #     print(1,end=' ')
+    if bs(arr2[i],arr1):
+            print(1,end=' ')
+    else : 
+        print(0,end=' ')
