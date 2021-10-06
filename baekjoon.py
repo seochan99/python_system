@@ -1591,8 +1591,10 @@ import sys
 # print(cnt)
 
 #1012 : 유기농 배추 
-# import sys 
-# input = sys.stdin.readline
+import sys 
+input = sys.stdin.readline
+sys.setrecursionlimit(10**4)
+
 
 # def bfs(x,y):
 #     queue =[[x,y]]
@@ -1607,30 +1609,38 @@ import sys
 #                 queue.append([cx,cy])
 
 
-# test = int(input()) # computer 
+def dfs(x,y):
+    graph[x][y]=0
+    for i in range(4):
+        cx = x+dx[i]
+        cy = y+dy[i]
+        if 0<=cx<n  and 0<=cy<m and graph[cx][cy]==1: #방문안한 곳 
+            dfs(cx,cy)
 
-# #방향벡터 
-# dx = [1,-1,0,0]
-# dy = [0,0,-1,1]
+test = int(input()) # computer 
+
+#방향벡터 
+dx = [1,-1,0,0]
+dy = [0,0,-1,1]
 
 
-# for _ in range(test):
-#     # n:세로 m:가로
-#     m,n,k= map(int,input().split())
-#     graph = [[0]*m for _ in range(n)]
-#     cnt=0 #지렁지렁 
+for _ in range(test):
+    # n:세로 m:가로
+    m,n,k= map(int,input().split())
+    graph = [[0]*m for _ in range(n)]
+    cnt=0 #지렁지렁 
     
-#     #배추
-#     for i in range(k):
-#         a,b = map(int,input().split())
-#         graph[b][a]=1
-#     for j in range(n):
-#         for k in range(m):
-#             if graph[j][k]==1:
-#                 bfs(j,k)
-#                 graph[j][k]=0
-#                 cnt+=1
-# print(cnt)
+    #배추
+    for i in range(k):
+        a,b = map(int,input().split())
+        graph[b][a]=1
+    for j in range(n):
+        for k in range(m):
+            if graph[j][k]==1:
+                dfs(j,k)
+                cnt+=1
+    print(cnt)
+
 # import sys 
 # input=sys.stdin.readline
 
@@ -1749,24 +1759,24 @@ import sys
 #         print(0)
 
 #1016
-import sys
-input = sys.stdin.readline
+# import sys
+# input = sys.stdin.readline
 
-def prime_list(MIN,MAX):
-    answer = MAX-MIN+1 
-    check = [False]*(MAX-MIN+1)
-    i=2 
-    while i*i <= MAX: 
-        square_number = i*i 
-        remain = 0 if MIN%square_number==0 else 1 
-        j = MIN//square_number + remain
-        while square_number*j <= MAX: 
-            if not check[square_number*j-MIN]:
-                 check[square_number*j-MIN]=True 
-                 answer-=1 
-            j+=1
-        i+=1 
-    print(answer)
+# def prime_list(MIN,MAX):
+#     answer = MAX-MIN+1 
+#     check = [False]*(MAX-MIN+1)
+#     i=2 
+#     while i*i <= MAX: 
+#         square_number = i*i 
+#         remain = 0 if MIN%square_number==0 else 1 
+#         j = MIN//square_number + remain
+#         while square_number*j <= MAX: 
+#             if not check[square_number*j-MIN]:
+#                  check[square_number*j-MIN]=True 
+#                  answer-=1 
+#             j+=1
+#         i+=1 
+#     print(answer)
 
-m,n = map(int,input().split())
-prime_list(m,n)
+# m,n = map(int,input().split())
+# prime_list(m,n)
