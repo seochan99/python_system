@@ -1720,32 +1720,53 @@ import sys
 #     else : 
 #         print(0,end=' ')
 
+#:1920
+# import sys 
+# sys.setrecursionlimit(10**6)
 
-import sys 
-sys.setrecursionlimit(10**6)
+# def bsr(target,start,end,data):
+#     if start>end :
+#         return None 
+#     mid = (start+end)//2
+#     if data[mid]==target:
+#         return 1
+#     elif data[mid]>target:
+#         end = mid -1
+#     else:
+#         start = mid + 1
+#     return bsr(target,start,end,data)
 
-def bsr(target,start,end,data):
-    if start>end :
-        return None 
-    mid = (start+end)//2
-    if data[mid]==target:
-        return 1
-    elif data[mid]>target:
-        end = mid -1
-    else:
-        start = mid + 1
-    return bsr(target,start,end,data)
+# n = int(input())
+# arr1 = list(map(int,input().split()))
+# m = int(input())
+# arr2 = list(map(int,input().split()))
 
-n = int(input())
-arr1 = list(map(int,input().split()))
-m = int(input())
-arr2 = list(map(int,input().split()))
+# arr1.sort()
+# for i in range(m):
+#     if bsr(arr2[i],0,n-1,arr1):
+#         print(1)
+#     else : 
+#         print(0)
 
-arr1.sort()
-for i in range(m):
-    if bsr(arr2[i],0,n-1,arr1):
-        print(1)
-    else : 
-        print(0)
+#1016
+import sys
+input = sys.stdin.readline
 
+def prime_list(MIN,MAX):
+    answer = MAX-MIN+1 
+    check = [False]*(MAX-MIN+1)
+    i=2 
+    while i*i <= MAX: 
+        square_number = i*i 
+        remain = 0 if MIN%square_number==0 else 1 
+        j = MIN//square_number + remain
+        while square_number*j <= MAX: 
+            if not check[square_number*j-MIN]:
+                 check[square_number*j-MIN]=True 
+                 answer-=1 
+            j+=1
+        i+=1 
+    print(answer)
 
+m,n = map(int,input().split())
+prime_list(m,n)
