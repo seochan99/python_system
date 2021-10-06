@@ -1674,47 +1674,44 @@ import sys
 #     print(dp[idx1-1][idx2-1])
 
 #10815 : 숫자카드
-def bs(target,data):
-    data.sort()
-    start = 0
-    end = len(data)-1
+# def bs(target,data):
+#     data.sort()
+#     start = 0
+#     end = len(data)-1
 
-    while start<=end:
-        mid = (start+end)//2 
+#     while start<=end:
+#         mid = (start+end)//2 
 
-        if data[mid] == target:
-            print(1,end=' ')
-            return 1
-        elif data[mid]<target:
-            start = mid + 1 
-        else :
-            end = mid -1 
-    return None 
+#         if data[mid] == target:
+#             print(1,end=' ')
+#             return 1
+#         elif data[mid]<target:
+#             start = mid + 1 
+#         else :
+#             end = mid -1 
+#     return None 
 
-# import sys 
-# sys.setrecursionlimit(10**9)
 
-# def bsr(target,start,end,data):
-#     if start>end :
-#         return None 
-#     mid = (start+end)//2
-#     if data[mid]==target:
-#         return 1
-#     elif data[mid]>target:
-#         end = mid -1
-#     else:
-#         start = mid + 1
-#     return bsr(target,start,end,data)
+def bsr(target,start,end,data):
+    if start>end :
+        return None 
+    mid = (start+end)//2
+    if data[mid]==target:
+        return 1
+    elif data[mid]>target:
+        end = mid -1
+    else:
+        start = mid + 1
+    return bsr(target,start,end,data)
 
 n = int(input())
 arr1 = list(map(int,input().split()))
 m = int(input())
 arr2 = list(map(int,input().split()))
 
+arr1.sort()
 for i in range(m):
-    # if bsr(arr2[i],0,n-1,arr1):
-    #     print(1,end=' ')
-    if bs(arr2[i],arr1):
-            print(1,end=' ')
+    if bsr(arr2[i],0,n-1,arr1):
+        print(1,end=' ')
     else : 
         print(0,end=' ')
