@@ -1591,55 +1591,54 @@ import sys
 # print(cnt)
 
 #1012 : 유기농 배추 
-import sys 
-input = sys.stdin.readline
-sys.setrecursionlimit(10**4)
+# import sys 
+# input = sys.stdin.readline
+# sys.setrecursionlimit(10**4)
 
 
-# def bfs(x,y):
-#     queue =[[x,y]]
-#     while queue:
-#         a,b = queue[0][0],queue[0][1]
-#         del queue[0]
-#         for i in range(4):
-#             cx = a+dx[i]
-#             cy = b+dy[i]
-#             if 0<=cx<n  and 0<=cy<m and graph[cx][cy]==1:
-#                 graph[cx][cy]=0
-#                 queue.append([cx,cy])
+# # def bfs(x,y):
+# #     queue =[[x,y]]
+# #     while queue:
+# #         a,b = queue[0][0],queue[0][1]
+# #         del queue[0]
+# #         for i in range(4):
+# #             cx = a+dx[i]
+# #             cy = b+dy[i]
+# #             if 0<=cx<n  and 0<=cy<m and graph[cx][cy]==1:
+# #                 graph[cx][cy]=0
+# #                 queue.append([cx,cy])
+
+# def dfs(x,y):
+#     graph[x][y]=0
+#     for i in range(4):
+#         cx = x+dx[i]
+#         cy = y+dy[i]
+#         if 0<=cx<n  and 0<=cy<m and graph[cx][cy]==1: #방문안한 곳 
+#             dfs(cx,cy)
+
+# test = int(input()) # computer 
+
+# #방향벡터 
+# dx = [1,-1,0,0]
+# dy = [0,0,-1,1]
 
 
-def dfs(x,y):
-    graph[x][y]=0
-    for i in range(4):
-        cx = x+dx[i]
-        cy = y+dy[i]
-        if 0<=cx<n  and 0<=cy<m and graph[cx][cy]==1: #방문안한 곳 
-            dfs(cx,cy)
-
-test = int(input()) # computer 
-
-#방향벡터 
-dx = [1,-1,0,0]
-dy = [0,0,-1,1]
-
-
-for _ in range(test):
-    # n:세로 m:가로
-    m,n,k= map(int,input().split())
-    graph = [[0]*m for _ in range(n)]
-    cnt=0 #지렁지렁 
+# for _ in range(test):
+#     # n:세로 m:가로
+#     m,n,k= map(int,input().split())
+#     graph = [[0]*m for _ in range(n)]
+#     cnt=0 #지렁지렁 
     
-    #배추
-    for i in range(k):
-        a,b = map(int,input().split())
-        graph[b][a]=1
-    for j in range(n):
-        for k in range(m):
-            if graph[j][k]==1:
-                dfs(j,k)
-                cnt+=1
-    print(cnt)
+#     #배추
+#     for i in range(k):
+#         a,b = map(int,input().split())
+#         graph[b][a]=1
+#     for j in range(n):
+#         for k in range(m):
+#             if graph[j][k]==1:
+#                 dfs(j,k)
+#                 cnt+=1
+#     print(cnt)
 
 # import sys 
 # input=sys.stdin.readline
