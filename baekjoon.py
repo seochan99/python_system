@@ -1692,6 +1692,38 @@ import sys
 #     return None 
 
 
+#10813
+# import sys 
+# sys.setrecursionlimit(10**9)
+
+# def bsr(target,start,end,data):
+#     if start>end :
+#         return None 
+#     mid = (start+end)//2
+#     if data[mid]==target:
+#         return 1
+#     elif data[mid]>target:
+#         end = mid -1
+#     else:
+#         start = mid + 1
+#     return bsr(target,start,end,data)
+
+# n = int(input())
+# arr1 = list(map(int,input().split()))
+# m = int(input())
+# arr2 = list(map(int,input().split()))
+
+# arr1.sort()
+# for i in range(m):
+#     if bsr(arr2[i],0,n,arr1):
+#         print(1,end=' ')
+#     else : 
+#         print(0,end=' ')
+
+
+import sys 
+sys.setrecursionlimit(10**6)
+
 def bsr(target,start,end,data):
     if start>end :
         return None 
@@ -1712,6 +1744,8 @@ arr2 = list(map(int,input().split()))
 arr1.sort()
 for i in range(m):
     if bsr(arr2[i],0,n-1,arr1):
-        print(1,end=' ')
+        print(1)
     else : 
-        print(0,end=' ')
+        print(0)
+
+
