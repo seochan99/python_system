@@ -1780,47 +1780,88 @@ import sys
 # m,n = map(int,input().split())
 # prime_list(m,n)
 
-import sys 
-sys.setrecursionlimit(10**6)
-input = sys.stdin.readline
-#m 세로 n가로 
-m,n,k = map(int,input().split())
-graph = [[0]*n for _ in range(m)]
-cnt = 0
+#영역구하기 : 2583
+# import sys 
+# sys.setrecursionlimit(10**6)
+# input = sys.stdin.readline
+# #m 세로 n가로 
+# m,n,k = map(int,input().split())
+# graph = [[0]*n for _ in range(m)]
+# cnt = 0
 
+# dx = [1,-1,0,0]
+# dy = [0,0,-1,1]
+# wide =1
+
+# total =[]
+
+# def dfs(x,y):
+#     global wide #초기 넓이 
+#     graph[x][y]=1 #방문 ! 
+#     for i in range(4):
+#         cx = x+dx[i]
+#         cy = y+dy[i]
+#         if 0<=cx<m  and 0<=cy<n and graph[cx][cy]==0: #방문안한 곳 
+#             dfs(cx,cy)
+#             wide+=1 #넓이 올라가랏 
+    
+
+# for _ in range(k): #사각형 색칠 
+#     x1,y1,x2,y2 = map(int,input().split())
+#     for j in range(y1,y2):
+#         for i in range(x1,x2):
+#             graph[j][i]=1 #색칠 
+
+# for j in range(m):
+#     for k in range(n):
+#         if graph[j][k]==0:
+#             dfs(j,k)
+#             total.append(wide)
+#             cnt+=1
+#             wide=1 #제일 첫 넓이는 1
+    
+# total.sort()
+
+# print(cnt)
+# for totals in total:
+#     print(totals,end=" ")
+
+#10026 : 적록색약 
+n = int(input())
 dx = [1,-1,0,0]
 dy = [0,0,-1,1]
-wide =1
+cnt1=0
 
-total =[]
-
-def dfs(x,y):
-    global wide #초기 넓이 
+def dfs(x,y): 
     graph[x][y]=1 #방문 ! 
     for i in range(4):
         cx = x+dx[i]
         cy = y+dy[i]
-        if 0<=cx<m  and 0<=cy<n and graph[cx][cy]==0: #방문안한 곳 
+        if 0<=cx<n  and 0<=cy<n and graph[cx][cy]==0: #방문안한 곳 
             dfs(cx,cy)
-            wide+=1 #넓이 올라가랏 
-    
+            
 
-for _ in range(k): #사각형 색칠 
-    x1,y1,x2,y2 = map(int,input().split())
-    for j in range(y1,y2):
-        for i in range(x1,x2):
-            graph[j][i]=1 #색칠 
+graph = [0 for _ in range(n)]
 
-for j in range(m):
+
+for i in range(n):
+    line = input()
+    graph[i] =list(line) #문자열 넣기 
+
+
+RGB=graph
+RGBX=graph
+print(RGB)
+
+#적록색약아니면 R G B 따로 
+#적록색약이면 R B => 빨간색 초록색 색상 구분 불가 
+
+for j in range(n):
     for k in range(n):
-        if graph[j][k]==0:
+        if (graph[j][k]=='R'):
             dfs(j,k)
-            total.append(wide)
-            cnt+=1
-            wide=1 #제일 첫 넓이는 1
-    
-total.sort()
+            cnt1+=1
+print(cnt1)
 
-print(cnt)
-for totals in total:
-    print(totals,end=" ")
+#적록색약 일 경우 구간
+#적록색약 일 경우 구간 
