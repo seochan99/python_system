@@ -1915,12 +1915,37 @@ import sys
 sys.setrecursionlimit(10**6)
 input=sys.stdin.readline
 
+cnt=0;total=1
 
 dx = [1,-1,0,0]
 dy = [0,0,-1,1]
+apt=[]
+
+def dfs(x,y):
+  global total
+  graph[x][y]=0 #방문 ! 
+  for i in range(4):
+      cx = x+dx[i]
+      cy = y+dy[i]
+      if 0<=cx<n  and 0<=cy<n and graph[cx][cy]==1:
+        total+=1
+        dfs(cx,cy)
 
 n = int(input())
 graph = []
 for i in range(n):
-    graph.append(list(map(int,input())))
-print(graph)
+    graph.append(list(map(int, input().rstrip())))
+
+
+for j in range(n):
+    for k in range(n):
+        if (graph[j][k]==1):
+            dfs(j,k)
+            cnt+=1
+            apt.append(total)
+            total=1
+
+apt.sort()
+print(cnt) #총집 
+for i in range(cnt):
+  print(apt[i])
