@@ -1827,82 +1827,100 @@ import sys
 #     print(totals,end=" ")
 
 #10026 : 적록색약 
+# import sys
+# sys.setrecursionlimit(10**6)
+# input=sys.stdin.readline
+
+# n = int(input())
+# dx = [1,-1,0,0]
+# dy = [0,0,-1,1]
+# cnt1=0;cnt2=0;cnt3=0;cnt4=0
+# flag =0
+
+# # def dfsG(x,y): 
+# #     graph[x][y]='Rr' #방문 ! 
+# #     for i in range(4):
+# #         cx = x+dx[i]
+# #         cy = y+dy[i]
+# #         if 0<=cx<n  and 0<=cy<n and graph[cx][cy]=='G': #방문안한 곳 
+# #             dfsG(cx,cy)
+
+# def dfsR(x,y): 
+#     flag = graph[x][y]
+     
+#     for i in range(4):
+#         cx = x+dx[i]
+#         cy = y+dy[i]
+#         if(flag=='R'):
+#             graph[x][y]='Rr' #방문 !
+#             if 0<=cx<n  and 0<=cy<n and graph[cx][cy]=='R': #방문안한 곳 
+#                 dfsR(cx,cy)
+#         elif(flag=='B'):
+#             graph[x][y]='B.' #방문 !         
+#             if 0<=cx<n  and 0<=cy<n and graph[cx][cy]=='B': #방문안한 곳 
+#                 dfsR(cx,cy)
+#         elif(flag=='G'):
+#             graph[x][y]='Rr' #방문 ! 
+#             if 0<=cx<n  and 0<=cy<n and graph[cx][cy]=='G': #방문안한 곳 
+#                 dfsR(cx,cy)
+
+# # def dfsB(x,y): 
+# #     graph[x][y]='B.' #방문 ! 
+# #     for i in range(4):
+# #         cx = x+dx[i]
+# #         cy = y+dy[i]
+# #         if 0<=cx<n  and 0<=cy<n and graph[cx][cy]=='B': #방문안한 곳 
+# #             dfsB(cx,cy)
+
+# def dfsRr(x,y):
+#     graph[x][y]=1 #방문 ! 
+#     for i in range(4):
+#         cx = x+dx[i]
+#         cy = y+dy[i]
+#         if 0<=cx<n  and 0<=cy<n and graph[cx][cy]=='Rr': #방문안한 곳 
+#             dfsRr(cx,cy)
+
+
+# graph = [0 for _ in range(n)]
+
+# for i in range(n):
+#     line = input()
+#     graph[i] =list(line) #문자열 넣기 
+
+# #적록색약아니면 R G B 따로 
+# #적록색약이면 R B => 빨간색 초록색 색상 구분 불가 
+
+# for j in range(n):
+#     for k in range(n):
+#         if (graph[j][k]=='R'):
+#             dfsR(j,k)
+#             cnt1+=1
+#         elif (graph[j][k]=='G'):
+#             dfsR(j,k)
+#             cnt2+=1
+#         elif (graph[j][k]=='B'):
+#             dfsR(j,k)
+#             cnt3+=1
+
+# for j in range(n):
+#     for k in range(n):
+#         if (graph[j][k]=='Rr'):
+#             dfsRr(j,k)
+#             cnt4+=1
+ 
+# print(cnt1+cnt2+cnt3, cnt3+cnt4)
+
+#2667 : 단지번호 붙이기 
 import sys
 sys.setrecursionlimit(10**6)
 input=sys.stdin.readline
 
-n = int(input())
+
 dx = [1,-1,0,0]
 dy = [0,0,-1,1]
-cnt1=0;cnt2=0;cnt3=0;cnt4=0
-flag =0
 
-# def dfsG(x,y): 
-#     graph[x][y]='Rr' #방문 ! 
-#     for i in range(4):
-#         cx = x+dx[i]
-#         cy = y+dy[i]
-#         if 0<=cx<n  and 0<=cy<n and graph[cx][cy]=='G': #방문안한 곳 
-#             dfsG(cx,cy)
-
-def dfsR(x,y): 
-    flag = graph[x][y]
-     
-    for i in range(4):
-        cx = x+dx[i]
-        cy = y+dy[i]
-        if(flag=='R'):
-            graph[x][y]='Rr' #방문 !
-            if 0<=cx<n  and 0<=cy<n and graph[cx][cy]=='R': #방문안한 곳 
-                dfsR(cx,cy)
-        elif(flag=='B'):
-            graph[x][y]='B.' #방문 !         
-            if 0<=cx<n  and 0<=cy<n and graph[cx][cy]=='B': #방문안한 곳 
-                dfsR(cx,cy)
-        elif(flag=='G'):
-            graph[x][y]='Rr' #방문 ! 
-            if 0<=cx<n  and 0<=cy<n and graph[cx][cy]=='G': #방문안한 곳 
-                dfsR(cx,cy)
-
-# def dfsB(x,y): 
-#     graph[x][y]='B.' #방문 ! 
-#     for i in range(4):
-#         cx = x+dx[i]
-#         cy = y+dy[i]
-#         if 0<=cx<n  and 0<=cy<n and graph[cx][cy]=='B': #방문안한 곳 
-#             dfsB(cx,cy)
-
-def dfsRr(x,y):
-    graph[x][y]=1 #방문 ! 
-    for i in range(4):
-        cx = x+dx[i]
-        cy = y+dy[i]
-        if 0<=cx<n  and 0<=cy<n and graph[cx][cy]=='Rr': #방문안한 곳 
-            dfsRr(cx,cy)
-
-
-graph = [0 for _ in range(n)]
-
+n = int(input())
+graph = []
 for i in range(n):
-    line = input()
-    graph[i] =list(line) #문자열 넣기 
-
-#적록색약아니면 R G B 따로 
-#적록색약이면 R B => 빨간색 초록색 색상 구분 불가 
-
-for j in range(n):
-    for k in range(n):
-        if (graph[j][k]=='R' or graph[j][k]=='G'):
-            dfsR(j,k)
-            cnt1+=1
-        elif (graph[j][k]=='B'):
-            dfsR(j,k)
-            cnt3+=1
-
-for j in range(n):
-    for k in range(n):
-        if (graph[j][k]=='Rr'):
-            dfsRr(j,k)
-            cnt4+=1
- 
-print(cnt1+cnt3, cnt3+cnt4)
+    graph.append(list(map(int,input())))
+print(graph)
