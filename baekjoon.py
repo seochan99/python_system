@@ -1911,41 +1911,76 @@ import sys
 # print(cnt1+cnt2+cnt3, cnt3+cnt4)
 
 #2667 : 단지번호 붙이기 
-import sys
-sys.setrecursionlimit(10**6)
-input=sys.stdin.readline
+# import sys
+# sys.setrecursionlimit(10**6)
+# input=sys.stdin.readline
 
-cnt=0;total=1
+# cnt=0;total=1
 
-dx = [1,-1,0,0]
-dy = [0,0,-1,1]
-apt=[]
+# dx = [1,-1,0,0]
+# dy = [0,0,-1,1]
+# apt=[]
 
-def dfs(x,y):
-  global total
-  graph[x][y]=0 #방문 ! 
-  for i in range(4):
-      cx = x+dx[i]
-      cy = y+dy[i]
-      if 0<=cx<n  and 0<=cy<n and graph[cx][cy]==1:
-        total+=1
-        dfs(cx,cy)
+# def dfs(x,y):
+#   global total
+#   graph[x][y]=0 #방문 ! 
+#   for i in range(4):
+#       cx = x+dx[i]
+#       cy = y+dy[i]
+#       if 0<=cx<n  and 0<=cy<n and graph[cx][cy]==1:
+#         total+=1
+#         dfs(cx,cy)
 
-n = int(input())
-graph = []
-for i in range(n):
-    graph.append(list(map(int, input().rstrip())))
+# n = int(input())
+# graph = []
+# for i in range(n):
+#     graph.append(list(map(int, input().rstrip())))
 
 
-for j in range(n):
-    for k in range(n):
-        if (graph[j][k]==1):
-            dfs(j,k)
-            cnt+=1
-            apt.append(total)
-            total=1
+# for j in range(n):
+#     for k in range(n):
+#         if (graph[j][k]==1):
+#             dfs(j,k)
+#             cnt+=1
+#             apt.append(total)
+#             total=1
 
-apt.sort()
-print(cnt) #총집 
-for i in range(cnt):
-  print(apt[i])
+# apt.sort()
+# print(cnt) #총집 
+# for i in range(cnt):
+#   print(apt[i])
+
+# n,m = map(int,input().split())
+# n = int(input())
+# m = int(input())
+
+# total = 0 ; avg = 0 #총점, 평균 
+# arr = [[0]*m for _ in range(n)]
+# print(arr)
+# print("1.국어 2.수학, 3.영어 순으로 입력해주세요 !")
+
+# #학생별로 
+# for i in range(m):
+#     print(f"{i+1}번째 학생")
+#     for j in range(n):
+#         print(f"{j+1}반째 과목")
+#         arr[i][j] = int(input())
+
+# print(arr)
+
+
+# int arr[0] =''
+# ]
+
+
+print("hello world")
+print("hello\nworld")
+print("heelo\tworld")
+print("\\ \\")
+print("'hello' 'world'")
+print(" \" ")
+print("""
+hello world
+hello ~~
+world~~
+""")
