@@ -1969,18 +1969,40 @@ import sys
 # print(arr)
 
 
-# int arr[0] =''
-# ]
+
+import sys
+sys.setrecursionlimit(10**6)
+input=sys.stdin.readline
+
+total=1
+flag = 0
+dx = [1,-1,0,0]
+dy = [0,0,-1,1]
+apt=[]
+
+def dfs(x,y,n,m):
+  global total
+  graph[x][y]=0 #방문 ! 
+  
+  if(x==n and y==m):
+      total+=1
+  else :
+        for i in range(4):
+            cx = x+dx[i]
+            cy = y+dy[i]
+            if 0<=cx<n  and 0<=cy<n and graph[cx][cy]==1:
+                total+=1
+                dfs(cx,cy,n,m)
+
+n,m = map(int,input().split())
+graph = []
+for i in range(n):
+    graph.append(list(map(int, input().rstrip())))
 
 
-print("hello world")
-print("hello\nworld")
-print("heelo\tworld")
-print("\\ \\")
-print("'hello' 'world'")
-print(" \" ")
-print("""
-hello world
-hello ~~
-world~~
-""")
+for j in range(n):
+    for k in range(m):
+        if (graph[j][k]==1):
+            dfs(j,k,n,m)
+print(total)
+
