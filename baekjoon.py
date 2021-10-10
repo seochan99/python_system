@@ -1824,7 +1824,7 @@ import sys
 
 # print(cnt)
 # for totals in total:
-#     print(totals,end=" ")
+#     print(totals,end=" ")lsdlfasljd
 
 #10026 : 적록색약 
 # import sys
@@ -1837,13 +1837,13 @@ import sys
 # cnt1=0;cnt2=0;cnt3=0;cnt4=0
 # flag =0
 
-# # def dfsG(x,y): 
-# #     graph[x][y]='Rr' #방문 ! 
-# #     for i in range(4):
-# #         cx = x+dx[i]
-# #         cy = y+dy[i]
-# #         if 0<=cx<n  and 0<=cy<n and graph[cx][cy]=='G': #방문안한 곳 
-# #             dfsG(cx,cy)
+# def dfsG(x,y): 
+#     graphfdafdkfldskf[x][y]='Rr' #방문 ! 
+#     for i in range(4):
+#         cx = x+dx[i]
+#         cy = y+dy[i]
+#         if 0<=cx<n  and 0<=cy<n and graph[cx][cy]=='G': #방문안한 곳 
+#             dfsG(cx,cy)
 
 # def dfsR(x,y): 
 #     flag = graph[x][y]
@@ -1971,7 +1971,7 @@ import sys
 
 
 import sys
-sys.setrecursionlimit(10**6)
+sys.setrecursionlimit(10**4)
 input=sys.stdin.readline
 
 total=1
