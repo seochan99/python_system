@@ -1971,38 +1971,26 @@ import sys
 
 
 import sys
-sys.setrecursionlimit(10**4)
+from collections import deque
 input=sys.stdin.readline
 
-total=1
-flag = 0
-dx = [1,-1,0,0]
-dy = [0,0,-1,1]
-apt=[]
+queue = deque()
+n,k = map(int,input().split())
 
-def dfs(x,y,n,m):
-  global total
-  graph[x][y]=0 #방문 ! 
-  
-  if(x==n and y==m):
-      total+=1
-  else :
-        for i in range(4):
-            cx = x+dx[i]
-            cy = y+dy[i]
-            if 0<=cx<n  and 0<=cy<n and graph[cx][cy]==1:
-                total+=1
-                dfs(cx,cy,n,m)
+def bfs():
+    queue.append(n)
+    while(queue):
+        soobin = queue.popleft() #수빈이 위치 저장 
+        for walk in (soobin-1,soobin+1,soobin*2):
+            if (0<=walk<MAX and  sec[walk]==0 ):
+                sec[walk] = sec[soobin]+1
+                queue.append(walk)
+                if(walk==k):
+                    print(sec[soobin]+1)
+                    break
+                #5는 어쩔수 없이 한번 오게된당.. 
+        
 
-n,m = map(int,input().split())
-graph = []
-for i in range(n):
-    graph.append(list(map(int, input().rstrip())))
-
-
-for j in range(n):
-    for k in range(m):
-        if (graph[j][k]==1):
-            dfs(j,k,n,m)
-print(total)
-
+MAX = 100001
+sec = [0] * MAX #초 리스트 
+bfs()
