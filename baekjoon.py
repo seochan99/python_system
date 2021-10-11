@@ -1969,28 +1969,28 @@ import sys
 # print(arr)
 
 
+# 수빈
+# import sys
+# from collections import deque
+# input=sys.stdin.readline
 
-import sys
-from collections import deque
-input=sys.stdin.readline
+# queue = deque()
+# n,k = map(int,input().split())
 
-queue = deque()
-n,k = map(int,input().split())
-
-def bfs():
-    queue.append(n)
-    while(queue):
-        soobin = queue.popleft() #수빈이 위치 저장 
-        for walk in (soobin-1,soobin+1,soobin*2):
-            if (0<=walk<MAX and  sec[walk]==0 ):
-                sec[walk] = sec[soobin]+1
-                queue.append(walk)
-                if(walk==k):
-                    print(sec[soobin]+1)
-                    break
-                #5는 어쩔수 없이 한번 오게된당.. 
+# def bfs():
+#     queue.append(n)
+#     while(queue):
+#         soobin = queue.popleft() #수빈이 위치 저장 
+#         if(soobin==k):
+#             print(sec[soobin])
+#             break
+#         for walk in (soobin-1,soobin+1,soobin*2):
+#             if (0<=walk<MAX and  sec[walk]==0 ):
+#                 sec[walk] = sec[soobin]+1
+#                 queue.append(walk)
+#                 #5는 어쩔수 없이 한번 오게된당.. 
         
 
-MAX = 100001
-sec = [0] * MAX #초 리스트 
-bfs()
+# MAX = 100001
+# sec = [0] * MAX #초 리스트 
+# bfs()
