@@ -1997,47 +1997,52 @@ import sys
 
 
 #7576 : 토마토 
-# import sys
-# input = sys.stdin.readline
-# from collections import deque
+import sys
+input = sys.stdin.readline
+from collections import deque #VBFS
 
-# m,n = map(int,input().split())
-# cnt=0
+m,n = map(int,input().split())
 
-# dx = [1,-1,0,0]
-# dy = [0,0,-1,1]
+dx = [1,-1,0,0]
+dy = [0,0,-1,1]
 
-# queue = deque()
-# graph=[]
-# for i in range(n):
-#     graph.append(list(map(int, input().rstrip().split())))
+queue = deque()
+graph=[]
 
-# #익은토마토 조사 
-# for i in range(n):
-#     for j in range(m):
-#         if graph[i][j]==1:
-#             queue.append([i,j])
+for i in range(n):
+    graph.append(list(map(int, input().rstrip().split())))
 
-# def bfs():
-#   while queue:
-#       a,b = queue.popleft() #i.j삽입 
-#   for i in range(4):
-#       cx = a+dx[i]
-#       cy = b+dy[i]
-#       if 0<=cx<n  and 0<=cy<n and graph[cx][cy]==0:
-#           graph[cx][cy] = graph[a][b] #시간 더해나감 
-#           queue.append([cx,cy])
-# bfs()
-# flag = 1 # 1 익음 0 안익음  
-# time = -2 
-# for j in range(n):
-#     for k in range(m):
-#         if graph[j][k]==0: #익지 않은것이 존재 
-#             flag =0 
-#         time =max(time,k)
-# if time == -1 : #최댓값이 -1 
-#     print(0)
-# elif flag ==0:
-#     print(-1)
-# else :
-#     print(time - 1)
+#붙이기 
+
+#익은토마토 조사 
+for i in range(n):
+    for j in range(m):
+        if graph[i][j]==1:
+            queue.append([i,j])
+
+def bfs():
+  while queue:
+      a,b = queue.popleft() #i.j삽입 
+      for i in range(4):
+          cx = a+dx[i]
+          cy = b+dy[i]
+          if 0<=cx<n  and 0<=cy<m and graph[cx][cy]==0: 
+              graph[cx][cy] = graph[a][b] + 1 #시간 더해나감 
+              queue.append([cx,cy])
+# print(graph)
+bfs()
+flag = 1 # 1 익음 0 안익음  
+time = -2 
+# print(graph)
+for j in graph:
+    for k in j:
+        if k==0: #익지 않은것이 존재 
+            flag =0 #안익음... 
+        time =max(time,k)
+
+if time == 1 : #최댓값이 1 #다익음   
+    print(0)
+elif flag ==0: #안익은게 있음/// 
+    print(-1)
+else :
+    print(time - 1) #1초부터 시작하니 1빼줌 
