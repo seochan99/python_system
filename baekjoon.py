@@ -2046,3 +2046,36 @@ import sys
 #     print(-1)
 # else :
 #     print(time - 1) #1초부터 시작하니 1빼줌 
+
+#4963 : 섬의갯수 
+import sys
+input = sys.stdin.readline
+sys.setrecursionlimit(10**)
+
+dx = [1,-1,0,0,1,1,-1,-1]
+dy = [0,0,-1,1,1,-1,1,-1] #대각선 벡터도 추가 
+
+def dfs(x,y):
+  graph[x][y]=0 #방문 ! 
+  for i in range(8):
+      cx = x+dx[i]
+      cy = y+dy[i]
+      if 0<=cx<n  and 0<=cy<m and graph[cx][cy]==1:
+        dfs(cx,cy)
+
+while True :
+    cnt=0
+    m,n = map(int,input().split())
+    if(m==n==0):
+        break
+    graph=[]
+
+    for i in range(n):
+        graph.append(list(map(int, input().rstrip().split()))) #입력받기 
+
+    for j in range(n):
+        for k in range(m):
+            if (graph[j][k]==1):
+                dfs(j,k)
+                cnt+=1
+    print(cnt)    
