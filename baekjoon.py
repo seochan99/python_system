@@ -2082,34 +2082,85 @@ import sys
 
 
 #2718 : 미로탐색 
+# import sys
+# input = sys.stdin.readline
+# from collections import deque #BFS
+
+# m,n = map(int,input().split())
+
+# dx = [1,-1,0,0]
+# dy = [0,0,-1,1]
+
+# queue = deque() #칸수저장 
+# graph=[]
+
+# for i in range(m):
+#     graph.append(list(map(int, input().rstrip()))) 
+
+# #붙이기 
+
+# queue.append([0,0]) #0,0에서 출발 
+
+# def bfs():
+#   while queue:
+#       a,b = queue.popleft() #i.j삽입 
+#       for i in range(4):
+#           cx = a+dx[i]
+#           cy = b+dy[i]
+#           if 0<=cx<m  and 0<=cy<n and graph[cx][cy]==1: 
+#               graph[cx][cy] = graph[a][b] + 1 #칸수 더해나감 
+#               queue.append([cx,cy])
+# bfs()
+
+# print(graph[m-1][n-1])
+
+#7562 : 나이트 
 import sys
 input = sys.stdin.readline
 from collections import deque #BFS
 
-m,n = map(int,input().split())
-
-dx = [1,-1,0,0]
-dy = [0,0,-1,1]
-
-queue = deque() #칸수저장 
-graph=[]
-
-for i in range(m):
-    graph.append(list(map(int, input().rstrip()))) 
-
-#붙이기 
-
-queue.append([0,0]) #0,0에서 출발 
+# 나이트 8가지 케이스 
+dx = [1,2,1,2,-1,-1,-2,-2]
+dy = [2,1,-2,-1,2,-2,1,-1]
 
 def bfs():
   while queue:
       a,b = queue.popleft() #i.j삽입 
-      for i in range(4):
+      for i in range(8):
           cx = a+dx[i]
           cy = b+dy[i]
-          if 0<=cx<m  and 0<=cy<n and graph[cx][cy]==1: 
+          if 0<=cx<n  and 0<=cy<n and graph[cx][cy]==0: #아직한번도 안간곳
               graph[cx][cy] = graph[a][b] + 1 #칸수 더해나감 
               queue.append([cx,cy])
-bfs()
 
-print(graph[m-1][n-1])
+test = int(input())
+for _ in range(test):
+
+    # 덱선언
+    queue = deque()
+
+    n = int(input())
+    graph = [[0] * n for _ in range(n)] #그래프 생성
+
+    knight_x, knight_y = map(int,input().split()) #나이트 x,y값 
+    dochak_x, dochak_y = map(int,input().split())
+
+    queue.append([knight_x,knight_y])
+    bfs()
+    graph[knight_x][knight_y]=0
+    print(graph[dochak_x][dochak_y])
+
+
+
+
+
+
+
+# def dfs(x,y):
+#   graph[x][y]=0 #방문 ! 
+#   for i in range(8):
+#       cx = x+dx[i]
+#       cy = y+dy[i]
+#       if 0<=cx<n  and 0<=cy<m and graph[cx][cy]==1:
+#         dfs(cx,cy)
+bfs()
