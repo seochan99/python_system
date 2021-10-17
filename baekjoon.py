@@ -2149,18 +2149,3 @@ for _ in range(test):
     bfs()
     graph[knight_x][knight_y]=0
     print(graph[dochak_x][dochak_y])
-
-
-
-
-
-
-
-# def dfs(x,y):
-#   graph[x][y]=0 #방문 ! 
-#   for i in range(8):
-#       cx = x+dx[i]
-#       cy = y+dy[i]
-#       if 0<=cx<n  and 0<=cy<m and graph[cx][cy]==1:
-#         dfs(cx,cy)
-bfs()
