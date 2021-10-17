@@ -2048,34 +2048,68 @@ import sys
 #     print(time - 1) #1초부터 시작하니 1빼줌 
 
 #4963 : 섬의갯수 
+# import sys
+# input = sys.stdin.readline
+# sys.setrecursionlimit(10**)
+
+# dx = [1,-1,0,0,1,1,-1,-1]
+# dy = [0,0,-1,1,1,-1,1,-1] #대각선 벡터도 추가 
+
+# def dfs(x,y):
+#   graph[x][y]=0 #방문 ! 
+#   for i in range(8):
+#       cx = x+dx[i]
+#       cy = y+dy[i]
+#       if 0<=cx<n  and 0<=cy<m and graph[cx][cy]==1:
+#         dfs(cx,cy)
+
+# while True :
+#     cnt=0
+#     m,n = map(int,input().split())
+#     if(m==n==0):
+#         break
+#     graph=[]
+
+#     for i in range(n):
+#         graph.append(list(map(int, input().rstrip().split()))) #입력받기 
+
+#     for j in range(n):
+#         for k in range(m):
+#             if (graph[j][k]==1):
+#                 dfs(j,k)
+#                 cnt+=1
+#     print(cnt)    
+
+
+#2718 : 미로탐색 
 import sys
 input = sys.stdin.readline
-sys.setrecursionlimit(10**)
+from collections import deque #BFS
 
-dx = [1,-1,0,0,1,1,-1,-1]
-dy = [0,0,-1,1,1,-1,1,-1] #대각선 벡터도 추가 
+m,n = map(int,input().split())
 
-def dfs(x,y):
-  graph[x][y]=0 #방문 ! 
-  for i in range(8):
-      cx = x+dx[i]
-      cy = y+dy[i]
-      if 0<=cx<n  and 0<=cy<m and graph[cx][cy]==1:
-        dfs(cx,cy)
+dx = [1,-1,0,0]
+dy = [0,0,-1,1]
 
-while True :
-    cnt=0
-    m,n = map(int,input().split())
-    if(m==n==0):
-        break
-    graph=[]
+queue = deque() #칸수저장 
+graph=[]
 
-    for i in range(n):
-        graph.append(list(map(int, input().rstrip().split()))) #입력받기 
+for i in range(m):
+    graph.append(list(map(int, input().rstrip()))) 
 
-    for j in range(n):
-        for k in range(m):
-            if (graph[j][k]==1):
-                dfs(j,k)
-                cnt+=1
-    print(cnt)    
+#붙이기 
+
+queue.append([0,0]) #0,0에서 출발 
+
+def bfs():
+  while queue:
+      a,b = queue.popleft() #i.j삽입 
+      for i in range(4):
+          cx = a+dx[i]
+          cy = b+dy[i]
+          if 0<=cx<m  and 0<=cy<n and graph[cx][cy]==1: 
+              graph[cx][cy] = graph[a][b] + 1 #칸수 더해나감 
+              queue.append([cx,cy])
+bfs()
+
+print(graph[m-1][n-1])
