@@ -2149,3 +2149,4 @@ import sys
 #     bfs()
 #     graph[knight_x][knight_y]=0
 #     print(graph[dochak_x][dochak_y])
+# test
