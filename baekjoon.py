@@ -2115,37 +2115,37 @@ import sys
 # print(graph[m-1][n-1])
 
 #7562 : 나이트 
-import sys
-input = sys.stdin.readline
-from collections import deque #BFS
+# import sys
+# input = sys.stdin.readline
+# from collections import deque #BFS
 
-# 나이트 8가지 케이스 
-dx = [1,2,1,2,-1,-1,-2,-2]
-dy = [2,1,-2,-1,2,-2,1,-1]
+# # 나이트 8가지 케이스 
+# dx = [1,2,1,2,-1,-1,-2,-2]
+# dy = [2,1,-2,-1,2,-2,1,-1]
 
-def bfs():
-  while queue:
-      a,b = queue.popleft() #i.j삽입 
-      for i in range(8):
-          cx = a+dx[i]
-          cy = b+dy[i]
-          if 0<=cx<n  and 0<=cy<n and graph[cx][cy]==0: #아직한번도 안간곳
-              graph[cx][cy] = graph[a][b] + 1 #칸수 더해나감 
-              queue.append([cx,cy])
+# def bfs():
+#   while queue:
+#       a,b = queue.popleft() #i.j삽입 
+#       for i in range(8):
+#           cx = a+dx[i]
+#           cy = b+dy[i]
+#           if 0<=cx<n  and 0<=cy<n and graph[cx][cy]==0: #아직한번도 안간곳
+#               graph[cx][cy] = graph[a][b] + 1 #칸수 더해나감 
+#               queue.append([cx,cy])
 
-test = int(input())
-for _ in range(test):
+# test = int(input())
+# for _ in range(test):
 
-    # 덱선언
-    queue = deque()
+#     # 덱선언
+#     queue = deque()
 
-    n = int(input())
-    graph = [[0] * n for _ in range(n)] #그래프 생성
+#     n = int(input())
+#     graph = [[0] * n for _ in range(n)] #그래프 생성
 
-    knight_x, knight_y = map(int,input().split()) #나이트 x,y값 
-    dochak_x, dochak_y = map(int,input().split())
+#     knight_x, knight_y = map(int,input().split()) #나이트 x,y값 
+#     dochak_x, dochak_y = map(int,input().split())
 
-    queue.append([knight_x,knight_y])
-    bfs()
-    graph[knight_x][knight_y]=0
-    print(graph[dochak_x][dochak_y])
+#     queue.append([knight_x,knight_y])
+#     bfs()
+#     graph[knight_x][knight_y]=0
+#     print(graph[dochak_x][dochak_y])
