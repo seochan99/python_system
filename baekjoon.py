@@ -2149,3 +2149,18 @@ import sys
 #     bfs()
 #     graph[knight_x][knight_y]=0
 #     print(graph[dochak_x][dochak_y])
+
+#2589 : 보물섬
+import sys 
+input = sys.stdin.readline
+
+m,n = map(int,input().split()) #세로,가로 
+
+graph2 = [0 for _ in range(m)]
+
+for i in range(m):
+    line = input().rstrip()
+    graph2[i] =list(line)
+
+
+print(graph2)
