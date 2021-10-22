@@ -1354,7 +1354,7 @@
 
 
 # 1629 : 곱셈 
-import sys
+# import sys
 # input = sys.stdin.readline
 
 # a,b,c = map(int,input().split())
@@ -2159,40 +2159,32 @@ from collections import deque #BFS
 dx = [1,-1,0,0]
 dy = [0,0,-1,1]
 
+def bfs(x,y):
+    queue.append([x,y])
+    timeGraph =[[0]*m for _ in range(n)] #임시그래프 생성 
+    timeGraph[x][y]=1 #시간을위한 그래프
+    time =0
+    while queue:
+      x,y = queue.popleft() #i.j삽입
+      for i in range(4):
+          cx = x+dx[i]
+          cy = y+dy[i]
+          if 0<=cx<n  and 0<=cy<m :
+              if graph[cx][cy] == 'L' and timeGraph[cx][cy]==0: #아직탐색안한 육지
+                  timeGraph[cx][cy] = timeGraph[x][y] + 1 #시간 더해나감 
+                  time = max(time,timeGraph[cx][cy])
+                  queue.append([cx,cy])
+    return time-1 #있던자리빼기 
+
 queue = deque()
-m,n = map(int,input().split()) #세로,가로 
-graph = [0 for _ in range(m)]
+n,m = map(int,input().split()) #세로,가로 
+graph = [list(input().rstrip()) for _ in range(n)] #그래프 입력받기 
+cnt = 0 
 
-#지도 입력받기 
-for i in range(m):
-    line = input().rstrip()
-    graph[i] =list(line)
-
-
-# #익은토마토 조사 
 for i in range(n):
     for j in range(m):
-        if graph[i][j]==1:
-            queue.append([i,j])
-
-def bfs():
-  while queue:
-      a,b = queue.popleft() #i.j삽입 
-      for i in range(4):
-          cx = a+dx[i]
-          cy = b+dy[i]
-          if 0<=cx<n  and 0<=cy<m and graph[cx][cy]==0: 
-              graph[cx][cy] = graph[a][b] + 1 #시간 더해나감 
-              queue.append([cx,cy])
-# print(graph)
-bfs()
-flag = 1 # 1 익음 0 안익음  
-time = -2 
-# print(graph)
-for j in graph:
-    for k in j:
-        if k==0: #익지 않은것이 존재 
-            flag =0 #안익음... 
-        time =max(time,k)
+        if graph[i][j] == 'L': #L이 저장된곳에 cnt 최댓값 출력 
+            cnt=max(cnt,bfs(i,j)) 
+print(cnt)
 
 
