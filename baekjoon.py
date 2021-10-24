@@ -2187,36 +2187,114 @@
 #             cnt=max(cnt,bfs(i,j)) 
 # print(cnt)
 
-import sys
-input=sys.stdin.readline
+# import sys
+# input=sys.stdin.readline
 
 
-l,c = map(int,input().split()) # 순열 c C l 
-visited = [0 for _ in range(c)]
-arr2=[] #순열저장 
-def dfs(cnt,idx):
-    if cnt== l: #l만큼의 단어 
-        mo = 0 #모음 
-        ja = 0 #자음 
-        for i in range(l):
-            if arr2[i] in 'aeiou': 
-                mo+=1
-            else :
-                ja +=1 
-        if mo>=1 and ja>=2: #조건만족 
-            print(''.join(arr2)) #리스트 출력 
-        return 
-    for i in range(idx,c):
-        if visited[i]==0:
-            arr2.append(arr[i])
-            visited[i]=1 #방문 
-            dfs(cnt+1,i+1)
-            visited[i]=0
-            # print(arr2[-1])
-            del arr2[-1] #마지막부분지우기 
+# l,c = map(int,input().split()) # 순열 c C l 
+# visited = [0 for _ in range(c)]
+# arr2=[] #순열저장 
+# def dfs(cnt,idx):
+#     if cnt== l: #l만큼의 단어 
+#         mo = 0 #모음 
+#         ja = 0 #자음 
+#         for i in range(l):
+#             if arr2[i] in 'aeiou': 
+#                 mo+=1
+#             else :
+#                 ja +=1 
+#         if mo>=1 and ja>=2: #조건만족 
+#             print(''.join(arr2)) #리스트 출력 
+#         return 
+#     for i in range(idx,c):
+#         if visited[i]==0:
+#             arr2.append(arr[i])
+#             visited[i]=1 #방문 
+#             dfs(cnt+1,i+1)
+#             visited[i]=0
+#             # print(arr2[-1])
+#             del arr2[-1] #마지막부분지우기 
 
 
-arr = input().split() #c만큼 리스트 입력받기 
-arr.sort() #알파벳순으로 정렬 
+# arr = input().split() #c만큼 리스트 입력받기 
+# arr.sort() #알파벳순으로 정렬 
 
-dfs(0,0)
+# dfs(0,0)
+
+# print("국어 점수를 입력하세요.",end=" ")
+# korea = int(input())
+# print("수학 점수를 입력하세요.",end=" ")
+# math = int(input())
+# print("영어 점수를 입력하세요.",end=" ")
+# english = int(input())
+
+# total = korea+math+english
+# avg = float(total)/3
+# print(f"총점 : {total}")
+# print(f"평균 : {avg}")
+# import math 
+# print(""" 
+# 본 프로그램은 섭씨를 화씨로 변환해주는 프로그램입니다.
+# 변환하고 싶은 섭씨 온도를 입력해주세요 :""",end=" ")
+# num1 = float(input()) #섭씨온도
+# num1 = (((1.8)*num1))+32
+# num1 = round(num1,3)
+# num2 = math.ceil(num1)
+# num3 = math.floor(num1)
+# print(num1,num2,num3)
+
+# print("성적을 입력해주세요 : ",end=" ")
+# score = int(input())
+
+# if score>=90 and score<=100 :
+#     print("A");
+# elif score>=80 and score<90:
+#     print("B")
+# elif score>=70 and score<80:
+#     print("C")
+# elif score>=60 and score<70:
+#     print("D")    
+# else :
+#     print("F")
+
+#구구단을 for문을 통해서 작성해보자
+#for문을 하나만 사용해서 
+# 숫자를 입력받고 그에 해당하는 구구단을 출력하자
+
+# 예시 입력 
+# 숫자를 입력하세요 : 3
+# 3*1 = 3 
+# 3*2= 6... 출력
+# for i in range(9):
+#     for j in range(9):
+#         print(f"{i+1} X {j+1} = {(i+1)*(j+1)}")
+#     print()
+
+# -> while 반복문으로 구구단 작성하기 5분
+# i=1
+# while i<10:
+#     j=1
+#     while(j<10):
+#         print(i,"X",j,i*j)
+#         j+=1
+#     i+=1
+
+# A,B,C = map(int,input().split())
+# print((A+B)%C)
+# print(((A%C)+(B%C))%C)
+# print((A*B)%C)
+# print(((A%C)*(B%C))%C)
+
+num1 = int(input())
+num2 = int(input())
+
+print(num1*(num2%10))
+a=num1*(num2%10)
+# num2 = num2/10
+num2= num2//10
+print(num1*(num2%10))
+b=num1*(num2%10)
+num2= num2//10
+print(num1*(num2%10))
+c=num1*(num2%10)
+print(a+b*10+c*100)
