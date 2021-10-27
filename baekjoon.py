@@ -2285,16 +2285,16 @@
 # print((A*B)%C)
 # print(((A%C)*(B%C))%C)
 
-num1 = int(input())
-num2 = int(input())
+# num1 = int(input())
+# num2 = int(input())
 
-print(num1*(num2%10))
-a=num1*(num2%10)
-# num2 = num2/10
-num2= num2//10
-print(num1*(num2%10))
-b=num1*(num2%10)
-num2= num2//10
-print(num1*(num2%10))
-c=num1*(num2%10)
-print(a+b*10+c*100)
+# print(num1*(num2%10))
+# a=num1*(num2%10)
+# # num2 = num2/10
+# num2= num2//10
+# print(num1*(num2%10))
+# b=num1*(num2%10)
+# num2= num2//10
+# print(num1*(num2%10))
+# c=num1*(num2%10)
+# print(a+b*10+c*100)
