@@ -2456,6 +2456,7 @@
 
 # dfs(0,0)
 
+#2309 : 난쟁이
 import sys
 input=sys.stdin.readline
 
