@@ -2223,6 +2223,9 @@
 
 # print("국어 점수를 입력하세요.",end=" ")
 # korea = int(input())
+
+# a = float(input('국어 점수를 입력하세요.', ))
+
 # print("수학 점수를 입력하세요.",end=" ")
 # math = int(input())
 # print("영어 점수를 입력하세요.",end=" ")
@@ -2230,8 +2233,11 @@
 
 # total = korea+math+english
 # avg = float(total)/3
+
 # print(f"총점 : {total}")
-# print(f"평균 : {avg}")
+# print(f"평균 : {round(avg,2)}")
+
+
 # import math 
 # print(""" 
 # 본 프로그램은 섭씨를 화씨로 변환해주는 프로그램입니다.
@@ -2274,27 +2280,209 @@
 # i=1
 # while i<10:
 #     j=1
-    while(j<10):
-        print(i,"X",j,i*j)
-        j+=1
-    i+=1
+#     while(j<10):
+#         print(i,"X",j,i*j)
+#         j+=1
+#     i+=1
 
-A,B,C = map(int,input().split())
-print((A+B)%C)
-print(((A%C)+(B%C))%C)
-print((A*B)%C)
-print(((A%C)*(B%C))%C)
+# A,B,C = map(int,input().split())
+# print((A+B)%C)
+# print(((A%C)+(B%C))%C)
+# print((A*B)%C)
+# print(((A%C)*(B%C))%C)
 
-num1 = int(input())
-num2 = int(input())
+# num1 = int(input())
+# num2 = int(input())
 
-print(num1*(num2%10))
-a=num1*(num2%10)
-# num2 = num2/10
-num2= num2//10
-print(num1*(num2%10))
-b=num1*(num2%10)
-num2= num2//10
-print(num1*(num2%10))
-c=num1*(num2%10)
-print(a+b*10+c*100)
+# print(num1*(num2%10))
+# a=num1*(num2%10)
+# # num2 = num2/10
+# num2= num2//10
+# print(num1*(num2%10))
+# b=num1*(num2%10)
+# num2= num2//10
+# print(num1*(num2%10))
+# c=num1*(num2%10)
+# print(a+b*10+c*100)
+
+#예제 1
+# num1,num2 = map(int,input().split())
+# print("덧셈 : ",end="")
+# print(num1+num2)
+# print("뺄셈 : ",end="")
+# print(num1-num2)
+# print("곱셈 : ",end="")
+# print(num1*num2)
+# print("나눗셈 : ",end="")
+# print(num1//num2)
+# print(f"나머지 : {num1%num2}")
+
+
+# print("본 프로그램은 섭씨를 화씨로로 변환해주는 프로그램입니다  변환하고 싶은 섭씨 온도를 입력해 주세요")
+# num = float(input())
+# print(f"섭씨온도 : {num}")
+# num = (((1.8)*num))+32
+# print(f"화씨온도 {num}")
+
+
+
+# print("국어 점수를 입력하세요.",end=" ")
+# korea = int(input())
+# print("수학 점수를 입력하세요.",end=" ")
+# math = int(input())
+# print("영어 점수를 입력하세요.",end=" ")
+# english = int(input())
+
+# total = korea+math+english
+# avg = float(total)/3
+
+# if 90<=avg<=100 :
+#     print("A");
+# elif avg>=80 and avg<90:
+#     print("B")
+# elif avg>=70 and avg<80:
+#     print("C")
+# elif avg>=60 and avg<70:
+#     print("D")    
+# else :
+#     print("F")
+
+
+# from random import choice
+
+
+# print(""""
+# *****계산기*****
+# 1. 덧셈
+# 2. 뺄셈
+# 3. 곱셈
+# 4. 나눗셈
+# 5. 나머지 
+# 선택하세요.
+# """)
+# choice= int(input()) 
+# num1,num2 = map(int,input().split())
+# if(choice==1):
+#     print(f"덧셈 : {num1+num2}")
+# elif(choice==2):
+#     print(f"나머지 : {num1%num2}")
+# elif(choice==3):
+#     print(f"나머지 : {num1%num2}")
+# elif(choice==4):
+#     print(f"나머지 : {num1%num2}")
+# elif(choice==5):
+#     print(f"나머지 : {num1%num2}")
+# else:
+#     print(f"나머지 : {num1%num2}")
+
+
+
+# x= 3*50
+# y = x+120
+# z = y//3 
+# print(z)
+
+# num1 = int(input())
+# num2 = int(input())
+
+# num1,num2 = map(int,input().split("@"))
+# print(num1+num2)
+
+# a = "dongguk university"
+# b = "level"
+# print(a[-1])
+# print(a[0])
+# print(a[:])
+# print(a[-10:])
+# print(a[-30:30])
+# print(b[::2])
+
+# color = ['white','black','blue','apple']
+# arr = [4,5,1,2,8]
+# color.append("red")
+# color.extend(["pink","yellow"])
+# color.insert(2,"orange")
+# del color[0]
+# color.append("blue")
+# color.remove("blue")
+# color.remove("blue")
+# color.sort()
+# arr.append(5)
+# arr.sort(reverse=True)
+# arr.reverse()
+# print(arr.count(5))
+# print(arr.index(5))
+# print(arr)
+# print(color)
+
+# num1 =int(input())
+# num2= int(input())
+# print(num1*(num2%10))
+# print(num1*(num2//10%10))
+# print(num1*(num2//100))
+# print(num1*num2)
+
+# 암호 
+# import sys
+# input=sys.stdin.readline
+
+# l,c = map(int,input().split()) 
+
+# visited = [0 for _ in range(c)]
+# arr2=[] #순열저장 
+# def dfs(cnt,idx):
+#     if cnt== l: #l만큼의 단어 
+#         mo = 0 #모음 
+#         ja = 0 #자음 
+#         for i in range(l):
+#             if arr2[i] in 'aeiou': 
+#                 mo+=1
+#             else :
+#                 ja +=1 
+#         if mo>=1 and ja>=2: #조건만족 
+#             print(''.join(arr2)) #리스트 출력 
+#         return 
+#     for i in range(idx,c):
+#         if visited[i]==0:
+#             arr2.append(arr[i])
+#             visited[i]=1 #방문 
+#             dfs(cnt+1,i+1)
+#             visited[i]=0
+#             # print(arr2[-1])
+#             del arr2[-1] #마지막부분지우기 
+
+# arr = input().split() #c만큼 리스트 입력받기 
+# arr.sort() #알파벳순으로 정렬 
+
+# dfs(0,0)
+
+import sys
+input=sys.stdin.readline
+
+visited = [0 for _ in range(9)]
+arr =[0]*9
+arr2=[] #찐 난쟁이
+
+
+def dfs(cnt,idx):
+    if cnt== 7: #길이가 7
+        total=0
+        for i in range(7):
+            total+=arr2[i]
+        if total==100:
+            arr2.sort() #정렬의 문제 What..?
+            for i in range(7):
+                print(arr2[i])
+        return
+
+    for i in range(idx,9):
+        if visited[i]==0:
+            arr2.append(arr[i])
+            visited[i]=1 #방문 
+            dfs(cnt+1,i+1)
+            visited[i]=0
+            del arr2[-1] #마지막부분지우기 
+
+for i in range(9):
+    arr[i]=int(input())
+dfs(0,0)
