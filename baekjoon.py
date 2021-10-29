@@ -2456,34 +2456,54 @@
 
 # dfs(0,0)
 
-#2309 : 난쟁이
+#2309 : 일곱난쟁이
+# import sys
+# input=sys.stdin.readline
+
+# visited = [0 for _ in range(9)]
+# arr =[0]*9
+# arr2=[] #찐 난쟁이
+
+
+# def dfs(cnt,idx):
+#     if cnt== 7: #길이가 7
+#         total=0
+#         for i in range(7):
+#             total+=arr2[i]
+#         if total==100:
+#             arr2.sort() #정렬의 문제 What..?
+#             for i in range(7):
+#                 print(arr2[i])
+#         return
+
+#     for i in range(idx,9):
+#         if visited[i]==0:
+#             arr2.append(arr[i])
+#             visited[i]=1 #방문 
+#             dfs(cnt+1,i+1)
+#             visited[i]=0
+#             del arr2[-1] #마지막부분지우기 
+
+# for i in range(9):
+#     arr[i]=int(input())
+# dfs(0,0)
+
+#10819 : 차이를 최대로 
 import sys
+from itertools import permutations #순열 가져오기 
 input=sys.stdin.readline
 
-visited = [0 for _ in range(9)]
-arr =[0]*9
-arr2=[] #찐 난쟁이
+m = int(input())
+arr = list(map(int,input().split())) ## 숫자입력시 list선언 필수 
 
+per = permutations(arr) #순열 리스트 생성 
+MAX = 0 
 
-def dfs(cnt,idx):
-    if cnt== 7: #길이가 7
-        total=0
-        for i in range(7):
-            total+=arr2[i]
-        if total==100:
-            arr2.sort() #정렬의 문제 What..?
-            for i in range(7):
-                print(arr2[i])
-        return
+for i in per:
+    total = 0
+    for j in range(m-1):
+        total+=abs(i[j]-i[j+1])
+    if total > MAX : #최댓값보다 큼 
+        MAX = total  
 
-    for i in range(idx,9):
-        if visited[i]==0:
-            arr2.append(arr[i])
-            visited[i]=1 #방문 
-            dfs(cnt+1,i+1)
-            visited[i]=0
-            del arr2[-1] #마지막부분지우기 
-
-for i in range(9):
-    arr[i]=int(input())
-dfs(0,0)
+print(MAX)
