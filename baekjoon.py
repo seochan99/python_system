@@ -2489,21 +2489,56 @@
 # dfs(0,0)
 
 #10819 : 차이를 최대로 
+# import sys
+# from itertools import permutations #순열 가져오기 
+# input=sys.stdin.readline
+
+# m = int(input())
+# arr = list(map(int,input().split())) ## 숫자입력시 list선언 필수 
+
+# per = permutations(arr) #순열 리스트 생성 
+# MAX = 0 
+
+# for i in per:
+#     total = 0
+#     for j in range(m-1):
+#         total+=abs(i[j]-i[j+1])
+#     if total > MAX : #최댓값보다 큼 
+#         MAX = total  
+
+# print(MAX)
+
+#1987 : 알파벳
 import sys
-from itertools import permutations #순열 가져오기 
 input=sys.stdin.readline
 
-m = int(input())
-arr = list(map(int,input().split())) ## 숫자입력시 list선언 필수 
+cnt=0;total=1
 
-per = permutations(arr) #순열 리스트 생성 
-MAX = 0 
+#방향벡터 
+dx = [1,-1,0,0] 
+dy = [0,0,-1,1]
+visited=[]
 
-for i in per:
-    total = 0
-    for j in range(m-1):
-        total+=abs(i[j]-i[j+1])
-    if total > MAX : #최댓값보다 큼 
-        MAX = total  
+def dfs(x,y,total):
+    global cnt 
+    visited.append(graph[x][y])
+    cnt = max(total,cnt)
+    # print(visited)
+    for i in range(4):
+        cx = x+dx[i]
+        cy = y+dy[i]
+        if 0<=cx<n  and 0<=cy<m:
+            if graph[cx][cy] not in visited: #방문하지 않은 알파벳 
+                dfs(cx,cy,total+1)
+                del visited[-1]
+    
+n,m = map(int,input().split())
+cnt=1
+graph = []
 
-print(MAX)
+for i in range(n): #그래프 그리기 
+    graph.append(list(input().rstrip()))
+
+
+dfs(0,0,cnt) #시작 0,0
+print(cnt)
