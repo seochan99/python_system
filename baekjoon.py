@@ -2508,12 +2508,113 @@
 
 # print(MAX)
 
-#1987 : 알파벳
+# #1987 : 알파벳
+# import sys
+# input=sys.stdin.readline
+
+# cnt=0;total=1
+
+# #방향벡터 
+# dx = [1,-1,0,0] 
+# dy = [0,0,-1,1]
+# visited=[]
+
+# def dfs(x,y,total):
+#     global cnt 
+#     visited.append(graph[x][y])
+#     cnt = max(total,cnt)
+#     # print(visited)
+#     for i in range(4):
+#         cx = x+dx[i]
+#         cy = y+dy[i]
+#         if 0<=cx<n  and 0<=cy<m:
+#             if graph[cx][cy] not in visited: #방문하지 않은 알파벳 
+#                 dfs(cx,cy,total+1)
+#                 del visited[-1]
+    
+# n,m = map(int,input().split())
+# cnt=1
+# graph = []
+
+# for i in range(n): #그래프 그리기 
+#     graph.append(list(input().rstrip()))
+
+
+# dfs(0,0,cnt) #시작 0,0
+# print(cnt)
+
+
+
+
+# import sys
+# input = sys.stdin.readline
+# from collections import deque #BFS
+
+# # 나이트 8가지 케이스 
+# dx = [1,2,1,2,-1,-1,-2,-2]
+# dy = [2,1,-2,-1,2,-2,1,-1]
+
+# def bfs():
+#   while queue:
+#       a,b = queue.popleft() #i.j삽입 
+#       for i in range(8):
+#           cx = a+dx[i]
+#           cy = b+dy[i]
+#           if 0<=cx<n  and 0<=cy<n and graph[cx][cy]==0: #아직한번도 안간곳
+#               graph[cx][cy] = graph[a][b] + 1 #칸수 더해나감 
+#               queue.append([cx,cy])
+
+# test = int(input())
+# for _ in range(test):
+
+#     # 덱선언
+#     queue = deque()
+
+#     n = int(input())
+#     graph = [[0] * n for _ in range(n)] #그래프 생성
+
+#     knight_x, knight_y = map(int,input().split()) #나이트 x,y값 
+#     dochak_x, dochak_y = map(int,input().split())
+
+#     queue.append([knight_x,knight_y])
+#     bfs()
+#     graph[knight_x][knight_y]=0
+#     print(graph[dochak_x][dochak_y])
+
+# import sys
+# input=sys.stdin.readline
+
+# visited = [0 for _ in range(9)]
+# arr =[0]*9
+# arr2=[] #찐 난쟁이
+
+
+# def dfs(cnt,idx):
+#     if cnt== 7: #길이가 7
+#         total=0
+#         for i in range(7):
+#             total+=arr2[i]
+#         if total==100:
+#             for i in range(7):
+#                 print(arr2[i])
+#         return 
+
+#     for i in range(idx,9):
+#         if visited[i]==0:
+#             arr2.append(arr[i])
+#             visited[i]=1 #방문 
+#             dfs(cnt+1,i+1)
+#             visited[i]=0
+#             print(arr2)
+#             del arr2[-1] #마지막부분지우기 
+
+# for i in range(9):
+#     arr[i]=int(input())
+# arr.sort()
+# dfs(0,0)
+
 import sys
 input=sys.stdin.readline
-
-cnt=0;total=1
-
 #방향벡터 
 dx = [1,-1,0,0] 
 dy = [0,0,-1,1]
@@ -2521,16 +2622,15 @@ visited=[]
 
 def dfs(x,y,total):
     global cnt 
-    visited.append(graph[x][y])
     cnt = max(total,cnt)
     # print(visited)
     for i in range(4):
         cx = x+dx[i]
         cy = y+dy[i]
-        if 0<=cx<n  and 0<=cy<m:
-            if graph[cx][cy] not in visited: #방문하지 않은 알파벳 
-                dfs(cx,cy,total+1)
-                del visited[-1]
+        if 0<=cx<n  and 0<=cy<m and graph[cx][cy] not in visited: #방문하지 않은 알파벳 
+            visited.append(graph[cx][cy])
+            dfs(cx,cy,total+1)
+            del visited[-1]
     
 n,m = map(int,input().split())
 cnt=1
@@ -2539,6 +2639,6 @@ graph = []
 for i in range(n): #그래프 그리기 
     graph.append(list(input().rstrip()))
 
-
+visited.append(graph[0][0])
 dfs(0,0,cnt) #시작 0,0
 print(cnt)
