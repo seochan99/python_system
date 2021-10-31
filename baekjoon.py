@@ -1762,7 +1762,7 @@
 # input = sys.stdin.readline
 
 # def prime_list(MIN,MAX):
-#     answer = MAX-MIN+1 
+#     `answer` = MAX-MIN+1 
 #     check = [False]*(MAX-MIN+1)
 #     i=2 
 #     while i*i <= MAX: 
@@ -2613,35 +2613,34 @@
 # arr.sort()
 # dfs(0,0)
 
-# import sys
-# input=sys.stdin.readline
-# #방향벡터 
-# dx = [1,-1,0,0] 
-# dy = [0,0,-1,1]
-# visited=[]
+import sys
+input=sys.stdin.readline
+#방향벡터 
+dx = [1,-1,0,0] 
+dy = [0,0,-1,1]
 
-# def dfs(x,y,total):
-#     global cnt 
-#     cnt = max(total,cnt)
-#     # print(visited)
-#     for i in range(4):
-#         cx = x+dx[i]
-#         cy = y+dy[i]
-#         if 0<=cx<n  and 0<=cy<m and graph[cx][cy] not in visited: #방문하지 않은 알파벳 
-#             visited.append(graph[cx][cy])
-#             dfs(cx,cy,total+1)
-#             del visited[-1]
+def dfs(x,y,total):
+    global cnt 
+    cnt = max(total,cnt)
+    # print(visited)
+    for i in range(4):
+        cx = x+dx[i]
+        cy = y+dy[i]
+        if 0<=cx<n  and 0<=cy<m and visited[graph[cx][cy]]!=1: #방문하지 않은 알파벳 
+            visited[graph[cx][cy]]=1
+            dfs(cx,cy,total+1)
+            visited[graph[cx][cy]]=0 
     
-# n,m = map(int,input().split())
-# cnt=1
-# graph = []
+n,m = map(int,input().split())
 
-# for i in range(n): #그래프 그리기 
-#     graph.append(list(input().rstrip()))
-
-# visited.append(graph[0][0])
-# dfs(0,0,cnt) #시작 0,0
-# print(cnt)
+graph = [list(map(lambda x: ord(x)-65,input().rstrip())) for _ in range(n)] #아스키 코드값으로 변환 
+#변환후 65빼줘서 0부터 A시작 
+#ord=>문자열 아스키 코드값 변환 
+visited = [0]*26
+cnt=0
+visited[graph[0][0]] = 1
+dfs(0,0,1) #시작 0,0
+print(cnt)
 
 #2529 : 부등호 
 # import sys
@@ -2680,70 +2679,102 @@
 # print(max(allNumber))
 # print(min(allNumber))
 
-import sys
-input = sys.stdin.readline
+#2529 : 부등호 
+# import sys
+# input = sys.stdin.readline
 
-k = int(input())
-arr = input().split()
-visited = [0]*10 #방문여부 
-MAX,MIN = "",""
+# k = int(input())
+# arr = input().split()
+# visited = [0]*10 #방문여부 
+# MAX,MIN = "",""
 
-def check(i,j,k):
-    if k==">":
-        return i>j #맞으면 1 아니면 0 
-    else :
-        return i<j
+# def check(i,j,k):
+#     if k==">":
+#         return i>j #맞으면 1 아니면 0 
+#     else :
+#         return i<j
 
-def bt(cnt,string):
-    global MAX,MIN
-    if cnt>k :
-        if len(MIN) == 0 :
-            MIN = string
-        else :
-            MAX = string 
-        return
+# def bt(cnt,string):
+#     global MAX,MIN
+#     if cnt>k :
+#         if len(MIN) == 0 :
+#             MIN = string
+#         else :
+#             MAX = string 
+#         return
 
-    for i in range(10):
-        if visited[i]==0:
-            if cnt == 0 or check(string[-1],str(i),arr[cnt-1]):
-                visited[i]=1
-                bt(cnt+1,string+str(i)) 
-                visited[i]=0 #백트레킹 
+#     for i in range(10):
+#         if visited[i]==0:
+#             if cnt == 0 or check(string[-1],str(i),arr[cnt-1]):
+#                 visited[i]=1
+#                 bt(cnt+1,string+str(i)) 
+#                 visited[i]=0 #백트레킹 
 
-bt(0,"") #빈문자열에서 시작 
-print(MAX)
-print(MIN)
+# bt(0,"") #빈문자열에서 시작 
+# print(MAX)
+# print(MIN)
 
-import sys 
-input = sys.stdin.readline
+# import sys 
+# input = sys.stdin.readline
 
-k=int(input())
-arr = input().split()
-visited = [0]*10
-MAX,MIN = "",""
+# k=int(input())
+# arr = input().split()
+# visited = [0]*10
+# MAX,MIN = "",""
 
-def check(i,j,k):
-    if k==">":
-        return i>j
-    else :
-        return i<j
+# def check(i,j,k):
+#     if k==">":
+#         return i>j
+#     else :
+#         return i<j
 
-def bt(cnt,string):
-    global MAX,MIN
-    if cnt > k :
-        if len(MIN)==0: #제일 처음 들어오는거 
-            MIN = string
-        else : 
-            MAX = string #이후 MAX에 넣음 
-        return #함수반환 
-    for i in range(10):
-        if visited[i]==0: #아직 방문 전 
-            if cnt==0 or check(string[-1],str(i),arr[cnt-1]): #0이면 무조건 담꺼 붙여야함 ㅇㅇ check(string제일마지막꺼,추가될거,부호)
-                visited[i]=1
-                bt(cnt+1,string+str(i))
-                visited[i]=0
+# def bt(cnt,string):
+#     global MAX,MIN
+#     if cnt > k :
+#         if len(MIN)==0: #제일 처음 들어오는거 
+#             MIN = string
+#         else : 
+#             MAX = string #이후 MAX에 넣음 
+#         return #함수반환 
+#     for i in range(10):
+#         if visited[i]==0: #아직 방문 전 
+#             if cnt==0 or check(string[-1],str(i),arr[cnt-1]): #0이면 무조건 담꺼 붙여야함 ㅇㅇ check(string제일마지막꺼,추가될거,부호)
+#                 visited[i]=1
+#                 bt(cnt+1,string+str(i))
+#                 visited[i]=0
 
 
-bt(0,"")
-print(MAX)
-print(MIN)
+# bt(0,"")
+# print(MAX)
+# print(MIN)
+
+# 1700 : 멀티탭 스케줄링 
+
+#알파벳..
+# import sys
+# input=sys.stdin.readline
+# #방향벡터 
+# dx = [1,-1,0,0] 
+# dy = [0,0,-1,1]
+
+# def BFS(x,y):
+#     global cnt
+#     queue = set([x,y,graph[x][y]])
+
+#     while queue:
+#         x,y,english = queue.pop()
+
+#         for i in range(4):
+#             cx = x+dx[i]
+#             cy = y+dy[i]
+#             if (0<=cx<n)and 0<=cy<m and graph[cx][cy] not in english:
+#                 queue.add(cx,cy,english+graph[cx][cy])
+#                 cnt=max(cnt,len(english)+1)
+
+
+# n,m = map(int,input().split())
+# graph = [list(input().strip()) for _ in range(n)]
+
+# cnt =1 
+# BFS(0,0)
+# print(cnt)
