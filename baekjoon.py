@@ -2613,32 +2613,54 @@
 # arr.sort()
 # dfs(0,0)
 
-import sys
-input=sys.stdin.readline
-#방향벡터 
-dx = [1,-1,0,0] 
-dy = [0,0,-1,1]
-visited=[]
+# import sys
+# input=sys.stdin.readline
+# #방향벡터 
+# dx = [1,-1,0,0] 
+# dy = [0,0,-1,1]
+# visited=[]
 
-def dfs(x,y,total):
-    global cnt 
-    cnt = max(total,cnt)
-    # print(visited)
-    for i in range(4):
-        cx = x+dx[i]
-        cy = y+dy[i]
-        if 0<=cx<n  and 0<=cy<m and graph[cx][cy] not in visited: #방문하지 않은 알파벳 
-            visited.append(graph[cx][cy])
-            dfs(cx,cy,total+1)
-            del visited[-1]
+# def dfs(x,y,total):
+#     global cnt 
+#     cnt = max(total,cnt)
+#     # print(visited)
+#     for i in range(4):
+#         cx = x+dx[i]
+#         cy = y+dy[i]
+#         if 0<=cx<n  and 0<=cy<m and graph[cx][cy] not in visited: #방문하지 않은 알파벳 
+#             visited.append(graph[cx][cy])
+#             dfs(cx,cy,total+1)
+#             del visited[-1]
     
-n,m = map(int,input().split())
-cnt=1
-graph = []
+# n,m = map(int,input().split())
+# cnt=1
+# graph = []
 
-for i in range(n): #그래프 그리기 
-    graph.append(list(input().rstrip()))
+# for i in range(n): #그래프 그리기 
+#     graph.append(list(input().rstrip()))
 
-visited.append(graph[0][0])
-dfs(0,0,cnt) #시작 0,0
-print(cnt)
+# visited.append(graph[0][0])
+# dfs(0,0,cnt) #시작 0,0
+# print(cnt)
+
+#2529 : 부등호 
+import sys
+from itertools import permutations
+
+input = sys.stdin.readline
+number = [0,1,2,3,4,5,6,7,8,9]
+
+k = int(input())
+
+# arr = input().split()
+# print(arr)
+
+per = permutations(number,k+1)
+
+
+print(list(per))
+
+
+# for i in per:
+#     for j in range(k):
+        
