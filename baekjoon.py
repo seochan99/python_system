@@ -2779,6 +2779,39 @@
 # BFS(0,0)
 # print(cnt)
 
+#멀티탭 스케쥴링 
+import sys 
+input = sys.stdin.readline
 
 
+
+n,k = map(int,input().split())
+arr = list(map(int,input().split())) #사용순서 
+plug = [0 for _ in range(n)]
+cnt = 0 
+
+#k만큼 빙글빙글 
+for i in range(k):
+    flag = False 
+    for j in range(n):
+        if plug[j]==arr[i] or plug[]==0:
+            flag = True 
+            plug[j]=arr[i]
+            break #넣는다.
+    if flag:
+        continue
+    else :
+        a=0
+        for j in range(n):
+            try:
+                if a<arr[i+1:].index(plug[j]):
+                    a=arr[i+1:].index(plug[j])
+                    b = j 
+            except:
+                a = -1 
+                b = j 
+                break 
+        plug[b]=arr[i]
+        cnt+=1
+print(cnt)
 

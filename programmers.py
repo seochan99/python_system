@@ -13,7 +13,13 @@
 
 # 핸드폰 번호 가리기
 
-def solution(phone_number):
-    return "*"*(len(phone_number)-4) + phone_number[-4:]
+# def solution(phone_number):
+#     return "*"*(len(phone_number)-4) + phone_number[-4:]
 
-print(solution("01023624076"))
+# print(solution("01023624076"))
+
+#행렬의 덧셈 
+# def solution(arr1, arr2):
+#     answer = [[]]
+#     answer.append(arr1[0]+arr2[0])
+#     return answer
