@@ -2644,23 +2644,106 @@
 # print(cnt)
 
 #2529 : 부등호 
-import sys
-from itertools import permutations
+# import sys
+# from itertools import permutations
 
-input = sys.stdin.readline
-number = [0,1,2,3,4,5,6,7,8,9]
+# input = sys.stdin.readline
+# number = [0,1,2,3,4,5,6,7,8,9]
 
-k = int(input())
+# k = int(input())
+# arr2=[]
+# allNumber=[]
 
 # arr = input().split()
-# print(arr)
+# per = permutations(number,k+1)
 
-per = permutations(number,k+1)
+# for i in range(k):
+#     if arr[i] == '>':
+#         arr[i]=1
+#     elif arr[i] == '<':
+#         arr[i]=0
 
 
-print(list(per))
-
-
+# # > > = 1 < = 0 이다. 
+# print(list(per))
 # for i in per:
-#     for j in range(k):
-        
+#     print(i)
+#     for j in range(k-1):
+#         if(i[j]>i[j+1]):
+#             arr2[j]=1
+#         elif(i[j]<i[j+1]):
+#             arr2[j]=0
+#     if arr == arr2 :
+#         allNumber.append[i]
+
+
+# print(max(allNumber))
+# print(min(allNumber))
+
+import sys
+input = sys.stdin.readline
+
+k = int(input())
+arr = input().split()
+visited = [0]*10 #방문여부 
+MAX,MIN = "",""
+
+def check(i,j,k):
+    if k==">":
+        return i>j #맞으면 1 아니면 0 
+    else :
+        return i<j
+
+def bt(cnt,string):
+    global MAX,MIN
+    if cnt>k :
+        if len(MIN) == 0 :
+            MIN = string
+        else :
+            MAX = string 
+        return
+
+    for i in range(10):
+        if visited[i]==0:
+            if cnt == 0 or check(string[-1],str(i),arr[cnt-1]):
+                visited[i]=1
+                bt(cnt+1,string+str(i)) 
+                visited[i]=0 #백트레킹 
+
+bt(0,"") #빈문자열에서 시작 
+print(MAX)
+print(MIN)
+
+import sys 
+input = sys.stdin.readline
+
+k=int(input())
+arr = input().split()
+visited = [0]*10
+MAX,MIN = "",""
+
+def check(i,j,k):
+    if k==">":
+        return i>j
+    else :
+        return i<j
+
+def bt(cnt,string):
+    global MAX,MIN
+    if cnt > k :
+        if len(MIN)==0: #제일 처음 들어오는거 
+            MIN = string
+        else : 
+            MAX = string #이후 MAX에 넣음 
+        return #함수반환 
+    for i in range(10):
+        if visited[i]==0: #아직 방문 전 
+            if cnt==0 or check(string[-1],str(i),arr[cnt-1]): #0이면 무조건 담꺼 붙여야함 ㅇㅇ check(string제일마지막꺼,추가될거,부호)
+                visited[i]=1
+                bt(cnt+1,string+str(i))
+                visited[i]=0
+
+
+bt(0,"")
+print(MAX)
+print(MIN)
