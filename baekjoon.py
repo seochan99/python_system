@@ -2613,34 +2613,34 @@
 # arr.sort()
 # dfs(0,0)
 
-import sys
-input=sys.stdin.readline
-#방향벡터 
-dx = [1,-1,0,0] 
-dy = [0,0,-1,1]
+# import sys
+# input=sys.stdin.readline
+# #방향벡터 
+# dx = [1,-1,0,0] 
+# dy = [0,0,-1,1]
 
-def dfs(x,y,total):
-    global cnt 
-    cnt = max(total,cnt)
-    # print(visited)
-    for i in range(4):
-        cx = x+dx[i]
-        cy = y+dy[i]
-        if 0<=cx<n  and 0<=cy<m and visited[graph[cx][cy]]!=1: #방문하지 않은 알파벳 
-            visited[graph[cx][cy]]=1
-            dfs(cx,cy,total+1)
-            visited[graph[cx][cy]]=0 
+# def dfs(x,y,total):
+#     global cnt 
+#     cnt = max(total,cnt)
+#     # print(visited)
+#     for i in range(4):
+#         cx = x+dx[i]
+#         cy = y+dy[i]
+#         if 0<=cx<n  and 0<=cy<m and visited[graph[cx][cy]]!=1: #방문하지 않은 알파벳 
+#             visited[graph[cx][cy]]=1
+#             dfs(cx,cy,total+1)
+#             visited[graph[cx][cy]]=0 
     
-n,m = map(int,input().split())
+# n,m = map(int,input().split())
 
-graph = [list(map(lambda x: ord(x)-65,input().rstrip())) for _ in range(n)] #아스키 코드값으로 변환 
-#변환후 65빼줘서 0부터 A시작 
-#ord=>문자열 아스키 코드값 변환 
-visited = [0]*26
-cnt=0
-visited[graph[0][0]] = 1
-dfs(0,0,1) #시작 0,0
-print(cnt)
+# graph = [list(map(lambda x: ord(x)-65,input().rstrip())) for _ in range(n)] #아스키 코드값으로 변환 
+# #변환후 65빼줘서 0부터 A시작 
+# #ord=>문자열 아스키 코드값 변환 
+# visited = [0]*26
+# cnt=0
+# visited[graph[0][0]] = 1
+# dfs(0,0,1) #시작 0,0
+# print(cnt)
 
 #2529 : 부등호 
 # import sys
@@ -2778,3 +2778,7 @@ print(cnt)
 # cnt =1 
 # BFS(0,0)
 # print(cnt)
+
+
+
+
