@@ -26,7 +26,7 @@ def ternary(n):#균형 3진법 함수
    sam=["0","1","-1"]
    while n:
        result = result + sam[n % 3] + " "
-       n = (n + 1) // 3 
+       n = (n+1)//3
    return result 
 
 def main(): 
