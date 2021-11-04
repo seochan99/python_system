@@ -23,3 +23,8 @@
 #     answer = [[]]
 #     answer.append(arr1[0]+arr2[0])
 #     return answer
+
+def hello():
+    print("hi")
+    hello()
+hello()
