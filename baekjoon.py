@@ -2819,29 +2819,30 @@
 #         cnt+=1
 # print(cnt)
 
-print(""" ---계산기---
-1. 더하기
-2. 빼기
-3. 나누기
-4. 곱하기
-5. 나머지 
-입력해주세요 """)
-choice = int(input())
+# print(""" ---계산기---
+# 1. 더하기
+# 2. 빼기
+# 3. 나누기
+# 4. 곱하기
+# 5. 나머지 
+# 입력해주세요 """)
+# choice = int(input())
 
-print("두 수를 입력해주세요")
-num1, num2 = map(int,input().split())
-if(choice==1):
-    print(num1+num2)
-elif(choice==2):
-    print(num1-num2)
-elif(choice==3):
-    print(num1//num2)
-elif(choice==4):
-    print(num1*num2)
-elif(choice==5):
-    print(num1%num2)    
-else : 
-    print("잘못된 값을 입력하셨습니다.")
+# print("두 수를 입력해주세요")
+# num1, num2 = map(int,input().split())
+# if(choice==1):
+#     print(num1+num2)
+# elif(choice==2):
+#     print(num1-num2)
+# elif(choice==3):
+#     print(num1//num2)
+# elif(choice==4):
+#     print(num1*num2)
+# elif(choice==5):
+#     print(num1%num2)    
+# else : 
+#     print("잘못된 값을 입력하셨습니다.")
 
 
-
+# # dd
+# # d
