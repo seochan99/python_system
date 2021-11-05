@@ -2336,6 +2336,10 @@
 # total = korea+math+english
 # avg = float(total)/3
 
+# if(90<=total<=100):
+#     print("A")
+
+
 # if 90<=avg<=100 :
 #     print("A");
 # elif avg>=80 and avg<90:
@@ -2780,38 +2784,64 @@
 # print(cnt)
 
 #멀티탭 스케쥴링 
-import sys 
-input = sys.stdin.readline
+# import sys 
+# input = sys.stdin.readline
 
 
 
-n,k = map(int,input().split())
-arr = list(map(int,input().split())) #사용순서 
-plug = [0 for _ in range(n)]
-cnt = 0 
+# n,k = map(int,input().split())
+# arr = list(map(int,input().split())) #사용순서 
+# plug = [0 for _ in range(n)]
+# cnt = 0 
 
-#k만큼 빙글빙글 
-for i in range(k):
-    flag = False 
-    for j in range(n):
-        if plug[j]==arr[i] or plug[]==0:
-            flag = True 
-            plug[j]=arr[i]
-            break #넣는다.
-    if flag:
-        continue
-    else :
-        a=0
-        for j in range(n):
-            try:
-                if a<arr[i+1:].index(plug[j]):
-                    a=arr[i+1:].index(plug[j])
-                    b = j 
-            except:
-                a = -1 
-                b = j 
-                break 
-        plug[b]=arr[i]
-        cnt+=1
-print(cnt)
+# #k만큼 빙글빙글 
+# for i in range(k):
+#     flag = False 
+#     for j in range(n):
+#         if plug[j]==arr[i] or plug[]==0:
+#             flag = True 
+#             plug[j]=arr[i]
+#             break #넣는다.
+#     if flag:
+#         continue
+#     else :
+#         a=0
+#         for j in range(n):
+#             try:
+#                 if a<arr[i+1:].index(plug[j]):
+#                     a=arr[i+1:].index(plug[j])
+#                     b = j 
+#             except:
+#                 a = -1 
+#                 b = j 
+#                 break 
+#         plug[b]=arr[i]
+#         cnt+=1
+# print(cnt)
+
+print(""" ---계산기---
+1. 더하기
+2. 빼기
+3. 나누기
+4. 곱하기
+5. 나머지 
+입력해주세요 """)
+choice = int(input())
+
+print("두 수를 입력해주세요")
+num1, num2 = map(int,input().split())
+if(choice==1):
+    print(num1+num2)
+elif(choice==2):
+    print(num1-num2)
+elif(choice==3):
+    print(num1//num2)
+elif(choice==4):
+    print(num1*num2)
+elif(choice==5):
+    print(num1%num2)    
+else : 
+    print("잘못된 값을 입력하셨습니다.")
+
+
 
