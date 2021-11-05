@@ -37,7 +37,7 @@ def main():
 if __name__=="__main__": 
     while(True):
         main()
-        print("mmmmmmmmm")
+        print("---------------")
     
 ############4##########
 # def main(): 
