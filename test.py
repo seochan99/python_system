@@ -28,7 +28,7 @@ def ternary(n):#균형 3진법 함수
        result = result + sam[n % 3] + " "
        n = (n+1)//3
    return result 
-
+# 2-> -1 1
 def main(): 
     n = int(input())
     print(ternary(n))   #n을 ternary 함수에 대입후 결과 값 출력하기 
