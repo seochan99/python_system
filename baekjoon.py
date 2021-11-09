@@ -2846,3 +2846,36 @@
 
 # # dd
 # # d
+import sys 
+input = sys.stdin.readline
+
+n,score,p = map(int,input().split())
+
+if(n<=0):
+    print(1);exit(0)
+
+arr = list(map(int,input().split()))
+arr.append(score)
+arr.sort(reverse=True) #내림차순으로 정렬 
+
+idx = arr.index(score)+1 #스코어 인덱스 출력 #공동 등수라고 해도 앞에거 출력하기에 괜춘 
+
+if idx>p:
+    print(-1)
+else :
+    print(idx)
+    
+# if n==p and arr[-1]>=score: #마지막등수보다 낮은값이 입력됐을때
+#     print(-1)
+# else :
+#     rank = n +1 
+#     for i in range(n):
+#         if arr[i]<=score:
+#             rank = i+1 
+#             break 
+#     print(rank)
+
+
+
+# #p만큼만 랭킹 리스트에 올라갈수있다
+# #p를 벗어나면 랭커 x 이므로 -1출력 
