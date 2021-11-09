@@ -2846,24 +2846,27 @@
 
 # # dd
 # # d
-import sys 
-input = sys.stdin.readline
+# import sys 
+# input = sys.stdin.readline
 
-n,score,p = map(int,input().split())
+# n,score,p = map(int,input().split())
 
-if(n<=0):
-    print(1);exit(0)
+# if(n<=0):
+#     print(1);exit(0)
 
-arr = list(map(int,input().split()))
-arr.append(score)
-arr.sort(reverse=True) #내림차순으로 정렬 
+# arr = list(map(int,input().split()))
+# arr.append(score)
+# arr.sort(reverse=True) #내림차순으로 정렬 
 
-idx = arr.index(score)+1 #스코어 인덱스 출력 #공동 등수라고 해도 앞에거 출력하기에 괜춘 
+# idx = arr.index(score)+1 #스코어 인덱스 출력 #공동 등수라고 해도 앞에거 출력하기에 괜춘 
 
-if idx>p:
-    print(-1)
-else :
-    print(idx)
+# if idx>p:
+#     print(-1)
+# else :
+#     if n==p and arr[-1]==score:
+#         print(-1)
+#     else: 
+#         print(idx)
     
 # if n==p and arr[-1]>=score: #마지막등수보다 낮은값이 입력됐을때
 #     print(-1)
@@ -2879,3 +2882,34 @@ else :
 
 # #p만큼만 랭킹 리스트에 올라갈수있다
 # #p를 벗어나면 랭커 x 이므로 -1출력 
+
+#1946 : 신입 사원 
+import sys 
+input = sys.stdin.readline
+
+t = int(input()) #테스트 케이스 ㅍㅍㅍ
+for _ in range(t):
+    arr = []
+    seoru = 0 ; myunjeop =0 
+    ppl = int(input()) #지원자의 숫자 
+    all_num = ppl
+    for _ in range(ppl): 
+
+        s,m = map(int,input().split())
+        arr.append([s,m])
+
+        max_seo = arr[0][0]
+        if (arr[_][0]>max_seo):
+            max_seo = arr[_][0]
+
+        max_myun = arr[0][1]
+        if (arr[_][1]>max_myun):
+            max_myun = arr[_][1] 
+        
+
+        
+        #서류 
+    for i in range(ppl):
+        if arr[i][0]<max_seo and arr[i][1]<max_myun:
+            all_num -=1 
+    print(ppl-all_num)
