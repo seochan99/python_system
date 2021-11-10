@@ -2888,28 +2888,29 @@ import sys
 input = sys.stdin.readline
 
 t = int(input()) #테스트 케이스 ㅍㅍㅍ
-for _ in range(t):
-    arr = []
-    seoru = 0 ; myunjeop =0 
-    ppl = int(input()) #지원자의 숫자 
-    all_num = ppl
-    for _ in range(ppl): 
+# for _ in range(t):
+#     arr = []
+#     seoru = 0 ; myunjeop =0 
+#     ppl = int(input()) #지원자의 숫자 
+#     all_num = ppl
+#     for _ in range(ppl): 
 
-        s,m = map(int,input().split())
-        arr.append([s,m])
+#         s,m = map(int,input().split())
+#         arr.append([s,m])
 
-        max_seo = arr[0][0]
-        if (arr[_][0]>max_seo):
-            max_seo = arr[_][0]
+#         max_seo = arr[0][0]
+#         if (arr[_][0]>max_seo):
+#             max_seo = arr[_][0]
 
-        max_myun = arr[0][1]
-        if (arr[_][1]>max_myun):
-            max_myun = arr[_][1] 
+#         max_myun = arr[0][1]
+#         if (arr[_][1]>max_myun):
+#             max_myun = arr[_][1] 
         
 
         
-        #서류 
-    for i in range(ppl):
-        if arr[i][0]<max_seo and arr[i][1]<max_myun:
-            all_num -=1 
-    print(ppl-all_num)
+#         #서류 
+
+#     for i in range(ppl):
+#         if arr[i][0]<max_seo and arr[i][1]<max_myun:
+#             all_num -=1 
+#     print(ppl-all_num)
