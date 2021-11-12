@@ -2884,71 +2884,60 @@
 # #p를 벗어나면 랭커 x 이므로 -1출력 
 
 #1946 : 신입 사원 
-# import sys 
-# input = sys.stdin.readline
-
-# t = int(input()) #테스트 케이스 ㅍㅍㅍ
-# #순위가 들어옴 
-# for _ in range(t):
-#     arr = []
-#     seoru = 0 ; myunjeop =0 
-#     ppl = int(input()) #지원자의 숫자 
-#     all_num = ppl
-#     for _ in range(ppl): 
-
-#         s,m = map(int,input().split())
-#         arr.append([s,m])
-
-#         max_seo = arr[0][0]
-#         if (arr[_][0]<max_seo):
-#             max_seo = arr[_][0]
-
-#         max_myun = arr[0][1]
-#         if (arr[_][1]<max_myun):
-#             max_myun = arr[_][1] 
-        
-
-        
-#         #서류 
-#     print(max_seo,max_myun)
-#     for i in range(ppl):
-#         if arr[i][0]>max_seo and arr[i][1]>max_myun:
-#             print(arr[i][0],arr[i][1])
-#             all_num -=1 
-#     print(all_num)
-
-#멀티탭 
 import sys 
 input = sys.stdin.readline
 
+t = int(input()) #테스트 케이스 ㅍㅍㅍ
+#순위가 들어옴 
+for _ in range(t):
+    arr = []
+    seoru = 0 ; myunjeop =0 
+    ppl = int(input()) #지원자의 숫자 
+    all_num = 1 #서류1등 
+    for _ in range(ppl): 
+        s,m = map(int,input().split())
+        arr.append([s,m])
+    
+    arr.sort() #서류기준 정렬 
+    maxS = arr[0][1] #먄접 첫빠따 등수 최대등수 설정 
 
+    for i in range(1,ppl):
+        if maxS>arr[i][1]:
+            all_num+=1
+            maxS=arr[i][1]
 
-n,k = map(int,input().split())
-arr = list(map(int,input().split())) #사용순서 
-plug = [0 for _ in range(n)]
-cnt = 0 
+    print(all_num)
 
-#k만큼 빙글빙글 
-for i in range(k):
-    flag = False 
-    for j in range(n):
-        if plug[j]==arr[i] or plug[j]==0:
-            flag = True 
-            plug[j]=arr[i]
-            break #넣는다.
-    if flag:
-        continue
-    else :
-        a=0
-        for j in range(n):
-            try:
-                if a<arr[i+1:].index(plug[j]):
-                    a=arr[i+1:].index(plug[j])
-                    b = j 
-            except:
-                a = -1 
-                b = j 
-                break 
-        plug[b]=arr[i]
-        cnt+=1
-print(cnt)
+#멀티탭 
+# import sys 
+# input = sys.stdin.readline
+
+# n,k = map(int,input().split())
+# arr = list(map(int,input().split())) #사용순서 
+# plug = [0 for _ in range(n)]
+# cnt = 0 
+
+# #k만큼 빙글빙글 
+# for i in range(k):
+#     flag = False 
+#     for j in range(n):
+#         if plug[j]==arr[i] or plug[j]==0: #이미플러그에 있거나 플러그 비었을때
+#             flag = True 
+#             plug[j]=arr[i] #꼽는 과정 -> 플러그있을경우 넣어도 상관x 비었을경우는 넣어주는 과정 
+#             break 
+#     if flag: #꼽았을때 돌아가자~~
+#         continue
+#     else : #못꼽았음 ㅠㅠ 뭘빼지?
+#         a=0
+#         for j in range(n):
+#             try:
+#                 if a<arr[i+1:].index(plug[j]): #지금 플러그에 꽂혀있는게 뒤에 있다 
+#                     a=arr[i+1:].index(plug[j])
+#                     b = j #플러그에 꽂을 인덱스값 
+#             except:
+#                 a = -1 
+#                 b = j 
+#                 break 
+#         plug[b]=arr[i]
+#         cnt+=1
+# print(cnt)
