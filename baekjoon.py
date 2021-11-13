@@ -2943,18 +2943,21 @@
 # # print(cnt)
 
 #듣보잡 :1764 
-import sys 
-input = sys.stdin.readline
+# import sys 
+# input = sys.stdin.readline
 
 
-n,m = map(int,input().split()) 
-cantHear=[input().strip() for i in range(n)]
-cantSee =[input().strip() for i in range(m)]
+# n,m = map(int,input().split()) 
+# cantHear=[input().strip() for i in range(n)]
+# cantSee =[input().strip() for i in range(m)]
 
-#집합을 만들어주고 리스트로 형변환 
-#교집합 찾는다 
-cant =list(set(cantHear)& set(cantSee)) 
-print(len(cant))
+# #집합을 만들어주고 리스트로 형변환 
+# #교집합 찾는다 
+# cant =list(set(cantHear)& set(cantSee)) 
+# print(len(cant))
 
-for cants in sorted(cant): #정렬값만 반환 
-    print(cants)
+# for cants in sorted(cant): #정렬값만 반환 
+#     print(cants)
+
+#!/usr/bin/env python
+print("hi")
