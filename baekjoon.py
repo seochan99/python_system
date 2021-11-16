@@ -2963,31 +2963,72 @@
 # print("hi")
 
 #10828 : 스택 
+# import sys 
+# input = sys.stdin.readline 
+
+# stack=[]
+
+# n = int(input())
+# for i in range(n):
+#     choice = input().split()
+
+#     if choice[0]=='push':
+#         stack.append(choice[1])
+#     elif choice[0]=='pop':
+#         if len(stack)==0:
+#             print(-1)
+#         else :
+#             print(stack.pop())
+#     elif choice[0]=='size':
+#         print(len(stack))
+#     elif choice[0]=='empty':
+#         if len(stack)==0: #ㅂㅣ어ㅆㅑ? 
+#             print(1)
+#         else :
+#             print(0)
+#     elif choice[0]=='top':
+#         if len(stack)==0:
+#             print(-1)
+#         else :
+#             print(stack[-1]) #마지막요소 출력 
+
+# 큐 
 import sys 
-input = sys.stdin.readline 
+from collections import deque
 
-stack=[]
+test = int(sys.stdin.readline())
 
-n = int(input())
-for i in range(n):
-    choice = input().split()
+queue = deque()
 
-    if choice[0]=='push':
-        stack.append(choice[1])
-    elif choice[0]=='pop':
-        if len(stack)==0:
-            print(-1)
+def empty():
+    if len(queue)==0:
+        return 1
+    else :
+        return 0 
+
+for _ in range(test):
+    wn = list(sys.stdin.readline().split())
+    if wn[0] == 'push':
+        queue.append(wn[1])
+    elif wn[0] == 'pop':
+        if(empty()):
+            print("-1")
         else :
-            print(stack.pop())
-    elif choice[0]=='size':
-        print(len(stack))
-    elif choice[0]=='empty':
-        if len(stack)==0: #ㅂㅣ어ㅆㅑ? 
-            print(1)
+            print(queue.popleft())
+    elif wn[0] == 'size':
+        print(len(queue))
+    elif wn[0] == 'empty':
+        if(empty()):
+            print("1")
         else :
-            print(0)
-    elif choice[0]=='top':
-        if len(stack)==0:
-            print(-1)
+            print("0")
+    elif wn[0] == 'front':
+        if(empty()):
+            print("-1")
         else :
-            print(stack[-1]) #마지막요소 출력 
+            print(queue[0])
+    elif wn[0] == 'back':
+        if(empty()):
+            print("-1")
+        else :
+            print(queue[-1])
