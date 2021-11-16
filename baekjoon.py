@@ -2993,42 +2993,99 @@
 #             print(stack[-1]) #마지막요소 출력 
 
 # 큐 
-import sys 
-from collections import deque
+# import sys 
+# from collections import deque
 
-test = int(sys.stdin.readline())
+# test = int(sys.stdin.readline())
 
-queue = deque()
+# queue = deque()
 
-def empty():
-    if len(queue)==0:
-        return 1
-    else :
-        return 0 
+# def empty():
+#     if len(queue)==0:
+#         return 1
+#     else :
+#         return 0 
 
-for _ in range(test):
-    wn = list(sys.stdin.readline().split())
-    if wn[0] == 'push':
-        queue.append(wn[1])
-    elif wn[0] == 'pop':
-        if(empty()):
-            print("-1")
-        else :
-            print(queue.popleft())
-    elif wn[0] == 'size':
-        print(len(queue))
-    elif wn[0] == 'empty':
-        if(empty()):
-            print("1")
-        else :
-            print("0")
-    elif wn[0] == 'front':
-        if(empty()):
-            print("-1")
-        else :
-            print(queue[0])
-    elif wn[0] == 'back':
-        if(empty()):
-            print("-1")
-        else :
-            print(queue[-1])
+# for _ in range(test):
+#     wn = list(sys.stdin.readline().split())
+#     if wn[0] == 'push':
+#         queue.append(wn[1])
+#     elif wn[0] == 'pop':
+#         if(empty()):
+#             print("-1")
+#         else :
+#             print(queue.popleft())
+#     elif wn[0] == 'size':
+#         print(len(queue))
+#     elif wn[0] == 'empty':
+#         if(empty()):
+#             print("1")
+#         else :
+#             print("0")
+#     elif wn[0] == 'front':
+#         if(empty()):
+#             print("-1")
+#         else :
+#             print(queue[0])
+#     elif wn[0] == 'back':
+#         if(empty()):
+#             print("-1")
+#         else :
+#             print(queue[-1])
+
+#에디터 
+# L : 왼쪽, D : 오른쪽, B:왼쪽 문자 삭제, 문장 맨 앞이면 무시  P$
+# import sys 
+# input = sys.stdin.readline 
+
+# word = list(input().rstrip())
+# cursor=len(word)-1 #제일 마지막 문장 가르킴 
+
+# n = int(input())
+
+# for _ in range(n):
+#     choice = input().split()
+#     if choice[0]=='L':
+#         if cursor==0:#제일앞이면 무시 ! 
+#             continue  
+#         else :
+#             cursor-=1 #커서 한칸 앞 
+#     elif choice[0]=='D':
+#         if cursor==len(word)-1:
+#             continue 
+#         else :
+#             cursor+=1
+#     elif choice[0]=='B':
+#         if cursor==0:
+#             continue
+#         else :
+#             del word[cursor-1]
+#     elif choice[0]=='P':
+#         word.insert(cursor-1,choice[1])
+
+# for words in word:
+#     print(words,end="")
+
+#1406 : 에디터 
+# import sys 
+# input = sys.stdin.readline
+
+# stack1 = list(input().strip()) #커서기준 왼쪽 
+# stack2=[] #커서기준 오른쪽 
+
+# n = int(input())
+
+# for i in range(n):
+#     choice = input().split()
+#     if choice[0]=='L' and stack1 != []: #왼쪽엔 아무것도 없지 않을때 
+#         stack2.append(stack1.pop())
+#     elif choice[0]=='D' and stack2 != []: #오른쪽엔 아무것도 없지 않을때 
+#         stack1.append(stack2.pop())
+#     elif choice[0]=='P':
+#         stack1.append(choice[1])
+#     elif choice[0]=='B' and stack1!= []:
+#         stack1.pop()
+
+# print("".join(stack1+list(reversed(stack2))))
+# #join을 통해 list -> strings change 
+
