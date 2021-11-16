@@ -2960,4 +2960,34 @@
 #     print(cants)
 
 #!/usr/bin/env python
-print("hi")
+# print("hi")
+
+#10828 : 스택 
+import sys 
+input = sys.stdin.readline 
+
+stack=[]
+
+n = int(input())
+for i in range(n):
+    choice = input().split()
+
+    if choice[0]=='push':
+        stack.append(choice[1])
+    elif choice[0]=='pop':
+        if len(stack)==0:
+            print(-1)
+        else :
+            print(stack.pop())
+    elif choice[0]=='size':
+        print(len(stack))
+    elif choice[0]=='empty':
+        if len(stack)==0: #ㅂㅣ어ㅆㅑ? 
+            print(1)
+        else :
+            print(0)
+    elif choice[0]=='top':
+        if len(stack)==0:
+            print(-1)
+        else :
+            print(stack[-1]) #마지막요소 출력 
