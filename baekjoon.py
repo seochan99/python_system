@@ -3089,3 +3089,27 @@
 # print("".join(stack1+list(reversed(stack2))))
 # #join을 통해 list -> strings change 
 
+#1026 : 보물 
+import sys 
+input = sys.stdin.readline
+
+n = int(input())
+total=0
+
+arr1=list(map(int,input().split()))
+arr2=list(map(int,input().split()))
+
+# #가장 작게
+for i in range(n):
+    total+=min(arr1)*max(arr2)
+    arr1.pop(arr1.index(min(arr1)))
+    arr2.pop(arr2.index(max(arr2)))
+print(total)
+# arr1.sort()
+# arr2.sort(reverse=True)
+
+# for i in range(n):
+#     total+=arr1[i]*arr2[i]
+
+# print(total)
+
