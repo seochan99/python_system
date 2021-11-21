@@ -3113,3 +3113,11 @@
 
 # print(total)
 
+def add(num1,num2):
+    return num1+num2
+
+
+a = int(input())
+b = int(input())
+
+print(add(a,b))
