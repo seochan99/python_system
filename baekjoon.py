@@ -3116,8 +3116,27 @@
 # def add(num1,num2):
 #     return num1+num2
 
+#9012 : 괄호 
+# n = int(input())
+# for _ in range(n):
+#     cnt=0
+#     stack = input() 
+#     for stacks in stack:
 
-a = int(input())
-b = int(input())
+#         if(cnt<0): #조건탈락 
+#             break
+        
+#         if stacks =='(':
+#             cnt+=1
+#         else : #")"
+#             cnt-=1 
+        
+#     if(cnt==0):
+#         print("YES")
+#     else :
+#         print("NO")
+    
+        
 
-print(add(a,b))
+
+    
