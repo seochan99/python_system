@@ -3137,26 +3137,51 @@
 #         print("NO")
     
 #1874 : 스택 수열 
-n = int(input())
-stack1 = []
+# n = int(input())
+# stack1 = []
+# result = []
+
+# flag = True 
+
+# cnt = 1
+# for _ in range(n):
+#     num = int(input())
+#     while(cnt<=num): #1부터 붙여 
+#         stack1.append(cnt)
+#         result.append('+')
+#         cnt+=1
+#     if stack1[-1] == num:#스택의 끝부분이 입력받는 수라면 
+#         stack1.pop() #팝팝 
+#         result.append('-')
+#     else :
+#         flag = False 
+# if(flag==False):
+#     print("NO")
+# else :
+#     for results in result:
+#         print(results)
+
+#1158 : 요세푸스 문제 
+import sys 
+
+n,k = map(int,input().split())
+arr = [i for i in range(1,n+1)] #사람들 
+
 result = []
+idx=0 #인덱스 값으로 제거 
 
-flag = True 
+for i in range(n):
+    idx+=k-1 #인덱스로제거
+    if idx>= len(arr):
+        idx%=len(arr) 
+    result.append(str(arr.pop(idx)))#idx번째숫자를 팝  str변형 
 
-cnt = 1
-for _ in range(n):
-    num = int(input())
-    while(cnt<=num): #1부터 붙여 
-        stack1.append(cnt)
-        result.append('+')
-        cnt+=1
-    if stack1[-1] == num:#스택의 끝부분이 입력받는 수라면 
-        stack1.pop() #팝팝 
-        result.append('-')
-    else :
-        flag = False 
-if(flag==False):
-    print("NO")
-else :
-    for results in result:
-        print(results)
+
+print("<",", ".join(result)[:],">",sep="")
+# print("<",end="")
+# for reuslts in result:
+#     print(reuslts,end=", ")
+
+# print(">",end="")
+
+
