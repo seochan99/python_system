@@ -3188,31 +3188,61 @@
 # 중요도를 체크한다 
 # 중요도가 높은게 단 하나라도 있을 경우 맨 뒤로 보낸다
 
+# test = int(input())
+
+# for _ in range(test):
+#     n,m = map(int,input().split()) #n : 문서 갯수 m: 몇번째?
+#     arr = list(map(int,input().split())) #중요도 
+#     mPlace=[0 for _ in range(n)]
+#     mPlace[m]=1 #찾고싶은 위치 표시 
+#     cnt =0 
+
+#     while True :
+#         if arr[0]==max(arr): #제일 첫번째 요소가 최댓값이라면 
+#             cnt+=1 
+#             if mPlace[0]==1: #찾던값 
+#                 print(cnt)
+#                 break 
+#             else :
+#                 del arr[0]
+#                 del mPlace[0] #필요 없는 값 삭제 
+#         else :
+#             arr.append(arr.pop(0)) #최댓값이 아닌 경우 뒤에 붙이기 
+#             mPlace.append(mPlace.pop(0)) #뒤로 붙이기 
+
+# 5430 : AC 
+# R : 뒤집기 D: 버리기 
+# 비어있는데 버리면 에러 발생 
+# 함수 조합해서 사용가능 
+
+
+from collections import deque
+import sys 
+input = sys.stdin.readline
+
 test = int(input())
-
 for _ in range(test):
-    n,m = map(int,input().split()) #n : 문서 갯수 m: 몇번째?
-    arr = list(map(int,input().split())) #중요도 
-    mPlace=[0 for _ in range(n)]
-    mPlace[m]=1 #찾고싶은 위치 표시 
-    cnt =0 
+    func = input() 
+    n = int(input())
+    queue = deque(input().rstrip()[1:-1].split(",")) #대괄호 삭제, 콤마 기준 스플릿 
 
-    while True :
-        if arr[0]==max(arr): #제일 첫번째 요소가 최댓값이라면 
-            cnt+=1 
-            if mPlace[0]==1: #찾던값 
-                print(cnt)
-                break 
+    if (n==0):
+        queue=deque()
+
+    flag = 0
+    for funcs in func:
+        if funcs=='D':
+            if queue:
+                queue.popleft()
             else :
-                del arr[0]
-                del mPlace[0] #필요 없는 값 삭제 
-        else :
-            arr.append(arr.pop(0)) #최댓값이 아닌 경우 뒤에 붙이기 
-            mPlace.append(mPlace.pop(0)) #뒤로 붙이기 
+                print("error")
+                flag=1 
+                break 
+        else : 
+            queue.reverse()
 
+    if flag==0:
+        print("["+",".join(queue)+"]")
 
-
-
-
-
+            
 
