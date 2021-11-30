@@ -3162,26 +3162,57 @@
 #         print(results)
 
 #1158 : 요세푸스 문제 
-import sys 
 
-n,k = map(int,input().split())
-arr = [i for i in range(1,n+1)] #사람들 
+# n,k = map(int,input().split())
+# arr = [i for i in range(1,n+1)] #사람들 
 
-result = []
-idx=0 #인덱스 값으로 제거 
+# result = []
+# idx=0 #인덱스 값으로 제거 
 
-for i in range(n):
-    idx+=k-1 #인덱스로제거
-    if idx>= len(arr):
-        idx%=len(arr) 
-    result.append(str(arr.pop(idx)))#idx번째숫자를 팝  str변형 
+# for i in range(n):
+#     idx+=k-1 #인덱스로제거
+#     if idx>= len(arr):
+#         idx%=len(arr) 
+#     result.append(str(arr.pop(idx)))#idx번째숫자를 팝  str변형 
 
 
-print("<",", ".join(result)[:],">",sep="")
+# print("<",", ".join(result)[:],">",sep="")
 # print("<",end="")
 # for reuslts in result:
 #     print(reuslts,end=", ")
 
 # print(">",end="")
+
+
+# 1966 : 프린터 큐 
+# 중요도를 체크한다 
+# 중요도가 높은게 단 하나라도 있을 경우 맨 뒤로 보낸다
+
+test = int(input())
+
+for _ in range(test):
+    n,m = map(int,input().split()) #n : 문서 갯수 m: 몇번째?
+    arr = list(map(int,input().split())) #중요도 
+    mPlace=[0 for _ in range(n)]
+    mPlace[m]=1 #찾고싶은 위치 표시 
+    cnt =0 
+
+    while True :
+        if arr[0]==max(arr): #제일 첫번째 요소가 최댓값이라면 
+            cnt+=1 
+            if mPlace[0]==1: #찾던값 
+                print(cnt)
+                break 
+            else :
+                del arr[0]
+                del mPlace[0] #필요 없는 값 삭제 
+        else :
+            arr.append(arr.pop(0)) #최댓값이 아닌 경우 뒤에 붙이기 
+            mPlace.append(mPlace.pop(0)) #뒤로 붙이기 
+
+
+
+
+
 
 
