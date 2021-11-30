@@ -3160,12 +3160,3 @@ if(flag==False):
 else :
     for results in result:
         print(results)
-        
-
-
-
-
-
-
-
-    
