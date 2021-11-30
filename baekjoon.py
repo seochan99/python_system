@@ -3136,7 +3136,36 @@
 #     else :
 #         print("NO")
     
+#1874 : 스택 수열 
+n = int(input())
+stack1 = []
+result = []
+
+flag = True 
+
+cnt = 1
+for _ in range(n):
+    num = int(input())
+    while(cnt<=num): #1부터 붙여 
+        stack1.append(cnt)
+        result.append('+')
+        cnt+=1
+    if stack1[-1] == num:#스택의 끝부분이 입력받는 수라면 
+        stack1.pop() #팝팝 
+        result.append('-')
+    else :
+        flag = False 
+if(flag==False):
+    print("NO")
+else :
+    for results in result:
+        print(results)
         
+
+
+
+
+
 
 
     
