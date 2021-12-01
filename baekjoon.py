@@ -3216,33 +3216,33 @@
 # 함수 조합해서 사용가능 
 
 
-from collections import deque
-import sys 
-input = sys.stdin.readline
+# from collections import deque
+# import sys 
+# input = sys.stdin.readline
 
-test = int(input())
-for _ in range(test):
-    func = input() 
-    n = int(input())
-    queue = deque(input().rstrip()[1:-1].split(",")) #대괄호 삭제, 콤마 기준 스플릿 
+# test = int(input())
+# for _ in range(test):
+#     func = input() 
+#     n = int(input())
+#     queue = deque(input().rstrip()[1:-1].split(",")) #대괄호 삭제, 콤마 기준 스플릿 
 
-    if (n==0):
-        queue=deque()
+#     if (n==0):
+#         queue=deque()
 
-    flag = 0
-    for funcs in func:
-        if funcs=='D':
-            if queue:
-                queue.popleft()
-            else :
-                print("error")
-                flag=1 
-                break 
-        else : 
-            queue.reverse()
+#     flag = 0
+#     for funcs in func:
+#         if funcs=='D':
+#             if queue:
+#                 queue.popleft()
+#             else :
+#                 print("error")
+#                 flag=1 
+#                 break 
+#         else : 
+#             queue.reverse()
 
-    if flag==0:
-        print("["+",".join(queue)+"]")
+#     if flag==0:
+#         print("["+",".join(queue)+"]")
 
             
 
