@@ -3229,20 +3229,20 @@
 #     if (n==0):
 #         queue=deque()
 
-#     flag = 0
-#     for funcs in func:
-#         if funcs=='D':
-#             if queue:
-#                 queue.popleft()
-#             else :
-#                 print("error")
-#                 flag=1 
-#                 break 
-#         else : 
-#             queue.reverse()
+    flag = 0
+    for funcs in func:
+        if funcs=='D':
+            if queue:
+                queue.popleft()
+            else :
+                print("error")
+                flag=1 
+                break 
+        else : 
+            queue.reverse()
 
-#     if flag==0:
-#         print("["+",".join(queue)+"]")
+    if flag==0:
+        print("["+",".join(queue)+"]")
 
             
 
