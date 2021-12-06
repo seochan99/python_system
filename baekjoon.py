@@ -3241,8 +3241,8 @@
     #     else : 
     #         queue.reverse()
 
-    # if flag==0:
-    #     print("["+",".join(queue)+"]")
+    if flag==0:
+        print("["+",".join(queue)+"]")
 
             
 
