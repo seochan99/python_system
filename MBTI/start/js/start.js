@@ -6,17 +6,32 @@ function addAnswer(answerText, qIdx)
     var a = document.querySelector('.answerBox') // a는 질문박스 
     var answer = document.createElement('Button');//버튼만듬 
     answer.classList.add('answerList'); //클래스추가 
+    answer.classList.add('my-3'); //클래스추가 마진 패딩 
+    answer.classList.add('py-3'); //클래스추가 
+    answer.classList.add('mx-auto'); //클래스추가 
+    answer.classList.add('fadeIn');
+
     a.appendChild(answer); //a태그안에 질문 버튼 만듬 
     answer.innerHTML =  answerText;
 
+    //클릭시 사라지게 만듬 
     answer.addEventListener("click",function(){
         var children = document.querySelectorAll('.answerList'); //모든버튼선택
         for(let i =0;i<children.length;i++)
         {
             children[i].disabled = true;
-            children[i].style.display = 'none'; //모든버튼이 사라지게 만듬 
+            children[i].style.WebkitAnimation = "fadeOut 0.5s";
+            children[i].style.animation = "fadeOut 0.5s";
         }
-        goNext(++qIdx);
+        setTimeout(()=>{
+            for(let i =0;i<children.length;i++)
+            {
+                children[i].style.display='none'; //안보이게 만듬 
+            }
+            goNext(++qIdx);
+        },450)
+        // 사라지는게 끝나면 다음질문 출력 
+        
     })
 }
 
