@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./css/default.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/qna.css">
+    <link rel="stylesheet" href="./css/result.css">
     <link rel="stylesheet" href="./css/animation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +21,7 @@
 </head>
 <body>
     <div class="container">
-    <section id="main" class="mx-auto mt-5 py-5 px-3">
+    <section id="main" class="mx-auto my-5 py-5 px-3">
         <h3 class="">십이간지로 알아보는 연애유형</h3>
         <!-- mx-auto 가운데정렬 -->
         <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
@@ -34,6 +35,11 @@
     </section>
 
     <section id="qna">
+        <div class="status mx-auto">
+            <div class="statusBar">
+
+            </div>
+        </div>
         <div class="qBox my-5 py-3 mx-auto">
 
             
@@ -46,7 +52,21 @@
     </section>
 
     <section id="result">
+        <h3 class="">당신의 결과는?</h3>
         
+        <div class="resultname">
+
+        </div>
+
+        <!-- mx-auto 가운데정렬 -->
+        <div id="resultImg" class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto"> 
+            <!-- 이미지넣기 -->
+            
+        </div>
+        <div class="resultDesc">
+
+        </div>
+        <button type="button" class="btn btn-danger mt-3">공유하기</button>
     </section>
     <script src="./js/data.js" charset="utf-8"></script>
     <script src="./js/start.js" charset="utf-8"></script>
