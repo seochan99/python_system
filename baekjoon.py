@@ -3241,9 +3241,11 @@
     #     else : 
     #         queue.reverse()
 
-    if flag==0:
-        print("["+",".join(queue)+"]")
-
-            
+    # if flag==0:
+    #     print("["+",".join(queue)+"]")
+import random
+lotto = random.sample(range(1,46),6)
+lotto.sort()
+print(lotto)
 
 #얼른 종강주세요,,
