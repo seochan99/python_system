@@ -15,10 +15,10 @@
 #         start = mid + 1 
 #     return bsr(target,start,end,data)
 
-# num1 = int(input())
-# arr1 = list(map(int,input().split()))
-# num2 = int(input())
-# arr2 = list(map(int,input().split()))
+num1 = int(input())
+arr1 = list(map(int,input().split()))
+num2 = int(input())
+arr2 = list(map(int,input().split()))
         
 # #이분탐색 
 # arr1.sort()
