@@ -3216,34 +3216,34 @@
 # 함수 조합해서 사용가능 
 
 
-import sys 
-input = sys.stdin.readline
+# import sys 
+# input = sys.stdin.readline
 
-test = int(input())
-for _ in range(test):
-    func = input() 
-    n = int(input())
-    queue = input().strip()[1:-1].split(',')
-    func = func.replace('RR',"")
-    r=0
-    first,back=0,0
+# test = int(input())
+# for _ in range(test):
+#     func = input() 
+#     n = int(input())
+#     queue = input().strip()[1:-1].split(',')
+#     func = func.replace('RR',"")
+#     r=0
+#     first,back=0,0
 
-    for funcs in func:
-        if funcs == 'R':
-            r+=1
-        elif funcs=='D':
-            if r%2 == 0 :
-                first+=1 #앞부분 컷
-            else :
-                back+=1 #뒷부분 컷
+#     for funcs in func:
+#         if funcs == 'R':
+#             r+=1
+#         elif funcs=='D':
+#             if r%2 == 0 :
+#                 first+=1 #앞부분 컷
+#             else :
+#                 back+=1 #뒷부분 컷
 
-#조건여부에 따라 출력 
-    if first+back<=n:
-        queue=queue[first:n-back]
+# #조건여부에 따라 출력 
+#     if first+back<=n:
+#         queue=queue[first:n-back]
 
-        if r%2 == 1:
-            print("["+','.join(queue[::-1])+']')
-        else :
-            print("["+','.join(queue)+']')
-    else :
-        print("error")
+#         if r%2 == 1:
+#             print("["+','.join(queue[::-1])+']')
+#         else :
+#             print("["+','.join(queue)+']')
+#     else :
+#         print("error")
