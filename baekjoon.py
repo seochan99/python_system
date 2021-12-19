@@ -3237,13 +3237,13 @@
 #             else :
 #                 back+=1 #뒷부분 컷
 
-# #조건여부에 따라 출력 
-#     if first+back<=n:
-#         queue=queue[first:n-back]
+#조건여부에 따라 출력 
+    # if first+back<=n:
+    #     queue=queue[first:n-back]
 
-#         if r%2 == 1:
-#             print("["+','.join(queue[::-1])+']')
-#         else :
-#             print("["+','.join(queue)+']')
-#     else :
-#         print("error")
+    #     if r%2 == 1:
+    #         print("["+','.join(queue[::-1])+']')
+    #     else :
+    #         print("["+','.join(queue)+']')
+    # else :
+    #     print("error")
