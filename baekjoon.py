@@ -2142,8 +2142,8 @@
 #     n = int(input())
 #     graph = [[0] * n for _ in range(n)] #그래프 생성
 
-#     knight_x, knight_y = map(int,input().split()) #나이트 x,y값 
-#     dochak_x, dochak_y = map(int,input().split())
+    # knight_x, knight_y = map(int,input().split()) #나이트 x,y값 
+    # dochak_x, dochak_y = map(int,input().split())
 
 #     queue.append([knight_x,knight_y])
 #     bfs()
@@ -2221,33 +2221,41 @@
 
 # dfs(0,0)
 
-# print("국어 점수를 입력하세요.",end=" ")
-# korea = int(input())
-
-# a = float(input('국어 점수를 입력하세요.', ))
-
-# print("수학 점수를 입력하세요.",end=" ")
-# math = int(input())
-# print("영어 점수를 입력하세요.",end=" ")
-# english = int(input())
+# korea = int(input("국어 점수를 입력하세요."))
+# math = int(input("수학 점수를 입력하세요."))
+# english = int(input("영어 점수를 입력하세요."))
 
 # total = korea+math+english
-# avg = float(total)/3
+# avg = total/3
 
 # print(f"총점 : {total}")
 # print(f"평균 : {round(avg,2)}")
 
 
 # import math 
+
 # print(""" 
 # 본 프로그램은 섭씨를 화씨로 변환해주는 프로그램입니다.
 # 변환하고 싶은 섭씨 온도를 입력해주세요 :""",end=" ")
 # num1 = float(input()) #섭씨온도
 # num1 = (((1.8)*num1))+32
-# num1 = round(num1,3)
+
+
+# num1 = round(num1,2)
 # num2 = math.ceil(num1)
 # num3 = math.floor(num1)
 # print(num1,num2,num3)
+
+
+
+# c = float(input("섭씨온도를 입력해주세요:"))
+# f = ((9/5*c)+32)
+# print("화씨온도:",round(f,2))
+
+# tempC = float(input())
+# print("섭씨온도 : ", tempC)
+# tempF = round((9/5)*tempC+32,2)
+# print("화씨온도 : ", tempF)
 
 # print("성적을 입력해주세요 : ",end=" ")
 # score = int(input())
@@ -3247,3 +3255,16 @@
     #         print("["+','.join(queue)+']')
     # else :
     #     print("error")
+
+score1 = int(input("국어 점수를 입력하세요."))
+print("수학 점수를 입력하세요. ",end="")
+score2 = int(input())
+print("영어 점수를 입력하세요. ",end="")
+score3 = int(input())
+
+total=score1+score2+score3
+average =  (total)/3
+
+print("총점 : ", (total))
+print("평균 : " ,round(average, 2))
+print(f"평균 : {round(average,2)}")

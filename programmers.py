@@ -24,7 +24,10 @@
 #     answer.append(arr1[0]+arr2[0])
 #     return answer
 
-def hello():
-    print("hi")
-    hello()
-hello()
+# num1,num2 = map(int,input().split())
+# print("덧셈 :",num1+num2)
+# print("뺄셈 :",num1-num2,"이것은 뺄셈입니다.")
+# print(f"뺄셈 : {num1-num2} 이것은 뺄셈입니다. ")
+# print("곱셈 :",num1*num2)
+# print("나눗셈 :",num1//num2)
+# print("나머지 :",num1%num2)
