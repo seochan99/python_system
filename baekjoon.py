@@ -3256,15 +3256,30 @@
     # else :
     #     print("error")
 
-score1 = int(input("국어 점수를 입력하세요."))
-print("수학 점수를 입력하세요. ",end="")
-score2 = int(input())
-print("영어 점수를 입력하세요. ",end="")
-score3 = int(input())
+# score1 = int(input("국어 점수를 입력하세요."))
+# print("수학 점수를 입력하세요. ",end="")
+# score2 = int(input())
+# print("영어 점수를 입력하세요. ",end="")
+# score3 = int(input())
 
-total=score1+score2+score3
-average =  (total)/3
+# total=score1+score2+score3
+# average =  (total)/3
 
-print("총점 : ", (total))
-print("평균 : " ,round(average, 2))
-print(f"평균 : {round(average,2)}")
+# print("총점 : ", (total))
+# print("평균 : " ,round(average, 2))
+# print(f"평균 : {round(average,2)}")
+
+from itertools import combinations
+
+while True:
+    lotto = list(input().split())
+
+    if (lotto[0]=='0'): #종료  
+        break 
+    del lotto[0]
+    lottos = list(map(' '.join,combinations(lotto,6)))
+    for lottoss in lottos:
+        print(lottoss)
+    print()
+
+
