@@ -3268,7 +3268,7 @@
 # print("총점 : ", (total))
 # print("평균 : " ,round(average, 2))
 # print(f"평균 : {round(average,2)}")
-
+#6603 :로또
 from itertools import combinations
 
 while True:
