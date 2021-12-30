@@ -11,11 +11,11 @@
 # # #     a.append(k)
 
 #a=[1,2,3,4,5,40]
-for b in range(1, 10001):
-    if b in a:
-        pass
-    else:
-        print(b) #셀프넘버만 출력 ,생성자가 없는 케이스 
+# for b in range(1, 10001):
+#     if b in a:
+#         pass
+#     else:
+#         print(b) #셀프넘버만 출력 ,생성자가 없는 케이스 
 
 
 
@@ -3269,17 +3269,35 @@ for b in range(1, 10001):
 # print("평균 : " ,round(average, 2))
 # print(f"평균 : {round(average,2)}")
 #6603 :로또
+# from itertools import combinations
+
+# while True:
+#     lotto = list(input().split())
+
+#     if (lotto[0]=='0'): #종료  
+#         break 
+#     del lotto[0]
+#     lottos = list(map(' '.join,combinations(lotto,6)))
+#     for lottoss in lottos:
+#         print(lottoss)
+#     print()
+
+import sys 
 from itertools import combinations
 
-while True:
-    lotto = list(input().split())
+input = sys.stdin.readline
 
-    if (lotto[0]=='0'): #종료  
-        break 
-    del lotto[0]
-    lottos = list(map(' '.join,combinations(lotto,6)))
-    for lottoss in lottos:
-        print(lottoss)
-    print()
+n,s = map(int,input().split())
+# 더한값이 s가 되게 만들기 
+# 부분수열 갯수 구하기 
+arr = list(map(int,input().split()))
+cnt=0
 
+for i in range(1,n+1):
+    arr2 = combinations(arr,i) #i만큼 조합 생성
+    
+    for j in arr2:
+        if sum(j)==s:
+            cnt+=1 
 
+print(cnt)
