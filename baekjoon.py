@@ -3282,22 +3282,66 @@
 #         print(lottoss)
 #     print()
 
-import sys 
-from itertools import combinations
 
-input = sys.stdin.readline
+#1182 : 부분수열의 합 
+# import sys 
+# from itertools import combinations
 
-n,s = map(int,input().split())
-# 더한값이 s가 되게 만들기 
-# 부분수열 갯수 구하기 
-arr = list(map(int,input().split()))
-cnt=0
+# input = sys.stdin.readline
 
-for i in range(1,n+1):
-    arr2 = combinations(arr,i) #i만큼 조합 생성
+# n,s = map(int,input().split())
+# # 더한값이 s가 되게 만들기 
+# # 부분수열 갯수 구하기 
+# arr = list(map(int,input().split()))
+# cnt=0
+
+# for i in range(1,n+1):
+#     arr2 = combinations(arr,i) #i만큼 조합 생성
     
-    for j in arr2:
-        if sum(j)==s:
-            cnt+=1 
+#     for j in arr2:
+#         if sum(j)==s:
+#             cnt+=1 
 
-print(cnt)
+# print(cnt)
+
+#재귀 풀이 익히기 
+# import sys
+# input = sys.stdin.readline
+# def dfs(idx, sum):
+#     global cnt
+#     if idx >= n:
+#         return
+#     sum += s_[idx]
+#     if sum == s:
+#         cnt += 1
+#     dfs(idx + 1, sum - s_[idx])
+#     dfs(idx + 1, sum)
+# n, s = map(int, input().split())
+# s_ = list(map(int, input().split()))
+# cnt = 0
+# dfs(0, 0)
+# print(cnt)
+
+# 9095 : 1,2,3 더하기
+
+
+#규칙 
+#f(n)=f(n-1)+f(n-2)+f(n-3)
+# def OneTwoThree(n):
+#     if n==1:
+#         return 1
+#     elif n==2:
+#         return 2
+#     elif n==3:
+#         return 4
+#     else :
+#         return OneTwoThree(n-1)+OneTwoThree(n-2)+OneTwoThree(n-3)
+case=[1,2,4]
+t = int(input())
+
+for i in range(3,10):
+    case.append(case[i-3]+case[i-2]+case[i-1])
+
+for _ in range(t):
+    n = int(input())
+    print(case[n-1])
