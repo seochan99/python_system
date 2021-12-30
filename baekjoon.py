@@ -10,12 +10,12 @@
 # # #     k = d(i) #i 를 d 함수에 넣기 
 # # #     a.append(k)
 
-# # # #a=[1,2,3,4,5,40]
-# # # for b in range(1, 10001):
-# # #     if b in a:
-# # #         pass
-# # #     else:
-# # #         print(b) #셀프넘버만 출력 ,생성자가 없는 케이스 
+#a=[1,2,3,4,5,40]
+for b in range(1, 10001):
+    if b in a:
+        pass
+    else:
+        print(b) #셀프넘버만 출력 ,생성자가 없는 케이스 
 
 
 
