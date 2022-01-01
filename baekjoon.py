@@ -3336,12 +3336,12 @@
 #         return 4
 #     else :
 #         return OneTwoThree(n-1)+OneTwoThree(n-2)+OneTwoThree(n-3)
-case=[1,2,4]
-t = int(input())
+# case=[1,2,4]
+# t = int(input())
 
-for i in range(3,10):
-    case.append(case[i-3]+case[i-2]+case[i-1])
+# for i in range(3,10):
+#     case.append(case[i-3]+case[i-2]+case[i-1])
 
-for _ in range(t):
-    n = int(input())
-    print(case[n-1])
+# for _ in range(t):
+#     n = int(input())
+#     print(case[n-1])
