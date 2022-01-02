@@ -3364,16 +3364,36 @@
 
 #1037 : 약수 
 #진짜 약수가 모두 있을때 그것을 기준으로 판단 
-import sys 
-input = sys.stdin.readline
+# import sys 
+# input = sys.stdin.readline
 
-n = int(input())
-real = list(map(int,input().split()))
+# n = int(input())
+# real = list(map(int,input().split()))
 
-if n==1: #요소가 하나 
-    print(real[0]*real[0])
-else :# 약수가 여러개 
-    print(min(real)*max(real))
+# if n==1: #요소가 하나 
+#     print(real[0]*real[0])
+# else :# 약수가 여러개 
+#     print(min(real)*max(real))
 
+# 14889 : 스타트와 링크
+# import sys 
+# input = sys.stdin.readline
+# n = int(input())
 
+# graph=[]
 
+# for i in range(n):
+#     graph.append(list(map(int, input().rstrip().split())))
+
+# #n/2 만큼의 팀원 
+# 1,2,3,4
+
+# 1,2 / 3,4
+# 1,3 / 2,4 
+# 1,4 / 2,3 
+a = 'niceman'
+b = 'orange'
+print(a.islower()) 
+print(a.endswith('n')) 
+print(a.capitalize()) 
+print(a.replace('nice', 'good'))
