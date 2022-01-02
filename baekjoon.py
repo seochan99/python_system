@@ -3325,23 +3325,23 @@
 # 9095 : 1,2,3 더하기
 
 
-#규칙 
-#f(n)=f(n-1)+f(n-2)+f(n-3)
-# def OneTwoThree(n):
-#     if n==1:
-#         return 1
-#     elif n==2:
-#         return 2
-#     elif n==3:
-#         return 4
-#     else :
-#         return OneTwoThree(n-1)+OneTwoThree(n-2)+OneTwoThree(n-3)
-# case=[1,2,4]
-# t = int(input())
+규칙 
+f(n)=f(n-1)+f(n-2)+f(n-3)
+def OneTwoThree(n):
+    if n==1:
+        return 1
+    elif n==2:
+        return 2
+    elif n==3:
+        return 4
+    else :
+        return OneTwoThree(n-1)+OneTwoThree(n-2)+OneTwoThree(n-3)
+case=[1,2,4]
+t = int(input())
 
-# for i in range(3,10):
-#     case.append(case[i-3]+case[i-2]+case[i-1])
+for i in range(3,10):
+    case.append(case[i-3]+case[i-2]+case[i-1])
 
-# for _ in range(t):
-#     n = int(input())
-#     print(case[n-1])
+for _ in range(t):
+    n = int(input())
+    print(case[n-1])
