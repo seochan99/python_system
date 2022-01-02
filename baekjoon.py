@@ -3325,23 +3325,55 @@
 # 9095 : 1,2,3 더하기
 
 
-규칙 
-f(n)=f(n-1)+f(n-2)+f(n-3)
-def OneTwoThree(n):
-    if n==1:
-        return 1
-    elif n==2:
-        return 2
-    elif n==3:
-        return 4
-    else :
-        return OneTwoThree(n-1)+OneTwoThree(n-2)+OneTwoThree(n-3)
-case=[1,2,4]
-t = int(input())
+# 규칙 
+# f(n)=f(nz-1)+f(n-2)+f(n-3)
+# def OneTwoThree(n):
+#     if n==1:
+#         return 1
+#     elif n==2:
+#         return 2
+#     elif n==3:
+#         return 4
+#     else :
+#         return OneTwoThree(n-1)+OneTwoThree(n-2)+OneTwoThree(n-3)
+# case=[1,2,4]
+# t = int(input())
 
-for i in range(3,10):
-    case.append(case[i-3]+case[i-2]+case[i-1])
+# for i in range(3,10):
+#     case.append(case[i-3]+case[i-2]+case[i-1])
 
-for _ in range(t):
-    n = int(input())
-    print(case[n-1])
+# for _ in range(t):
+#     n = int(input())
+#     print(case[n-1])
+
+#1037 : 약수 
+#진짜 약수가 모두 있을때 그것을 기준으로 판단 
+
+#배열원소 곱 구하기 reduce
+# from functools import reduce
+# import sys 
+# input = sys.stdin.readline
+
+# def mul(arr):
+#     return reduce(lambda x,y : x*y, arr)
+
+# n = int(input())
+# real = list(map(int,input().split()))
+
+# print(mul(real))
+
+#1037 : 약수 
+#진짜 약수가 모두 있을때 그것을 기준으로 판단 
+import sys 
+input = sys.stdin.readline
+
+n = int(input())
+real = list(map(int,input().split()))
+
+if n==1: #요소가 하나 
+    print(real[0]*real[0])
+else :# 약수가 여러개 
+    print(min(real)*max(real))
+
+
+
