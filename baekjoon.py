@@ -3391,9 +3391,9 @@
 # 1,2 / 3,4
 # 1,3 / 2,4 
 # 1,4 / 2,3 
-a = 'niceman'
-b = 'orange'
-print(a.islower()) 
-print(a.endswith('n')) 
-print(a.capitalize()) 
-print(a.replace('nice', 'good'))
+# a = 'niceman'
+# b = 'orange'
+# print(a.islower()) 
+# print(a.endswith('n')) 
+# print(a.capitalize()) 
+# print(a.replace('nice', 'good'))
