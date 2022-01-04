@@ -3397,3 +3397,23 @@
 # print(a.endswith('n')) 
 # print(a.capitalize()) 
 # print(a.replace('nice', 'good'))
+
+# #1931 : 회의실 
+import sys 
+input = sys.stdin.readline
+
+n=int(input())
+time=[]
+for _ in range(n):
+    startTime,endTime=map(int,input().split())
+    time.append([startTime,endTime])
+
+time=sorted(time,key=lambda x:x[0])
+time=sorted(time,key=lambda x:x[1])
+
+last=0;cnt=0
+for i,j in time:
+    if i>=last:
+        cnt+=1
+        last=j
+print(cnt)
