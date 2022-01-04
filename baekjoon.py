@@ -3417,3 +3417,26 @@
 #         cnt+=1
 #         last=j
 # print(cnt)
+
+# 20300 : 서강근육맨
+#pt 1번 -> 운동기구 최대 2개 
+#N개의 운동기구, 사용하지 않았던 기구 선택 
+#운동기구마다 근손실, 근손실<=M 
+import sys 
+input = sys.stdin.readline
+
+n=int(input())
+lost = list(map(int,input().split()))
+maxValue=0
+lost.sort()
+
+#홀수 
+if n%2==1:
+    for i in range(n//2):
+        maxValue=max(maxValue,lost[i]+lost[n-2-i]) #뒤에서 두번째
+    maxValue=max(maxValue,lost[-1])
+#짝수 1 10 15 20 
+else:
+    for i in range(n//2):
+        maxValue = max(maxValue,lost[i]+lost[n-1-i])
+print(maxValue)
