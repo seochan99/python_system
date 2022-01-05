@@ -3475,27 +3475,89 @@
 # print(minValue)
 
 # 14889 : 스타트와 링크(문풀본)
-from itertools import combinations  
+# from itertools import combinations  
 
-n =int(input())
-matrix=[i for i in range(n)]
-cases = list(combinations(matrix,int(n//2))) #절반만 팀짜면 나머지 자동팀 생성 
+# n =int(input())
+# matrix=[i for i in range(n)]
+# cases = list(combinations(matrix,int(n//2))) #절반만 팀짜면 나머지 자동팀 생성 
+
+# for i in range(n):
+#     matrix[i] = list(map(int,input().split()))
+
+# minValue = 100*n*n #행렬 1개의 cell값은 100을 넘지 않음 
+
+# for aTeam in cases: #cases의 첫번째 요소 
+#     totalA = 0 
+#     totalB = 0 
+#     for x in aTeam:
+#         for y in aTeam:
+#             totalA+=matrix[x][y]
+
+#     bTeam = [x for x in range(n) if x not in aTeam] #aTeam에  있지 않는 사람들로 구성 
+#     for x in bTeam:
+#         for y in bTeam:
+#             totalB+=matrix[x][y]
+#     minValue = min(minValue,abs(totalA-totalB))
+# print(minValue)
+
+#15686 : 치킨배달 
+# from itertools import combinations
+# import sys 
+# input = sys.stdin.readline
+# n,m = map(int,input().split())
+
+# graph=[]
+
+# for i in range(n):
+#     graph.append(list(map(int, input().rstrip().split())))
+
+# homeLists=[(i,j) for i in range(n) for j in range(n) if graph[i][j]==1]
+# chickenList=[(i,j) for i in range(n) for j in range(n) if graph[i][j]==2] #치킨집인덱스 찾기 
+# chickenCases = list(combinations(chickenList,m))
+
+# minDistance=10^4
+
+# print(homeLists)
+# print(chickenList)
+
+# for chickenCase in chickenCases:
+#     for FindMyChicken in chickenCase:        
+#         for homeList in homeLists:
+#             minDis =abs(FindMyChicken[0]-homeList[0])+abs(FindMyChicken[1]-homeList[1])
+#             print(minDis)
+#         minDistance=min(minDistance,minDis)
+#         print(minDistance)
+        
+
+# coins=[500,100,50,10,5,1]
+
+# moeny=int(input())
+# jaesan=1000-moeny
+
+# cnt=0
+
+# for coin in coins:
+#     cnt+=jaesan//coin
+#     jaesan%=coin 
+# print(cnt)
+
+import sys 
+input =sys.stdin.readline 
+
+n,l = map(int,input().split())
+place = list(map(int,input().split()))
+place.sort()
+
+start = place[0]
+end = place[0]+l ; cnt=1
 
 for i in range(n):
-    matrix[i] = list(map(int,input().split()))
+    if start<=place[i]<end: #사이에 있는 경우 
+        continue
+    else :
+        start = place[i]
+        end = place[i]+l
+        cnt+=1
 
-minValue = 100*n*n #행렬 1개의 cell값은 100을 넘지 않음 
+print(cnt)
 
-for aTeam in cases: #cases의 첫번째 요소 
-    totalA = 0 
-    totalB = 0 
-    for x in aTeam:
-        for y in aTeam:
-            totalA+=matrix[x][y]
-
-    bTeam = [x for x in range(n) if x not in aTeam] #aTeam에  있지 않는 사람들로 구성 
-    for x in bTeam:
-        for y in bTeam:
-            totalB+=matrix[x][y]
-    minValue = min(minValue,abs(totalA-totalB))
-print(minValue)
