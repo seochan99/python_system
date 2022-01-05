@@ -3422,21 +3422,80 @@
 #pt 1번 -> 운동기구 최대 2개 
 #N개의 운동기구, 사용하지 않았던 기구 선택 
 #운동기구마다 근손실, 근손실<=M 
-import sys 
-input = sys.stdin.readline
+# import sys 
+# input = sys.stdin.readline
 
-n=int(input())
-lost = list(map(int,input().split()))
-maxValue=0
-lost.sort()
+# n=int(input())
+# lost = list(map(int,input().split()))
+# maxValue=0
+# lost.sort()
 
-#홀수 
-if n%2==1:
-    for i in range(n//2):
-        maxValue=max(maxValue,lost[i]+lost[n-2-i]) #뒤에서 두번째
-    maxValue=max(maxValue,lost[-1])
-#짝수 1 10 15 20 
-else:
-    for i in range(n//2):
-        maxValue = max(maxValue,lost[i]+lost[n-1-i])
-print(maxValue)
+# #홀수 
+# if n%2==1:
+#     for i in range(n//2):
+#         maxValue=max(maxValue,lost[i]+lost[n-2-i]) #뒤에서 두번째
+#     maxValue=max(maxValue,lost[-1])
+# #짝수 1 10 15 20 
+# else:
+#     for i in range(n//2):
+#         maxValue = max(maxValue,lost[i]+lost[n-1-i])
+# print(maxValue)
+
+# 14889 : 스타트와 링크(해설본)
+# from itertools import combinations  
+
+# n =int(input())
+# matrix=[i for i in range(n)]
+# print(matrix)
+# cases = list(combinations(matrix,int(n//2))) #절반만 팀짜면 나머지 자동팀 생성 
+# del cases[n//2+1:] # 절반 case 삭제 
+# print(cases)
+# for i in range(n):
+#     matrix[i] = list(map(int,input().split()))
+
+# minValue = 100*n*n #행렬 1개의 cell값은 100을 넘지 않음 
+
+# for aTeam in cases: #cases의 첫번째 요소 
+#     totalA = 0 
+#     totalB = 0 
+#     print(aTeam)
+#     for x in aTeam:
+#         for y in aTeam:
+#             totalA+=matrix[x][y]
+#     print("A : ",totalA)
+
+#     bTeam = [x for x in range(n) if x not in aTeam] #aTeam에  있지 않는 사람들로 구성 
+#     print(bTeam)
+#     for x in bTeam:
+#         for y in bTeam:
+#             totalB+=matrix[x][y]
+#     print("B : ",totalB)
+#     minValue = min(minValue,abs(totalA-totalB))
+#     print(minValue)
+# print(minValue)
+
+# 14889 : 스타트와 링크(문풀본)
+from itertools import combinations  
+
+n =int(input())
+matrix=[i for i in range(n)]
+cases = list(combinations(matrix,int(n//2))) #절반만 팀짜면 나머지 자동팀 생성 
+
+for i in range(n):
+    matrix[i] = list(map(int,input().split()))
+
+minValue = 100*n*n #행렬 1개의 cell값은 100을 넘지 않음 
+
+for aTeam in cases: #cases의 첫번째 요소 
+    totalA = 0 
+    totalB = 0 
+    for x in aTeam:
+        for y in aTeam:
+            totalA+=matrix[x][y]
+
+    bTeam = [x for x in range(n) if x not in aTeam] #aTeam에  있지 않는 사람들로 구성 
+    for x in bTeam:
+        for y in bTeam:
+            totalB+=matrix[x][y]
+    minValue = min(minValue,abs(totalA-totalB))
+print(minValue)
