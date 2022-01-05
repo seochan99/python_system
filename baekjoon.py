@@ -3541,22 +3541,21 @@
 #     jaesan%=coin 
 # print(cnt)
 
+#1449:백준 
 import sys 
 input =sys.stdin.readline 
 
 n,l = map(int,input().split())
-place = list(map(int,input().split()))
-place.sort()
+places = list(map(int,input().split()))
+places.sort()
 
-start = place[0]
-end = place[0]+l ; cnt=1
+start = places[0]
+end = places[0]+l ; cnt=1
 
-for i in range(n):
-    if start<=place[i]<end: #사이에 있는 경우 
-        continue
-    else :
-        start = place[i]
-        end = place[i]+l
+for place in places:
+    if end<=place: #사이에 있는 경우 
+        start = place
+        end = place+l
         cnt+=1
 
 print(cnt)
