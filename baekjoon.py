@@ -3542,21 +3542,44 @@
 # print(cnt)
 
 #1449:백준 
-import sys 
-input =sys.stdin.readline 
+# import sys 
+# input =sys.stdin.readline 
 
-n,l = map(int,input().split())
-places = list(map(int,input().split()))
-places.sort()
+# n,l = map(int,input().split())
+# places = list(map(int,input().split()))
+# places.sort()
 
-start = places[0]
-end = places[0]+l ; cnt=1
+# start = places[0]
+# end = places[0]+l ; cnt=1
 
-for place in places:
-    if end<=place: #사이에 있는 경우 
-        start = place
-        end = place+l
-        cnt+=1
+# for place in places:
+#     if end<=place: #사이에 있는 경우 
+#         start = place
+#         end = place+l
+#         cnt+=1
 
-print(cnt)
+# print(cnt)
+
+#1080 : 행렬 
+n,m = map(int,input().split())
+
+matrixA=[];matrixB=[]
+cnt=0
+
+for _ in range(n):
+    matrixA.append(input())
+for _ in range(n):
+    matrixB.append(input())
+
+for x in range(n):
+    for y in range(m):
+        if matrixA[x][y]!=matrixB[x][y]:
+            cnt+=1
+        else:
+            continue
+if cnt==0:
+    print(-1)
+else:
+    print(cnt)
+
 
