@@ -3561,25 +3561,35 @@
 # print(cnt)
 
 #1080 : 행렬 
-n,m = map(int,input().split())
+# n,m = map(int,input().split())
 
-matrixA=[];matrixB=[]
-cnt=0
+# matrixA=[];matrixB=[]
+# cnt=0
 
-for _ in range(n):
-    matrixA.append(input())
-for _ in range(n):
-    matrixB.append(input())
+# for _ in range(n):
+#     matrixA.append(input())
+# for _ in range(n):
+#     matrixB.append(input())
 
-for x in range(n):
-    for y in range(m):
-        if matrixA[x][y]!=matrixB[x][y]:
-            cnt+=1
-        else:
-            continue
-if cnt==0:
-    print(-1)
-else:
-    print(cnt)
+# for x in range(n):
+#     for y in range(m):
+#         if matrixA[x][y]!=matrixB[x][y]:
+#             cnt+=1
+#         else:
+#             continue
+# if cnt==0:
+#     print(-1)
+# else:
+#     print(cnt)
 
+arr = input().split("-")
+plus = 0 ; minus = 0; 
 
+for first in arr[0].split('+'):
+    plus+=int(first)
+
+for pieces in arr[1:]:
+    for piece in pieces.split('+'):
+        minus+=int(piece)
+
+print(plus-minus)
