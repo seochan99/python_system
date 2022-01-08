@@ -3500,96 +3500,123 @@
 #     minValue = min(minValue,abs(totalA-totalB))
 # print(minValue)
 
-#15686 : 치킨배달 
+# 15686 : 치킨배달 
 # from itertools import combinations
 # import sys 
 # input = sys.stdin.readline
+
 # n,m = map(int,input().split())
+# graph=[list(map(int, input().rstrip().split())) for _ in range(n)]
 
-# graph=[]
-
-# for i in range(n):
-#     graph.append(list(map(int, input().rstrip().split())))
+# minDistance=float('inf') #양의 무한대 
 
 # homeLists=[(i,j) for i in range(n) for j in range(n) if graph[i][j]==1]
 # chickenList=[(i,j) for i in range(n) for j in range(n) if graph[i][j]==2] #치킨집인덱스 찾기 
-# chickenCases = list(combinations(chickenList,m))
 
-# minDistance=10^4
+# for chickenCase in combinations(chickenList,m):
+#     sumD=0
+#     for home in homeLists:
+#         sumD += min([abs(home[0]-i[0])+abs(home[1]-i[1]) for i in chickenCase])
+#         if minDistance<=sumD:
+#             break 
+#     if sumD < minDistance:
+#         minDistance = sumD
 
-# print(homeLists)
-# print(chickenList)
-
-# for chickenCase in chickenCases:
-#     for FindMyChicken in chickenCase:        
-#         for homeList in homeLists:
-#             minDis =abs(FindMyChicken[0]-homeList[0])+abs(FindMyChicken[1]-homeList[1])
-#             print(minDis)
-#         minDistance=min(minDistance,minDis)
-#         print(minDistance)
+# print(minDistance)
         
 
-# coins=[500,100,50,10,5,1]
+# # coins=[500,100,50,10,5,1]
 
-# moeny=int(input())
-# jaesan=1000-moeny
+# # moeny=int(input())
+# # jaesan=1000-moeny
 
-# cnt=0
+# # cnt=0
+
+# # for coin in coins:
+# #     cnt+=jaesan//coin
+# #     jaesan%=coin 
+# # print(cnt)
+
+# #1449:백준 
+# # import sys 
+# # input =sys.stdin.readline 
+
+# # n,l = map(int,input().split())
+# # places = list(map(int,input().split()))
+# # places.sort()
+
+# # start = places[0]
+# # end = places[0]+l ; cnt=1
+
+# # for place in places:
+# #     if end<=place: #사이에 있는 경우 
+# #         start = place
+# #         end = place+l
+# #         cnt+=1
+
+# # print(cnt)
+
+# #1080 : 행렬 
+# # n,m = map(int,input().split())
+
+# # matrixA=[];matrixB=[]
+# # cnt=0
+
+# # for _ in range(n):
+# #     matrixA.append(input())
+# # for _ in range(n):
+# #     matrixB.append(input())
+
+# # for x in range(n):
+# #     for y in range(m):
+# #         if matrixA[x][y]!=matrixB[x][y]:
+# #             cnt+=1
+# #         else:
+# #             continue
+# # if cnt==0:
+# #     print(-1)
+# # else:
+# #     print(cnt)
+
+# # #1541
+# # arr = input().split("-")
+# # plus = 0 ; minus = 0; 
+
+# # for first in arr[0].split('+'):
+# #     plus+=int(first)
+
+# # for pieces in arr[1:]:
+# #     for piece in pieces.split('+'):
+# #         minus+=int(piece)
+
+# # print(plus-minus)
+
+
+#거스름돈 
+# coins = [500,100,50,10,1] ; cnt=0
+# money= int(input()) 
+# pay=1000-money
 
 # for coin in coins:
-#     cnt+=jaesan//coin
-#     jaesan%=coin 
+#     cnt+=pay//coin 
+#     pay%=coin 
 # print(cnt)
+# n=1 
+# for i in range(n-2):
+#     print(i)
+# flag = 
 
-#1449:백준 
-# import sys 
-# input =sys.stdin.readline 
+# #거스름돈 
 
-# n,l = map(int,input().split())
-# places = list(map(int,input().split()))
-# places.sort()
+# coins=[500,100,50,10,5,1]
+# money = int(input())
+# money = 1000-money ; cnt=0 
 
-# start = places[0]
-# end = places[0]+l ; cnt=1
-
-# for place in places:
-#     if end<=place: #사이에 있는 경우 
-#         start = place
-#         end = place+l
-#         cnt+=1
+# for coin in coins:
+#     cnt=cnt+money//coin
+#     money%=coin 
 
 # print(cnt)
-
-#1080 : 행렬 
-# n,m = map(int,input().split())
-
-# matrixA=[];matrixB=[]
-# cnt=0
-
-# for _ in range(n):
-#     matrixA.append(input())
-# for _ in range(n):
-#     matrixB.append(input())
-
-# for x in range(n):
-#     for y in range(m):
-#         if matrixA[x][y]!=matrixB[x][y]:
-#             cnt+=1
-#         else:
-#             continue
-# if cnt==0:
-#     print(-1)
-# else:
-#     print(cnt)
-
-arr = input().split("-")
-plus = 0 ; minus = 0; 
-
-for first in arr[0].split('+'):
-    plus+=int(first)
-
-for pieces in arr[1:]:
-    for piece in pieces.split('+'):
-        minus+=int(piece)
-
-print(plus-minus)
+n=1 
+for i in range(n-2):
+    print(i)
