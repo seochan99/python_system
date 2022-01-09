@@ -61,17 +61,17 @@
 #         cnt+=1 
 # print(cnt)
 
-number = input().split("-")
+# number = input().split("-")
 
-firstSum = 0 
-otherSum = 0
+# firstSum = 0 
+# otherSum = 0
 
-for i in number[0].split("+"):
-    firstSum+=int(i)
+# for i in number[0].split("+"):
+#     firstSum+=int(i)
 
-for i in number[1:]:
-    for j in i.split("+"):
-        otherSum+=int(j) 
+# for i in number[1:]:
+#     for j in i.split("+"):
+#         otherSum+=int(j) 
 
-print(firstSum-otherSum)
+# print(firstSum-otherSum)
         
