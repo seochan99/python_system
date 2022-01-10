@@ -81,9 +81,52 @@
 #         return gcd(b,a%b)
 # print(gcd(192,162))
 
-def dfs(graph,v,visted):
-    visted[v]=True 
-    print(v,end=" ")
-    for i in graph[v]:
-        if not visted[i]:
-            dfs(graph,i,visted)
+# def dfs(graph,v,visted):
+#     visted[v]=True 
+#     print(v,end=" ")
+#     for i in graph[v]:
+#         if not visted[i]:
+#             dfs(graph,i,visted)
+# graph=[
+#     [],
+#     [2,3,8],
+#     [1,7],
+#     [1,4,5],
+#     [3,5],
+#     [3,4]
+#     [7],
+#     [2,6,8],
+#     [1,7]
+# ]
+
+# visted=[False]*9 
+# dfs(graph,1,visted)
+
+#BFS 
+# from collections import deque 
+
+# def bfs(graph,start,visted):
+#     queue = deque([start])
+#     visted[start]=True 
+#     while queue:
+#         v = queue.popleft()
+#         print(v,end=" ")
+#         for i in graph[v]:
+#             if not visted[i]:
+#                 queue.append(i)
+#                 visted[i]=True 
+
+# graph=[
+#     [],
+#     [2,3,8],
+#     [1,7],
+#     [1,4,5],
+#     [3,5],
+#     [3,4]
+#     [7],
+#     [2,6,8],
+#     [1,7]
+# ]
+
+# visited=[False]*9 
+# bfs(graph,1,visited)
