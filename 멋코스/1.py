@@ -130,3 +130,44 @@
 
 # visited=[False]*9 
 # bfs(graph,1,visited)
+
+# 얼음 
+# def dfs(x,y):
+#     if x<=-1 or x>=n or y<=-1 or y>=m:
+#         return False 
+#     if graph[x][y]==0: #0 인근 0 노드 1로 변경 
+#         graph[x][y]=1 
+#         dfs(x-1,y)
+#         dfs(x+1,y)
+#         dfs(x,y-1)
+#         dfs(x,y+1)
+#         return True 
+#     return False 
+
+
+# n,m = map(int,input().split())
+# graph=[]
+# for i in range(n):
+#     graph.append(list(map(int,input())))
+
+# cnt = 0
+# for i in range(n):
+#     for j in range(m):
+#         if dfs(n,m)==True:
+#             cnt+=1
+# print(cnt)
+
+
+# 미로탈출 
+from collections import deque 
+
+dx = [-1,1,0,0]
+dy = [0,0,-1,1]
+
+
+n,m = map(int,input().split())
+graph = []
+for i in range(n):
+    graph.append(list(map(int,input())))
+
+print(bfs(0,0))
