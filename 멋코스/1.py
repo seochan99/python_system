@@ -74,9 +74,16 @@
 #         otherSum+=int(j) 
 
 # print(firstSum-otherSum)
-def gcd(a,b):
-    if a%b==0:
-        return b
-    else :
-        return gcd(b,a%b)
-print(gcd(192,162))
+# def gcd(a,b):
+#     if a%b==0:
+#         return b
+#     else :
+#         return gcd(b,a%b)
+# print(gcd(192,162))
+
+def dfs(graph,v,visted):
+    visted[v]=True 
+    print(v,end=" ")
+    for i in graph[v]:
+        if not visted[i]:
+            dfs(graph,i,visted)
