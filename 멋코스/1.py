@@ -159,15 +159,53 @@
 
 
 # 미로탈출 
-from collections import deque 
+# from collections import deque 
 
-dx = [-1,1,0,0]
-dy = [0,0,-1,1]
+# dx = [-1,1,0,0]
+# dy = [0,0,-1,1]
 
+# def bfs(x,y):
+#     queue=deque()
+#     queue.append((x,y))
+#     while queue:
+#         x,y = queue.popleft()
+#         for i in range(4):
+#             cx = x + dx[i]
+#             cy = y + dy[i]
 
-n,m = map(int,input().split())
-graph = []
-for i in range(n):
-    graph.append(list(map(int,input())))
+#             if cx<0 or cx>=n or cy<0 or cy>=m or graph[cx][cy]==0:
+#                 continue
+#             if graph[cx][cy] ==1:
+#                 graph[cx][cy]=graph[x][y]+1 
+#                 queue.append((cx,cy))
+#     return graph[n-1][m-1]
 
-print(bfs(0,0))
+# n,m = map(int,input().split())
+# graph = []
+# for i in range(n):
+#     graph.append(list(map(int,input())))
+
+# print(bfs(0,0))
+
+# n=1260 
+# cnt =0 
+# arr = [500,100,50,10]
+
+# for coin in arr:
+#     cnt+=n//coin
+#     n%=coin 
+# print(cnt)
+
+n,k = map(int,input().split())
+
+result = 0
+while True:
+    target = (n//k)*k
+    result += (n-target)
+    n = target 
+    if n<k:
+        break 
+    result+=1
+    n//=k 
+result+=(n-1)
+print(result)
