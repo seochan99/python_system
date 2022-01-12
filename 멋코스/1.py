@@ -196,16 +196,28 @@
 #     n%=coin 
 # print(cnt)
 
-n,k = map(int,input().split())
+# n,k = map(int,input().split())
 
-result = 0
-while True:
-    target = (n//k)*k
-    result += (n-target)
-    n = target 
-    if n<k:
-        break 
-    result+=1
-    n//=k 
-result+=(n-1)
+# result = 0
+# while True:
+#     target = (n//k)*k
+#     result += (n-target)
+#     n = target 
+#     if n<k:
+#         break 
+#     result+=1
+#     n//=k 
+# result+=(n-1)
+# print(result)
+
+#곱 하 혹ㅡㄴ 더기 
+data = input()
+
+result = int(data[0])
+for i in range(1,len(data)):
+    num = int(data[i])
+    if num<=1 or result<=1:
+        result+=num 
+    else :
+        result *= num 
 print(result)
