@@ -211,13 +211,27 @@
 # print(result)
 
 #곱 하 혹ㅡㄴ 더기 
-data = input()
+# data = input()
 
-result = int(data[0])
-for i in range(1,len(data)):
-    num = int(data[i])
-    if num<=1 or result<=1:
-        result+=num 
-    else :
-        result *= num 
+# result = int(data[0])
+# for i in range(1,len(data)):
+#     num = int(data[i])
+#     if num<=1 or result<=1:
+#         result+=num 
+#     else :
+#         result *= num 
+# print(result)
+
+#모험가 길드 
+n= int(input())
+data = list(map(int,input().split()))
+data.sort()
+
+result = 0
+cnt = 0
+for i in data:
+    cnt+=1
+    if cnt>=i:
+        result+=1
+        cnt=0 
 print(result)
