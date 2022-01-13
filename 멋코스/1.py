@@ -223,15 +223,43 @@
 # print(result)
 
 #모험가 길드 
-n= int(input())
-data = list(map(int,input().split()))
-data.sort()
+# n= int(input())
+# data = list(map(int,input().split()))
+# data.sort()
 
-result = 0
-cnt = 0
-for i in data:
-    cnt+=1
-    if cnt>=i:
-        result+=1
-        cnt=0 
-print(result)
+# result = 0
+# cnt = 0
+# for i in data:
+#     cnt+=1
+#     if cnt>=i:
+#         result+=1
+#         cnt=0 
+# print(result)
+
+#1080 : 행렬 
+cnt=0
+n,m = map(int,input().split())
+matrixA = [list(map(int,list(input()))) for _ in range(n)]
+matrixB = [list(map(int,list(input()))) for _ in range(n)]
+
+def change(x,y):
+    for i in range(x,x+3):
+        for j in range(y,y+3):
+            matrixA[i][j]=1-matrixA[i][j] #1->0 0->1 skill 
+
+def check():
+    for i in range(n):
+        for j in range(m):
+            if matrixA[i][j]!=matrixB[i][j]:
+                return False 
+    return True 
+
+for i in range(n-2):
+    for j in range(m-2):
+        if matrixA[i][j] != matrixB[i][j]:
+            change(i,j)
+            cnt+=1 
+if check():
+    print(cnt)
+else:
+    print(-1)

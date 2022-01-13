@@ -77,10 +77,42 @@
 #     else :
 #         print(0,end=" ")
 
-#10876: 중복빼고 정ㅕ 
-n = int(input())
-arr = list(map(int,input().split()))
+# #10876: 중복빼고 정ㅕ 
+# n = int(input())
+# arr = list(map(int,input().split()))
 
-#중복제거를 위한 집합으로 받기 
-for i in sorted(list(set(arr))):
-    print(i,end=" ")
+# #중복제거를 위한 집합으로 받기 
+# for i in sorted(list(set(arr))):
+#     print(i,end=" ")
+
+
+# # 삽입 
+# color1.append("black")
+# color1.extend(["white","orange"])
+# color1.insert(2,"purple")
+# color1.append("green")
+# print(color1)
+# #제거 
+# color1.remove("green")
+# del color1[0]
+# print(color1)
+
+# a = [5,5,3,4,1,2]
+# b = ["b","c","a"]
+# print(a)
+# print(a.index(2))
+# print(a.count(5))
+# # a.sort() #오름차순
+# # a.sort(reverse=True) #내림차순 
+# # a.reverse() #문자열 역으로 출력 
+# b=sorted(a)
+
+# print(a)
+# print(b)
+
+#패킹 
+test = [1,2,"apple"]
+a,b,c = test
+print(a,b,c) 
+print(test)
+
