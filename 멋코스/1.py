@@ -267,291 +267,287 @@
 ######## DFS&BFS 
 
 
-#2606 : 바이러스
-#컴퓨터의 수 
-# n = int(input())
+# 2606 : 바이러스
+# 컴퓨터의 수 
+n = int(input())
 
-# #컴퓨터의 쌍 
-# m = int(input())
+#컴퓨터의 쌍 
+m = int(input())
 
-# def dfs(v):
-#     global cnt 
-#     visted[v] = 1
-#     for i in range(1,n+1):
-#         if visted[i]==0 and graph[v][i]==1: #방문여부와 graph[v]와 연결된 선 모두 찾기 
-#             dfs(i)
-#             cnt+=1 #cnt추가 
+def dfs(v):
+    global cnt 
+    visted[v] = 1
+    for i in range(1,n+1):
+        if visted[i]==0 and graph[v][i]==1: #방문여부와 graph[v]와 연결된 선 모두 찾기 
+            dfs(i)
+            cnt+=1 #cnt추가 
 
-# #그래프 
-# graph = [[0]*(n+1) for _ in range(n+1)] #우선, 0으로 초기화 
-# visted=[0 for _ in range(n+1)] #방문 체크 감염시 -> 1로변경  
-# cnt = 0
+#그래프 
+graph = [[0]*(n+1) for _ in range(n+1)] #우선, 0으로 초기화 
+visted=[0 for _ in range(n+1)] #방문 체크 감염시 -> 1로변경  
+cnt = 0
 
-# print(graph)
-# print(visted)
+#default 1번 컴퓨터가 웜바이러스 걸려있음 
+#1번을 통해서 걸리게 되는것들 
+for _ in range(m):
+    x,y = map(int,input().split())
+    graph[x][y] = 1
+    graph[y][x] = 1 
 
-# #default 1번 컴퓨터가 웜바이러스 걸려있음 
-# #1번을 통해서 걸리게 되는것들 
-
-# for _ in range(m):
-#     x,y = map(int,input().split())
-#     graph[x][y] = 1
-#     graph[y][x] = 1 
-
-# dfs(1) #1부터 시작 
+dfs(1) #1부터 시작 
 
 
-#1260 : DFS BFS 
+# 1260 : DFS BFS 
 
-# n : 정점 
-# m : 간선 
-# v : 탐색 시작할 정점의 번호 
-# from collections import deque
-# import sys 
-# input = sys.stdin.readline
+n : 정점 
+m : 간선 
+v : 탐색 시작할 정점의 번호 
+from collections import deque
+import sys 
+input = sys.stdin.readline
 
-# n,m,v = map(int,input().split())
+n,m,v = map(int,input().split())
 
-# matrix = [[0]*(n+1) for _ in range(n+1)]
-# visted = [0 for _ in range(n+1)]
+matrix = [[0]*(n+1) for _ in range(n+1)]
+visted = [0 for _ in range(n+1)]
 
-# #BFS 
-# def bfs(v):
-#     queue = deque() 
-#     queue.append(v)
-#     visted[v]=0 
-#     while(queue):
-#         v = queue[0]
-#         print(queue.popleft(),end=" ")
+#BFS 
+def bfs(v):
+    queue = deque() 
+    queue.append(v)
+    visted[v]=0 
+    while(queue):
+        v = queue[0]
+        print(queue.popleft(),end=" ")
 
-#         for i in range(1,n+1):
-#             if visted[i]==1 and matrix[v][i]==1:
-#                 queue.append(i)
-#                 visted[i]=0 
+        for i in range(1,n+1):
+            if visted[i]==1 and matrix[v][i]==1:
+                queue.append(i)
+                visted[i]=0 
 
 
-# #DFS 
-# def dfs(v):
-#     print(v,end=" ")
-#     visted[v]=1 
-#     for i in range(1,n+1):
-#         if visted[i]==0 and matrix[v][i]==1:
-#             dfs(i)
+#DFS 
+def dfs(v):
+    print(v,end=" ")
+    visted[v]=1 
+    for i in range(1,n+1):
+        if visted[i]==0 and matrix[v][i]==1:
+            dfs(i)
 
-# for _ in range(m):
-#     x,y = map(int,input().split())
-#     matrix[x][y]=1 
-#     matrix[y][x]=1  #표시 
+for _ in range(m):
+    x,y = map(int,input().split())
+    matrix[x][y]=1 
+    matrix[y][x]=1  #표시 
 
-# dfs(v)
-# print()
-# bfs(v)
+dfs(v)
+print()
+bfs(v)
 
-#dfs 
-#bfs 
-# import sys 
-# input = sys.stdin.readline
-# from collections import deque
+dfs 
+bfs 
+import sys 
+input = sys.stdin.readline
+from collections import deque
 
-# def bfs(v):
-#     queue = deque()
-#     queue.append(v)
-#     visted[v] == 0 
+def bfs(v):
+    queue = deque()
+    queue.append(v)
+    visted[v] == 0 
 
-#     while queue:
-#         v = queue[0]
-#         print(queue.popleft(),end=" ")
-#         for i in range(n+1):
-#             if visted[i]==1 and matrix[v][i]==1:
-#                 queue.append(i)
-#                 visted[i]=0 
+    while queue:
+        v = queue[0]
+        print(queue.popleft(),end=" ")
+        for i in range(n+1):
+            if visted[i]==1 and matrix[v][i]==1:
+                queue.append(i)
+                visted[i]=0 
 
 
 
-# def dfs(v):
-#     print(v,end=" ")
-#     visted[v]=1 
-#     for i in range(1,n+1):
-#         if visted[i]==0 and matrix[v][i]==1:
-#             dfs(i)
+def dfs(v):
+    print(v,end=" ")
+    visted[v]=1 
+    for i in range(1,n+1):
+        if visted[i]==0 and matrix[v][i]==1:
+            dfs(i)
 
 
-# n,m,v = map(int,input().split())
-# matrix = [[0]*(n+1) for _ in range(n+1)]
-# visted = [0 for _ in range(n+1)]
+n,m,v = map(int,input().split())
+matrix = [[0]*(n+1) for _ in range(n+1)]
+visted = [0 for _ in range(n+1)]
 
-# for _ in range(m):
-#     x,y = map(int,input().split())
-#     matrix[x][y] = 1
-#     matrix[y][x] = 1
+for _ in range(m):
+    x,y = map(int,input().split())
+    matrix[x][y] = 1
+    matrix[y][x] = 1
 
-# dfs(v)
-# print() 
-# bfs(v)
-
-
-#2178 : 미로 
-# from collections import deque
-# n,m = map(int,input().split())
-# matrix = [list(map(int,list(input()))) for _ in range(n)] #크으.. 
-
-# dx = [1,-1,0,0]
-# dy = [0,0,1,-1]
-
-# def bfs(x,y):
-#     queue = deque()
-#     queue.append([0,0])
-#     while queue:
-#         a,b = queue.popleft()
-#         for i in range(4):
-#             cx = a+dx[i]
-#             cy = b+dy[i]
-#             if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
-#                 matrix[cx][cy] = matrix[a][b]+1 
-#                 queue.append([cx,cy])
-
-# bfs(0,0)
-# print(matrix[n-1][m-1])
-# from collections import deque
-# n,m = map(int,input().split())
-# matrix = [list(map(int,list(input()))) for _ in range(n+1)]
-
-# dx = [1,-1,0,0]
-# dy = [0,0,-1,1]
-
-# def bfs(x,y):
-#     queue = deque()
-#     queue.append([x,y])
-#     while queue:
-#         a,b = queue.popleft()
-#         for i in range(4):
-#             cx = a+dx[i]
-#             cy = b+dy[i]
-#             if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1 : #아직 방문 x 
-#                 matrix[cx][cy]=matrix[a][b]+1 
-#                 queue.append([cx,cy])
+dfs(v)
+print() 
+bfs(v)
 
 
-# bfs(0,0)
-# print(matrix[n-1][m-1])
+2178 : 미로 
+from collections import deque
+n,m = map(int,input().split())
+matrix = [list(map(int,list(input()))) for _ in range(n)] #크으.. 
 
-# 1012 : 유기농 배추 
-# from collections import deque
-# import sys 
+dx = [1,-1,0,0]
+dy = [0,0,1,-1]
 
-# t = int(input())
+def bfs(x,y):
+    queue = deque()
+    queue.append([0,0])
+    while queue:
+        a,b = queue.popleft()
+        for i in range(4):
+            cx = a+dx[i]
+            cy = b+dy[i]
+            if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
+                matrix[cx][cy] = matrix[a][b]+1 
+                queue.append([cx,cy])
 
-# dx = [1,-1,0,0]
-# dy = [0,0,-1,1]
+bfs(0,0)
+print(matrix[n-1][m-1])
+from collections import deque
+n,m = map(int,input().split())
+matrix = [list(map(int,list(input()))) for _ in range(n+1)]
 
-# def dfs(x,y):
-#     matrix[x][y]=0
-#     for i in range(4):
-#             cx = x + dx[i]
-#             cy = y + dy[i]
-#             if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
-#                 dfs(x,y)
+dx = [1,-1,0,0]
+dy = [0,0,-1,1]
+
+def bfs(x,y):
+    queue = deque()
+    queue.append([x,y])
+    while queue:
+        a,b = queue.popleft()
+        for i in range(4):
+            cx = a+dx[i]
+            cy = b+dy[i]
+            if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1 : #아직 방문 x 
+                matrix[cx][cy]=matrix[a][b]+1 
+                queue.append([cx,cy])
 
 
-# def bfs(x,y):
-#     queue = deque()
-#     queue.append([x,y])
-#     while queue:
-#         a,b = queue.popleft()
-#         for i in range(4):
-#             cx = a + dx[i]
-#             cy = b + dy[i]
-#             if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
-#                 matrix[cx][cy]=0 
-#                 queue.append([cx,cy])
+bfs(0,0)
+print(matrix[n-1][m-1])
 
-# for _ in range(t):
-#     m,n,k=map(int,input().split()) #가로ㅡ세로 
-#     matrix = [[0]*m for _ in range(n) ]
-#     cnt = 0 
-#     #그래프 ㅡ그리기 
-#     for _ in range(k):
-#         y,x = map(int,input().split())
-#         matrix[x][y]=1 #배추심기 
+1012 : 유기농 배추 
+from collections import deque
+import sys 
 
-#     #탐색 
-#     for i in range(n):
-#         for j in range(m):
-#             if matrix[i][j]==1:
-#                 bfs(i,j) #연결된 요소 변경 
-#                 matrix[i][j]=0 
-#                 cnt+=1 
-#     print(cnt)
+t = int(input())
+
+dx = [1,-1,0,0]
+dy = [0,0,-1,1]
+
+def dfs(x,y):
+    matrix[x][y]=0
+    for i in range(4):
+            cx = x + dx[i]
+            cy = y + dy[i]
+            if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
+                dfs(x,y)
+
+
+def bfs(x,y):
+    queue = deque()
+    queue.append([x,y])
+    while queue:
+        a,b = queue.popleft()
+        for i in range(4):
+            cx = a + dx[i]
+            cy = b + dy[i]
+            if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
+                matrix[cx][cy]=0 
+                queue.append([cx,cy])
+
+for _ in range(t):
+    m,n,k=map(int,input().split()) #가로ㅡ세로 
+    matrix = [[0]*m for _ in range(n) ]
+    cnt = 0 
+    #그래프 ㅡ그리기 
+    for _ in range(k):
+        y,x = map(int,input().split())
+        matrix[x][y]=1 #배추심기 
+
+    #탐색 
+    for i in range(n):
+        for j in range(m):
+            if matrix[i][j]==1:
+                bfs(i,j) #연결된 요소 변경 
+                matrix[i][j]=0 
+                cnt+=1 
+    print(cnt)
     
-# from collections import deque
+from collections import deque
 
 
-# t = int(input())
+t = int(input())
 
-# dx = [1,-1,0,0]
-# dy = [0,0,-1,1]
+dx = [1,-1,0,0]
+dy = [0,0,-1,1]
 
-# def bfs(x,y):
-#     queue = deque()
-#     queue.append([x,y])
-#     while queue:
-#         a,b = queue.popleft()
-#         for i in range(4):
-#             cx = a + dx[i]
-#             cy = b + dy[i]
-#             if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
-#                 matrix[cx][cy]=0 
-#                 queue.append([cx,cy])
+def bfs(x,y):
+    queue = deque()
+    queue.append([x,y])
+    while queue:
+        a,b = queue.popleft()
+        for i in range(4):
+            cx = a + dx[i]
+            cy = b + dy[i]
+            if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
+                matrix[cx][cy]=0 
+                queue.append([cx,cy])
 
         
 
-# for _ in range(t):
-#     m,n,k = map(int,input().split()) ; cnt =0 
-#     matrix = [[0]*m for _ in range(n)]
-#     for _ in range(k):
-#         y,x = map(int,input().split())
-#         matrix[x][y] = 1
+for _ in range(t):
+    m,n,k = map(int,input().split()) ; cnt =0 
+    matrix = [[0]*m for _ in range(n)]
+    for _ in range(k):
+        y,x = map(int,input().split())
+        matrix[x][y] = 1
 
-#     for i in range(n):
-#         for j in range(m):
-#             if matrix[i][j]==1: #아직안간곳 
-#                 matrix[i][j]=0 
-#                 bfs(i,j) 
-#                 cnt +=1 
-#     print(cnt)
+    for i in range(n):
+        for j in range(m):
+            if matrix[i][j]==1: #아직안간곳 
+                matrix[i][j]=0 
+                bfs(i,j) 
+                cnt +=1 
+    print(cnt)
 
-#2644 : 촌수계산 
-# from collections import deque
+2644 : 촌수계산 
+from collections import deque
 
-# def bfs(num1):
-#     queue = deque()
-#     queue.append(num1)
-#     while queue:
-#         x = queue.popleft()
-#         for i in matrix[x]:
-#             if chonesoo[i]==0:
-#                 chonesoo[i] = chonesoo[x]+1
-#                 queue.append(i)
+def bfs(num1):
+    queue = deque()
+    queue.append(num1)
+    while queue:
+        x = queue.popleft()
+        for i in matrix[x]:
+            if chonesoo[i]==0:
+                chonesoo[i] = chonesoo[x]+1
+                queue.append(i)
 
-# n = int(input()) #노드 
-# num1,num2 = map(int,input().split()) #num1,num2 촌수 계싼해야함 
-# m = int(input()) #관계 수(간선 수)
+n = int(input()) #노드 
+num1,num2 = map(int,input().split()) #num1,num2 촌수 계싼해야함 
+m = int(input()) #관계 수(간선 수)
 
-# matrix = [[] for _ in range(n+1)] # 그래프 
-# chonesoo = [0 for _ in range(n+1)] # 촌수저장 
-
-
-# #x는 y의 부모이다. 
-# for _ in range(m):
-#     x,y = map(int,input().split())
-#     matrix[x].append(y) #부모 칸에 자식 넣는다 
-#     matrix[y].append(x) #자식 칸에 부모 넣는다 
-# bfs(num1)
-
-# print(chonesoo[num2] if chonesoo[num2]!=0 else -1 )
+matrix = [[] for _ in range(n+1)] # 그래프 
+chonesoo = [0 for _ in range(n+1)] # 촌수저장 
 
 
-#2644 : 촌수계산 
+#x는 y의 부모이다. 
+for _ in range(m):
+    x,y = map(int,input().split())
+    matrix[x].append(y) #부모 칸에 자식 넣는다 
+    matrix[y].append(x) #자식 칸에 부모 넣는다 
+bfs(num1)
+
+print(chonesoo[num2] if chonesoo[num2]!=0 else -1 )
+
+
+2644 : 촌수계산 
 from collections import deque
 
 n = int(input())
@@ -580,3 +576,9 @@ for _ in range(m):
 
 bfs(num1)
 print(chonesoo[num2] if chonesoo[num2]!=0 else -1)
+
+class App extends Component{
+    redner(){
+        return <h1>안녕하세요</h1>
+    }
+}
