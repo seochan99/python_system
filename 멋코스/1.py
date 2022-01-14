@@ -269,33 +269,80 @@
 
 #2606 : 바이러스
 #컴퓨터의 수 
-n = int(input())
+# n = int(input())
 
-#컴퓨터의 쌍 
-m = int(input())
+# #컴퓨터의 쌍 
+# m = int(input())
 
+# def dfs(v):
+#     global cnt 
+#     visted[v] = 1
+#     for i in range(1,n+1):
+#         if visted[i]==0 and graph[v][i]==1: #방문여부와 graph[v]와 연결된 선 모두 찾기 
+#             dfs(i)
+#             cnt+=1 #cnt추가 
+
+# #그래프 
+# graph = [[0]*(n+1) for _ in range(n+1)] #우선, 0으로 초기화 
+# visted=[0 for _ in range(n+1)] #방문 체크 감염시 -> 1로변경  
+# cnt = 0
+
+# print(graph)
+# print(visted)
+
+# #default 1번 컴퓨터가 웜바이러스 걸려있음 
+# #1번을 통해서 걸리게 되는것들 
+
+# for _ in range(m):
+#     x,y = map(int,input().split())
+#     graph[x][y] = 1
+#     graph[y][x] = 1 
+
+# dfs(1) #1부터 시작 
+
+
+#1260 : DFS BFS 
+
+# n : 정점 
+# m : 간선 
+# v : 탐색 시작할 정점의 번호 
+from collections import deque
+import sys 
+input = sys.stdin.readline
+
+n,m,v = map(int,input().split())
+
+matrix = [[0]*(n+1) for _ in range(n+1)]
+visted = [0 for _ in range(n+1)]
+
+#BFS 
+def bfs(v):
+    queue = deque() 
+    queue.append(v)
+    visted[v]=0 
+    while(queue):
+        v = queue[0]
+        print(queue.popleft(),end=" ")
+
+        for i in range(1,n+1):
+            if visted[i]==1 and matrix[v][i]==1:
+                queue.append(i)
+                visted[i]=0 
+
+
+#DFS 
 def dfs(v):
-    global cnt 
-    visted[v] = 1
+    print(v,end=" ")
+    visted[v]=1 
     for i in range(1,n+1):
-        if visted[i]==0 and graph[v][i]==1: #방문여부와 graph[v]와 연결된 선 모두 찾기 
+        if visted[i]==0 and matrix[v][i]==1:
             dfs(i)
-            cnt+=1 #cnt추가 
-
-#그래프 
-graph = [[0]*(n+1) for _ in range(n+1)] #우선, 0으로 초기화 
-visted=[0 for _ in range(n+1)] #방문 체크 감염시 -> 1로변경  
-cnt = 0
-
-print(graph)
-print(visted)
-
-#default 1번 컴퓨터가 웜바이러스 걸려있음 
-#1번을 통해서 걸리게 되는것들 
 
 for _ in range(m):
     x,y = map(int,input().split())
-    graph[x][y] = 1
-    graph[y][x] = 1 
+    matrix[x][y]=1 
+    matrix[y][x]=1  #표시 
 
-dfs(1) #1부터 시작 
+dfs(v)
+print()
+bfs(v)
