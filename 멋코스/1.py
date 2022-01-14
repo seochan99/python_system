@@ -521,38 +521,62 @@
 #     print(cnt)
 
 #2644 : 촌수계산 
+# from collections import deque
+
+# def bfs(num1):
+#     queue = deque()
+#     queue.append(num1)
+#     while queue:
+#         x = queue.popleft()
+#         for i in matrix[x]:
+#             if chonesoo[i]==0:
+#                 chonesoo[i] = chonesoo[x]+1
+#                 queue.append(i)
+
+# n = int(input()) #노드 
+# num1,num2 = map(int,input().split()) #num1,num2 촌수 계싼해야함 
+# m = int(input()) #관계 수(간선 수)
+
+# matrix = [[] for _ in range(n+1)] # 그래프 
+# chonesoo = [0 for _ in range(n+1)] # 촌수저장 
+
+
+# #x는 y의 부모이다. 
+# for _ in range(m):
+#     x,y = map(int,input().split())
+#     matrix[x].append(y) #부모 칸에 자식 넣는다 
+#     matrix[y].append(x) #자식 칸에 부모 넣는다 
+# bfs(num1)
+
+# print(chonesoo[num2] if chonesoo[num2]!=0 else -1 )
+
+
+#2644 : 촌수계산 
 from collections import deque
+
+n = int(input())
+num1,num2 = map(int,input().split())
+m = int(input())
 
 def bfs(num1):
     queue = deque()
     queue.append(num1)
     while queue:
         x = queue.popleft()
-        for i in matrix[x]:
-            if chonesoo[i]==0:
-                chonesoo[i] = chonesoo[x]+1
+        for i in graph[x]:
+            if chonesoo[i] == 0 :
+                chonesoo[i] = chonesoo[x]+1 
                 queue.append(i)
 
-n = int(input()) #노드 
-num1,num2 = map(int,input().split()) #num1,num2 촌수 계싼해야함 
-m = int(input()) #관계 수(간선 수)
- 
-matrix = [[] for _ in range(n+1)] # 그래프 
-chonesoo = [0 for _ in range(n+1)] # 촌수저장 
+    
 
+graph = [[] for _ in range(n+1)]
+chonesoo = [0 for _ in range(n+1)]
 
-#x는 y의 부모이다. 
 for _ in range(m):
     x,y = map(int,input().split())
-    matrix[x].append(y) #부모 칸에 자식 넣는다 
-    matrix[y].append(x) #자식 칸에 부모 넣는다 
+    graph[x].append(y)
+    graph[y].append(x)
+
 bfs(num1)
-
-print(chonesoo[num2] if chonesoo[num2]!=0 else -1 )
-
-
-
-
-#촌수 출력 
-
-#촌수 x -1 출력 
+print(chonesoo[num2] if chonesoo[num2]!=0 else -1)
