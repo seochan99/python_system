@@ -436,42 +436,86 @@
 # print(matrix[n-1][m-1])
 
 # 1012 : 유기농 배추 
-from collections import deque
+# from collections import deque
+# import sys 
+
+# t = int(input())
+
+# dx = [1,-1,0,0]
+# dy = [0,0,-1,1]
+
+# def dfs(x,y):
+#     matrix[x][y]=0
+#     for i in range(4):
+#             cx = x + dx[i]
+#             cy = y + dy[i]
+#             if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
+#                 dfs(x,y)
 
 
-t = int(input())
+# def bfs(x,y):
+#     queue = deque()
+#     queue.append([x,y])
+#     while queue:
+#         a,b = queue.popleft()
+#         for i in range(4):
+#             cx = a + dx[i]
+#             cy = b + dy[i]
+#             if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
+#                 matrix[cx][cy]=0 
+#                 queue.append([cx,cy])
 
-dx = [1,-1,0,0]
-dy = [0,0,-1,1]
+# for _ in range(t):
+#     m,n,k=map(int,input().split()) #가로ㅡ세로 
+#     matrix = [[0]*m for _ in range(n) ]
+#     cnt = 0 
+#     #그래프 ㅡ그리기 
+#     for _ in range(k):
+#         y,x = map(int,input().split())
+#         matrix[x][y]=1 #배추심기 
 
-def bfs(x,y):
-    queue = deque()
-    queue.append([x,y])
-    while queue:
-        a,b = queue.popleft()
-        for i in range(4):
-            cx = a + dx[i]
-            cy = b + dy[i]
-            if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
-                matrix[cx][cy]=0 
-                queue.append([cx,cy])
-
-for _ in range(t):
-    m,n,k=map(int,input().split()) #가로ㅡ세로 
-    matrix = [[0]*m for _ in range(n) ]
-    cnt = 0 
-    #그래프 ㅡ그리기 
-    for _ in range(k):
-        y,x = map(int,input().split())
-        matrix[x][y]=1 #배추심기 
-
-    #탐색 
-    for i in range(n):
-        for j in range(m):
-            if matrix[i][j]==1:
-                bfs(i,j) #연결된 요소 변경 
-                matrix[i][j]=0 
-                cnt+=1 
-    print(cnt)
+#     #탐색 
+#     for i in range(n):
+#         for j in range(m):
+#             if matrix[i][j]==1:
+#                 bfs(i,j) #연결된 요소 변경 
+#                 matrix[i][j]=0 
+#                 cnt+=1 
+#     print(cnt)
     
+# from collections import deque
 
+
+# t = int(input())
+
+# dx = [1,-1,0,0]
+# dy = [0,0,-1,1]
+
+# def bfs(x,y):
+#     queue = deque()
+#     queue.append([x,y])
+#     while queue:
+#         a,b = queue.popleft()
+#         for i in range(4):
+#             cx = a + dx[i]
+#             cy = b + dy[i]
+#             if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
+#                 matrix[cx][cy]=0 
+#                 queue.append([cx,cy])
+
+        
+
+# for _ in range(t):
+#     m,n,k = map(int,input().split()) ; cnt =0 
+#     matrix = [[0]*m for _ in range(n)]
+#     for _ in range(k):
+#         y,x = map(int,input().split())
+#         matrix[x][y] = 1
+
+#     for i in range(n):
+#         for j in range(m):
+#             if matrix[i][j]==1: #아직안간곳 
+#                 matrix[i][j]=0 
+#                 bfs(i,j) 
+#                 cnt +=1 
+#     print(cnt)
