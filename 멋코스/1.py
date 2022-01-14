@@ -349,43 +349,69 @@
 
 #dfs 
 #bfs 
-import sys 
-input = sys.stdin.readline
+# import sys 
+# input = sys.stdin.readline
+# from collections import deque
+
+# def bfs(v):
+#     queue = deque()
+#     queue.append(v)
+#     visted[v] == 0 
+
+#     while queue:
+#         v = queue[0]
+#         print(queue.popleft(),end=" ")
+#         for i in range(n+1):
+#             if visted[i]==1 and matrix[v][i]==1:
+#                 queue.append(i)
+#                 visted[i]=0 
+
+
+
+# def dfs(v):
+#     print(v,end=" ")
+#     visted[v]=1 
+#     for i in range(1,n+1):
+#         if visted[i]==0 and matrix[v][i]==1:
+#             dfs(i)
+
+
+# n,m,v = map(int,input().split())
+# matrix = [[0]*(n+1) for _ in range(n+1)]
+# visted = [0 for _ in range(n+1)]
+
+# for _ in range(m):
+#     x,y = map(int,input().split())
+#     matrix[x][y] = 1
+#     matrix[y][x] = 1
+
+# dfs(v)
+# print() 
+# bfs(v)
+
+
+#2178 : 미로 
 from collections import deque
+n,m = map(int,input().split())
+matrix = [list(map(int,list(input()))) for _ in range(n)] #크으.. 
 
-def bfs(v):
+dx = [1,-1,0,0]
+dy = [0,0,1,-1]
+
+def bfs(x,y):
     queue = deque()
-    queue.append(v)
-    visted[v] == 0 
-
+    queue.append([0,0])
     while queue:
-        v = queue[0]
-        print(queue.popleft(),end=" ")
-        for i in range(n+1):
-            if visted[i]==1 and matrix[v][i]==1:
-                queue.append(i)
-                visted[i]=0 
+        a,b = queue.popleft()
+        for i in range(4):
+            cx = a+dx[i]
+            cy = b+dy[i]
+            if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
+                matrix[cx][cy] = matrix[a][b]+1 
+                queue.append([cx,cy])
+
+bfs(0,0)
+print(matrix[n-1][m-1])
 
 
-
-def dfs(v):
-    print(v,end=" ")
-    visted[v]=1 
-    for i in range(1,n+1):
-        if visted[i]==0 and matrix[v][i]==1:
-            dfs(i)
-
-
-n,m,v = map(int,input().split())
-matrix = [[0]*(n+1) for _ in range(n+1)]
-visted = [0 for _ in range(n+1)]
-
-for _ in range(m):
-    x,y = map(int,input().split())
-    matrix[x][y] = 1
-    matrix[y][x] = 1
-
-dfs(v)
-print() 
-bfs(v)
 
