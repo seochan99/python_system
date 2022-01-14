@@ -391,27 +391,49 @@
 
 
 #2178 : 미로 
-from collections import deque
-n,m = map(int,input().split())
-matrix = [list(map(int,list(input()))) for _ in range(n)] #크으.. 
+# from collections import deque
+# n,m = map(int,input().split())
+# matrix = [list(map(int,list(input()))) for _ in range(n)] #크으.. 
 
-dx = [1,-1,0,0]
-dy = [0,0,1,-1]
+# dx = [1,-1,0,0]
+# dy = [0,0,1,-1]
 
-def bfs(x,y):
-    queue = deque()
-    queue.append([0,0])
-    while queue:
-        a,b = queue.popleft()
-        for i in range(4):
-            cx = a+dx[i]
-            cy = b+dy[i]
-            if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
-                matrix[cx][cy] = matrix[a][b]+1 
-                queue.append([cx,cy])
+# def bfs(x,y):
+#     queue = deque()
+#     queue.append([0,0])
+#     while queue:
+#         a,b = queue.popleft()
+#         for i in range(4):
+#             cx = a+dx[i]
+#             cy = b+dy[i]
+#             if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1:
+#                 matrix[cx][cy] = matrix[a][b]+1 
+#                 queue.append([cx,cy])
 
-bfs(0,0)
-print(matrix[n-1][m-1])
+# bfs(0,0)
+# print(matrix[n-1][m-1])
+# from collections import deque
+# n,m = map(int,input().split())
+# matrix = [list(map(int,list(input()))) for _ in range(n+1)]
+
+# dx = [1,-1,0,0]
+# dy = [0,0,-1,1]
+
+# def bfs(x,y):
+#     queue = deque()
+#     queue.append([x,y])
+#     while queue:
+#         a,b = queue.popleft()
+#         for i in range(4):
+#             cx = a+dx[i]
+#             cy = b+dy[i]
+#             if 0<=cx<n and 0<=cy<m and matrix[cx][cy]==1 : #아직 방문 x 
+#                 matrix[cx][cy]=matrix[a][b]+1 
+#                 queue.append([cx,cy])
 
 
+
+
+# bfs(0,0)
+# print(matrix[n-1][m-1])
 
