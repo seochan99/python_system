@@ -167,3 +167,108 @@ function begin(){
 }
 
 ehdwk동자
+
+
+
+// function showError(){
+//     alert('에러가 발생했습니다.');
+// }
+// showError();
+
+// function sayhello(name){
+//     let msg= `hello`; 
+//     if(name){
+//         msg = `Hello ${name}`;
+//     }
+//     console.log(msg);
+// }
+// sayhello('mike')
+
+function showError(){
+    console.log("error");
+}
+
+
+showError();
+
+let showError = function(){
+    console.log('error'); 
+}
+let showError =()=>{
+    console.log("error");
+}
+const sayHello = function(name){
+    const msg = `Hello, ${name}`;
+    console.log(msg);
+};
+const sayHello = (name)=>{
+    const msg = `Hello, ${name}`;
+    console.log(msg);
+};
+
+const add = function(num1,num2){
+    const result = num1 + num2;
+    return result;
+};
+
+// 익숙해져야행,, 
+const add = (num1,num2)=> num1+num2; 
+//return 1줄이면 더 간단히 만든다...! 
+
+//객체 
+// const superman = {
+//     name : "clark",
+//     age : 30,
+// }
+
+// superman.hairColor = "black"; //추가 
+// superman['hobby']="football"
+// delete superman.age; 
+
+// console.log(superman)
+// console.log(superman.name)
+// console.log(superman['age']) 
+
+
+// function makeObject(name,age){
+//     return{
+//         name : name,
+//         age : age,
+//         hobby : 'football'
+//     }
+// }
+// function makeObject(name,age){
+//     return{
+//         name,
+//         age,
+//         hobby : 'football'
+//     }
+// }
+
+// const Mike = makeObject('Mike',30);
+// console.log(Mike);
+// console.log('age' in Mike)
+// console.log("birthday" in Mike)
+
+// function isAdult(user)
+// {
+//     if(!('age' in user) || user.age<20){
+//         return false;
+//     }
+//     return true; 
+// }
+
+// const Mike = {
+//     name : 'Mike',
+//     age : 30
+// };
+
+// for(x in Mike){
+//     console.log(Mike[x]) // Mike['age]
+// }
+
+// const Jane = {
+//     name : "Jane"
+// };
+
+//Method This 
