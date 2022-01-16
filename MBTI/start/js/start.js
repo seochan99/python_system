@@ -272,3 +272,32 @@ const add = (num1,num2)=> num1+num2;
 // };
 
 //Method This 
+//method : 객체 프로티로 할당 된  함수 
+
+
+
+let boy = {
+    name : 'Mike',
+    showName : function(){
+        console.log(this.name)
+    }
+};
+let man = boy;
+boy = null; 
+man.showName();
+let boy = {
+    name : 'Mike',
+    sayThis: ()=>{
+        console.log(this);
+    }
+};
+boy.sayThis();
+
+let days = ['on','tue','wed'];
+for(let idx=0;idx<days.length;idx++){
+    console.log(days[idx]); 
+}
+for(let day of days)
+{
+    console.log(day)
+}

@@ -111,8 +111,8 @@
 # print(b)
 
 #패킹 
-test = [1,2,"apple"]
-a,b,c = test
-print(a,b,c) 
-print(test)
+# test = [1,2,"apple"]
+# a,b,c = test
+# print(a,b,c) 
+# print(test)
 
