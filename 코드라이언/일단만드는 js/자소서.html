@@ -1,0 +1,42 @@
+<!-- DOM 
+??document Object Model -->
+<!-- DOM 을 활용하여 html 접근가능  -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자소서 글자수 계산기</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        h1 {
+            margin-top: 30px;
+        }
+        #count {
+            float: right;
+        }
+    </style>
+</head>
+<body class="container">
+    <h1>자기소개</h1>
+    <textarea onkeydown="counter();" class="form-control" rows="3" id="jasoseol"> 인성 문제가 없습니다.</textarea>
+    <!-- onkeydown : 키를 누를떄마다 함수 불러옴 -->
+    <span id="count">(0/200)</span>
+    <script>
+        function counter(){
+            var content = document.getElementById("jasoseol").value;
+            if (content.length > 200){
+                content = content.substring(0,200);
+                document.getElementById("jasoseol").value = content; //content 다시 초기화 
+            }
+            document.getElementById("count").innerHTML = '('+ content.length+'/200'+')';
+        }
+        counter();
+        //이벤트 핸들링 
+        //substring : 잘라내기 가능 문자열 
+        //글자수 세기 . length 
+
+    </script>
+</body>
+</html>
