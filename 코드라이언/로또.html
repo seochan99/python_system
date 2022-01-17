@@ -10,16 +10,26 @@
     <h1>로또 번호 추첨기</h1>
     <script>
         var lotto = [];
-        lotto.push(parseInt( Math.random()*45+1));
-        lotto.push(parseInt( Math.random()*45+1));
-        lotto.push(parseInt( Math.random()*45+1));
-        lotto.push(parseInt( Math.random()*45+1));
-        lotto.push(parseInt( Math.random()*45+1));
-        lotto.push(parseInt( Math.random()*45+1));
-        // lotto.push(7); 
-        // let num = Math.random()*45+1; // random 0~1미만 -> 0~46미만 
-        // let ball1 = parseInt(num);  //parseInt 소수점을 버리고 정수형 
-        document.write(ball1);
+        // lotto.push(parseInt( Math.random()*45+1));
+        // lotto.push(parseInt( Math.random()*45+1));
+        // lotto.push(parseInt( Math.random()*45+1));
+        // lotto.push(parseInt( Math.random()*45+1));
+        // lotto.push(parseInt( Math.random()*45+1));
+        // lotto.push(parseInt( Math.random()*45+1));
+
+
+        //for/while문 
+        while (lotto.length<6)
+        {  
+             // 중복문제 발생 
+            // lotto.push(parseInt( Math.random()*45+1)); 
+            var num = parseInt(Math.random()*45+1);
+            //값잉 없으면 -1 return 한다 
+            if (lotto.indexOf(num == -1)){
+                lotto.push(num); 
+            }
+        }
+        document.write(lotto)
     </script>
     
 </body>
