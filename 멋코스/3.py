@@ -1,9 +1,12 @@
-#선택 정렬 
-from cmath import pi
-from re import L
+# #선택 정렬 
+# from cmath import pi
+# import imp
+# from re import L
+# import re
+# import sys
 
 
-arr = [7,5,9,0,3,1,6,2,4,8]
+# arr = [7,5,9,0,3,1,6,2,4,8]
 
 # for i in range(len(arr)):
 #     min_index = i 
@@ -60,3 +63,23 @@ arr = [7,5,9,0,3,1,6,2,4,8]
 #         break 
 # print(sum(a))
 
+
+import sys
+input = sys.stdin.readline
+
+t = int(input())
+for _ in range(t):
+    n,m = map(int,input().split()) ; cnt=0 
+
+    a = list(map(int,input().split()))
+    b = list(map(int,input().split()))
+    a.sort(reverse=True)
+    b.sort()
+    for i in a:
+        for j in b:
+            if i>j:
+                cnt+=1 
+            else :
+                break 
+
+    print(cnt)
