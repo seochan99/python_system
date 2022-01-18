@@ -64,22 +64,54 @@
 # print(sum(a))
 
 
-import sys
-input = sys.stdin.readline
+# import sys
+# input = sys.stdin.readline
 
-t = int(input())
-for _ in range(t):
-    n,m = map(int,input().split()) ; cnt=0 
+# t = int(input())
+# for _ in range(t):
+#     n,m = map(int,input().split()) ; cnt=0 
 
-    a = list(map(int,input().split()))
-    b = list(map(int,input().split()))
-    a.sort(reverse=True)
-    b.sort()
-    for i in a:
-        for j in b:
-            if i>j:
-                cnt+=1 
-            else :
-                break 
+#     a = list(map(int,input().split()))
+#     b = list(map(int,input().split()))
+#     a.sort(reverse=True)
+#     b.sort()
+#     for i in a:
+#         for j in b:
+#             if i>j:
+#                 cnt+=1 
+#             else :
+#                 break 
 
-    print(cnt)
+#     print(cnt)
+
+# import sys
+# input=sys.stdin.readline
+# sys.setrecursionlimit(10**4) 
+
+# #이분탐색 
+# def bsr(target,start,end,data): #
+#     if start>end:
+#         return None
+#     mid = (start+end)//2
+#     if data[mid]==target:
+#         del data[mid]
+#         return 1
+#     elif data[mid]>target:
+#         end = mid - 1
+#     else : #data[mid]<target
+#         start = mid + 1 
+#     return bsr(target,start,end,data)
+
+# n = int(input()) #상근 카드 갯수 
+# arr1 = list(map(int,input().split()))
+
+# m = int(input()) #엠
+# arr2 = list(map(int,input().split()))
+
+# #상근이가 가지고 있으면 1 아니면 0 출력 
+# arr1.sort()
+# for i in range(m):
+#     if bsr(arr2[i],0,n-1,arr1):
+#         print(1,end=" ")
+#     else :
+#         print(0,end=" ")
