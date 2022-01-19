@@ -116,3 +116,27 @@
 # print(a,b,c) 
 # print(test)
 
+#18406 
+
+
+# score =input()
+# halfLength = len(score)//2 
+# front = score[:halfLength] ; back = score[halfLength:]
+# frontScore = 0 ; backScore = 0 
+
+# for fronts in front:
+#     frontScore+=int(fronts)
+# for backs in back:
+#     backScore+=int(backs)
+
+# if frontScore == backScore:
+#     print("LUCKY")
+# else :
+#     print("READY")
+
+score = input()
+front,back = 0,0 
+for i in score[:len(score)//2]:front+=int(i)
+for i in score[len(score)//2:]:back+=int(i)
+print("LUCKY" if front==back else "READY")
+    
