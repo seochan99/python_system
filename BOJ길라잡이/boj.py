@@ -156,3 +156,5 @@
 # if score!=0:
 #     ans.append(str(score))
 # print(''.join(ans))
+
+#문자열 압축 
