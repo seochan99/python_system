@@ -158,3 +158,34 @@
 # print(''.join(ans))
 
 #문자열 압축 
+#압축전 s 
+#압축을 시도해서 가장 짧은 것의 길이 return 하는 함수 작성
+ldd =[]
+def solution(munja):
+    cnt=0
+    for i in range(len(munja)-1):
+        if munja[i]==munja[i+1]:
+            cnt += 1 
+            del munja[i]
+        else :
+            ldd.append([cnt,munja[i]])
+            cnt = 1 
+    return ldd
+munja = list(input())
+
+print(solution(munja))
+
+
+#문자열 압축 
+#aabbaccc 
+#2a2ba3c 
+#반복적으면 압축률 낮음 
+#2개이상단위로 자르는 방법 생각 
+#ababcdcdababcdcd
+#2ab2cd2ab2cd(2개)
+#2ababcdcd(8개) -> 제일 짧음 
+
+
+
+
+
