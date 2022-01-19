@@ -134,9 +134,25 @@
 # else :
 #     print("READY")
 
-score = input()
-front,back = 0,0 
-for i in score[:len(score)//2]:front+=int(i)
-for i in score[len(score)//2:]:back+=int(i)
-print("LUCKY" if front==back else "READY")
+# score = input()
+# front,back = 0,0 
+# for i in score[:len(score)//2]:front+=int(i)
+# for i in score[len(score)//2:]:back+=int(i)
+# print("LUCKY" if front==back else "READY")
     
+
+#문자열 재정렬 
+# munja = input()
+# ans = []
+# score = 0 
+
+# for x in munja:
+#     if x.isalpha():
+#         ans.append(x) 
+#     else :
+#         score+=int(x)
+
+# ans.sort()
+# if score!=0:
+#     ans.append(str(score))
+# print(''.join(ans))
