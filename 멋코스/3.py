@@ -102,16 +102,146 @@
 #         start = mid + 1 
 #     return bsr(target,start,end,data)
 
-n = int(input()) #상근 카드 갯수 
-arr1 = list(map(int,input().split()))
+# n = int(input()) #상근 카드 갯수 
+# arr1 = list(map(int,input().split()))
 
-m = int(input()) #엠
-arr2 = list(map(int,input().split()))
+# m = int(input()) #엠
+# arr2 = list(map(int,input().split()))
 
-#상근이가 가지고 있으면 1 아니면 0 출력 
-arr1.sort()
-for i in range(m):
-    if bsr(arr2[i],0,n-1,arr1):
-        print(1,end=" ")
-    else :
-        print(0,end=" ")
+# #상근이가 가지고 있으면 1 아니면 0 출력 
+# arr1.sort()
+# for i in range(m):
+#     if bsr(arr2[i],0,n-1,arr1):
+#         print(1,end=" ")
+#     else :
+#         print(0,end=" ")
+
+
+# ko = int(input("국어 점수를 입력하세요."))
+# math = int(input("수학 점수를 입력하세요."))
+# en = int(input("영어 점수를 입력하세요."))
+
+# avg = (ko+math+en)//3 
+# if 90<=avg<=100:
+#     print("A")
+# elif 80<=avg<90:
+#     print("B")
+# elif 70<=avg<80:
+#     print("C")
+# elif 60<=avg<70:
+#     print("D")
+# else:
+#     print("F")
+
+# korean = int(input("국어 점수를 입력하세요:"))
+# math = int(input("수학 점수를 입력하세요:"))
+# english = int(input("영어 점수를 입력하세요:"))
+# total = korean + math + english
+# avg = total//3
+
+# if avg >= 90:
+#     print("A")
+# elif avg >= 80:
+#     print("B")
+# elif avg >= 70:
+#     print("C")
+# elif avg >= 60:
+#     print("D")
+# else:
+#     print("F")
+
+
+# score1 = int(input("국어 점수를 입력하세요. "))
+# score2 = int(input("수학 점수를 입력하세요. "))
+# score3 = int(input("영어 점수를 입력하세요. "))
+
+# average = (score1+score2+score3)/3
+
+# if 90<=average<=100:
+#     print("A등급")
+# elif(average >= 80) and(average<= 90) :
+#     print("B등급")
+# elif(average >= 70) and(average<= 80) :
+#     print("C등급")
+# elif(average >= 60) and(average<= 70) :
+#     print("D등급")
+# else :
+#     print("F등급")
+
+# print("숫자 두개를 입력하세요")
+# num1,num2 = map(int,input().split())
+
+# print("----------계산기----------")
+# print("1. 더하기")
+# print("2. 빼기")
+# print("3. 나누기")
+# print("4. 곱하기")
+# print("5. 나머지")
+# print("----원하는 연산의 번호를 선택해주세요----")
+# choice = int(input())
+
+# if choice==1:
+#     print("더하기 :",num1+num2)
+# elif choice==2:
+#     print("빼기 : ",num1-num2)
+# elif choice==3:
+#     print("나누기 : ", num1//num2)
+# elif choice==4:
+#     print("곱하기 : ", num1*num2)
+# elif choice==5:
+#     print("나머지 :",num1%num2)
+# else:
+#     print("잘못된 번호를 입력하셨습니다.")
+
+
+
+# option = int(input("1:더하기, 2:빼기, 3:나누기, 4:곱하기, 5:나머지"))
+# # num1 = int(input()) ;num2 = int(input())
+# num1,num2 = map(int,input().split())
+# if option == 1:
+#     print(num1 + num2)
+# elif option ==2:
+#     print(num1 - num2)
+# elif option ==3:
+#     print(num1 // num2)
+# elif option ==4:
+#     print(num1 * num2)
+# elif option ==5:
+#     print(num1 % num2)
+# else:
+#     print("프로그램이 종료되었습니다.")
+
+
+# print("1번 : 덧셈, 2번 : 뺼셈, 3번 곱셈, 4번 나눗셈, 5번 나머지")
+# print("숫자 2개와 원하는 프로그램 적으시오.")
+# num1, num2, menu = map(int,input().split())
+# if menu == 1 :
+#     print("덧셈 : " + (num1+num2))
+# elif menu == 2 :
+#     print("뺼셈 : " + (num1-num2))
+# elif menu == 3 :
+#     print("곱셈 : " + (num1*num2)) 
+# elif menu == 4 :
+#     print("나눗셈 : " + (num1/num2))
+# elif menu == 5 :
+#     print("나머지 : " + (num1%num2))
+# else :
+#     print("잘못된 프로그램 선택입니다.")
+
+year = int(input())
+if (year%4==0 and year//100!=0) or (year//400==0):
+    print(1)
+else :
+    print(0)
+
+year = int(input())
+if (year%4==0 and year%100 != 0) or (year %400 == 0) :
+    print("1")
+else :
+    print("0")
+
+year = int(input())
+if (year%4 == 0 and year%100!= 0) or (year%400==0):
+    print(1)
+else:
+    print(0)
