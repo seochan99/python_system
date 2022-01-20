@@ -102,16 +102,16 @@
 #         start = mid + 1 
 #     return bsr(target,start,end,data)
 
-# n = int(input()) #상근 카드 갯수 
-# arr1 = list(map(int,input().split()))
+n = int(input()) #상근 카드 갯수 
+arr1 = list(map(int,input().split()))
 
-# m = int(input()) #엠
-# arr2 = list(map(int,input().split()))
+m = int(input()) #엠
+arr2 = list(map(int,input().split()))
 
-# #상근이가 가지고 있으면 1 아니면 0 출력 
-# arr1.sort()
-# for i in range(m):
-#     if bsr(arr2[i],0,n-1,arr1):
-#         print(1,end=" ")
-#     else :
-#         print(0,end=" ")
+#상근이가 가지고 있으면 1 아니면 0 출력 
+arr1.sort()
+for i in range(m):
+    if bsr(arr2[i],0,n-1,arr1):
+        print(1,end=" ")
+    else :
+        print(0,end=" ")
