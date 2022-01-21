@@ -320,21 +320,31 @@
 # for i in range(n):
 #     print(' '.join(age[i]))
 #빈도, 들어온 순서 
-n,c = map(int,input().split())
+# n,c = map(int,input().split())
+# arr = list(map(int,input().split()))
+
+# bindo = {} #빈도, 처음 등장위치 
+
+# for i in range(n):
+#     if arr[i] in bindo:
+#         bindo[arr[i]][0]+=1 
+#     else :
+#         bindo[arr[i]]=[1,i] #빈도,위치 
+# print(bindo.items())
+
+# sortBindo = sorted(bindo.items(),key = lambda x : (-x[1][0],x[1][1]))
+
+# result = []
+# for i in sortBindo:
+#     for j in range(i[1][0]):
+#         result.append(str(i[0]))
+# print(" ".join(result))
+
+n = int(input())
 arr = list(map(int,input().split()))
-
-bindo = {} #빈도, 처음 등장위치 
-
+arr.sort()
+personTime = 0 ; totalTime = 0
 for i in range(n):
-    if arr[i] in bindo:
-        bindo[arr[i]][0]+=1 
-    else :
-        bindo[arr[i]]=[1,i] #빈도,위치 
-
-sortBindo = sorted(bindo.items(),key = lambda x : (-x[1][0],x[1][1]))
-
-result = []
-for i in sortBindo:
-    for j in range(i[1][0]):
-        result.append(str(i[0]))
-print(" ".join(result))
+    personTime+=arr[i]
+    totalTime+=personTime 
+print(totalTime)
