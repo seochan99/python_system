@@ -253,25 +253,42 @@
 #길이 같으면 숫자의 합 중 작은 것이 먼저 
 #숫자마져 같으면 사전 순 
 
-import sys 
-input = sys.stdin.readline
+# import sys 
+# input = sys.stdin.readline
 
-n = int(input())
-codes = [0 for _ in range(n)]
+# n = int(input())
+# codes = [0 for _ in range(n)]
 
-def total(code):
-    score=0
-    for x in code:
-        if x.isalpha():
-            continue
-        else :
-            score+=int(x)
-    return score
+# def total(code):
+#     score=0
+#     for x in code:
+#         if x.isdigit():
+#             score+=int(x)
+#     return score
             
             
-for i in range(n):
-    codes[i]  = input().rstrip() #시리얼번호 입력받기 
+# for i in range(n):
+#     codes[i]  = input().rstrip() #시리얼번호 입력받기 
 
-codes.sort(key = lambda x:(len(x),total(x),x))#길이,합,사전순
-for code in codes:
-    print(code)
+# codes.sort(key = lambda x:(len(x),total(x),x))#길이,합,사전순
+
+# for code in codes:
+#     print(code)
+
+# def total(code):
+#     score=0
+#     for x in code:
+#         if x.isdigit():
+#             score+=int(x)
+#     return score
+
+
+# n = int(input())
+# codes = [0 for _ in range(n)]
+# for i in range(n):
+#     codes[i] = input()
+
+# codes.sort(key=lambda x:(len(x),total(x),x))
+
+# for code in codes:
+#     print(code)
