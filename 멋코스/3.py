@@ -228,20 +228,50 @@
 # else :
 #     print("잘못된 프로그램 선택입니다.")
 
-year = int(input())
-if (year%4==0 and year//100!=0) or (year//400==0):
-    print(1)
-else :
-    print(0)
+# year = int(input())
+# if (year%4==0 and year//100!=0) or (year//400==0):
+#     print(1)
+# else :
+#     print(0)
 
-year = int(input())
-if (year%4==0 and year%100 != 0) or (year %400 == 0) :
-    print("1")
-else :
-    print("0")
+# year = int(input())
+# if (year%4==0 and year%100 != 0) or (year %400 == 0) :
+#     print("1")
+# else :
+#     print("0")
 
-year = int(input())
-if (year%4 == 0 and year%100!= 0) or (year%400==0):
-    print(1)
-else:
-    print(0)
+# year = int(input())
+# if (year%4 == 0 and year%100!= 0) or (year%400==0):
+#     print(1)
+# else:
+#     print(0)
+
+
+#1413 : 시리얼 번호 
+
+#길이 짧은게 먼저 
+#길이 같으면 숫자의 합 중 작은 것이 먼저 
+#숫자마져 같으면 사전 순 
+
+import sys 
+input = sys.stdin.readline
+
+n = int(input())
+codes = [0 for _ in range(n)]
+
+def total(code):
+    score=0
+    for x in code:
+        if x.isalpha():
+            continue
+        else :
+            score+=int(x)
+    return score
+            
+            
+for i in range(n):
+    codes[i]  = input().rstrip() #시리얼번호 입력받기 
+
+codes.sort(key = lambda x:(len(x),total(x),x))#길이,합,사전순
+for code in codes:
+    print(code)

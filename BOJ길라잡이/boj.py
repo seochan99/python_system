@@ -142,20 +142,20 @@
     
 
 #문자열 재정렬 
-# munja = input()
-# ans = []
-# score = 0 
+munja = input()
+ans = []
+score = 0 
 
-# for x in munja:
-#     if x.isalpha():
-#         ans.append(x) 
-#     else :
-#         score+=int(x)
+for x in munja:
+    if x.isalpha():
+        ans.append(x) 
+    else :
+        score+=int(x)
 
-# ans.sort()
-# if score!=0:
-#     ans.append(str(score))
-# print(''.join(ans))
+ans.sort()
+if score!=0:
+    ans.append(str(score))
+print(''.join(ans))
 
 #문자열 압축 
 #압축전 s 
