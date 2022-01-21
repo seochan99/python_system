@@ -292,3 +292,15 @@
 
 # for code in codes:
 #     print(code)
+
+#1181 
+n = int(input())
+word = []
+for _ in range(n):
+    word.append(input())
+
+word = list(set(word)) #집합으로 중복제것 스킬 
+
+word.sort(key=lambda x:(len(x),x))
+for words in word:
+    print(words)
