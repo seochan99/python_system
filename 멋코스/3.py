@@ -294,13 +294,47 @@
 #     print(code)
 
 #1181 
-n = int(input())
-word = []
-for _ in range(n):
-    word.append(input())
+# n = int(input())
+# word = []
+# for _ in range(n):
+#     word.append(input())
 
-word = list(set(word)) #집합으로 중복제것 스킬 
+# word = list(set(word)) #집합으로 중복제것 스킬 
 
-word.sort(key=lambda x:(len(x),x))
-for words in word:
-    print(words)
+# word.sort(key=lambda x:(len(x),x))
+# for words in word:
+#     print(words)
+
+# # 2910 : 빈도정렬
+# n,c = map(int,input().split()) #메세지 길이,최대수 
+
+# arr = list(map(int,list(input().split()))) #수열을 받는다 
+# cnt = {} ; idx = 1 
+# for i in range(n):
+
+# n = int(input())
+# age =[]
+# for i in range(n):
+#     age.append(list(input().split()))
+# age.sort(key = lambda x:int(x[0]))
+# for i in range(n):
+#     print(' '.join(age[i]))
+#빈도, 들어온 순서 
+n,c = map(int,input().split())
+arr = list(map(int,input().split()))
+
+bindo = {} #빈도, 처음 등장위치 
+
+for i in range(n):
+    if arr[i] in bindo:
+        bindo[arr[i]][0]+=1 
+    else :
+        bindo[arr[i]]=[1,i] #빈도,위치 
+
+sortBindo = sorted(bindo.items(),key = lambda x : (-x[1][0],x[1][1]))
+
+result = []
+for i in sortBindo:
+    for j in range(i[1][0]):
+        result.append(str(i[0]))
+print(" ".join(result))
