@@ -319,7 +319,7 @@
 # age.sort(key = lambda x:int(x[0]))
 # for i in range(n):
 #     print(' '.join(age[i]))
-#빈도, 들어온 순서 
+# 빈도, 들어온 순서 
 # n,c = map(int,input().split())
 # arr = list(map(int,input().split()))
 
@@ -330,7 +330,6 @@
 #         bindo[arr[i]][0]+=1 
 #     else :
 #         bindo[arr[i]]=[1,i] #빈도,위치 
-# print(bindo.items())
 
 # sortBindo = sorted(bindo.items(),key = lambda x : (-x[1][0],x[1][1]))
 
@@ -340,11 +339,75 @@
 #         result.append(str(i[0]))
 # print(" ".join(result))
 
-n = int(input())
-arr = list(map(int,input().split()))
-arr.sort()
-personTime = 0 ; totalTime = 0
+# n = int(input())
+# arr = list(map(int,input().split()))
+# arr.sort()
+# personTime = 0 ; totalTime = 0
+# for i in range(n):
+#     personTime+=arr[i]
+#     totalTime+=personTime 
+# print(totalTime)
+
+
+
+
+# n,c = map(int,input().split())
+# arr = list(map(int,input().split()))
+
+# bindo = {} #빈도, 처음 등장위치 
+
+# {숫자 : [빈도,위치],  }
+# for i in range(n):
+#     if arr[i] in bindo:
+#         bindo[arr[i]][0]+=1 
+#     else :
+#         bindo[arr[i]]=[1,i] #빈도,위치 
+
+# sortBindo = sorted(bindo.items(),key = lambda x : (-x[1][0],x[1][1]))
+
+# result = []
+# for i in sortBindo:
+#     for j in range(i[1][0]):
+#         result.append(str(i[0]))
+# print(" ".join(result))
+
+# n = int(input())
+# arr = list(map(int,input().split()))
+# arr.sort()
+
+# personTime = 0 ; totalTime =0 
+# for time in arr :
+#     personTime+=time
+#     totalTime+=personTime
+# print(totalTime)
+
+
+##################################################################
+import sys
+input = sys.stdin.readline
+
+n,k = map(int,input().split())
+arr=[]
+
 for i in range(n):
-    personTime+=arr[i]
-    totalTime+=personTime 
-print(totalTime)
+    arr.append(list(map(int,input().split())))
+##################################################################
+##################################################################
+##################################################################
+
+################################################################## : ##################################################################
+
+##################################################################
+##################################################################
+##################################################################
+arr.sort(key = lambda x :(-x[1],-x[2],-x[3])) #내림차순 정렬 
+for i in range(n):
+    if arr[i][0] == k:
+        idx = i 
+print(idx)
+#공동등수가 될 수 있으므로 
+for i in range(n):
+    if arr[i][1:] == arr[idx][1:]: #메달 같은데 더 앞에 있는거 ! = 등수 땡겨 ! 
+        print(i+1)
+        break
+##################################################################
