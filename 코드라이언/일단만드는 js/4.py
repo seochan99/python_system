@@ -43,21 +43,21 @@
 # else:
 #     print(result+1)
 
-from bisect import bisect_left, bisect_right 
+# from bisect import bisect_left, bisect_right 
 
-def findRange(a,left_value,right_value):
-    right_idx = bisect_right(a,right_value)
-    left_idx = bisect_left(a,left_value)
-    return right_idx - left_idx 
+# def findRange(a,left_value,right_value):
+#     right_idx = bisect_right(a,right_value)
+#     left_idx = bisect_left(a,left_value)
+#     return right_idx - left_idx 
 
-n = int(input())
-arr1 = list(map(int,input().split())) 
-arr1.sort()
-m = int(input())
-arr2 = list(map(int,input().split())) 
+# n = int(input())
+# arr1 = list(map(int,input().split())) 
+# arr1.sort()
+# m = int(input())
+# arr2 = list(map(int,input().split())) 
 
-for find in arr2:
-    print(findRange(arr1,find,find),end=" ")
+# for find in arr2:
+#     print(findRange(arr1,find,find),end=" ")
 
 
 # -1~3범위에 있는 데이터 개수 출력 
@@ -89,3 +89,53 @@ for find in arr2:
 #             start = mid + 1
 
 # print(result)
+
+#### 1072 : 게임 
+#### 해설용 
+# x,y = map(int,input().split()) 
+# # x : 잔체 게임 y : 이긴 게임 
+# avg = (y/x)*100
+# findAvg = avg+1 
+
+# if(avg>=100):
+#     print(-1)
+#     exit()
+# print("findAvg : ",findAvg)
+
+# start = 1 ; end = x 
+
+# while start<=end:
+#     mid = (start+end)//2
+#     print("mid : ",mid)
+#     newAvg = ((y+mid)/(x+mid))*100
+#     print("newAvg : ",newAvg)
+#     if newAvg<findAvg:
+#         start = mid+1 
+#     else :
+#         result = mid 
+#         end = mid - 1 
+
+    
+# print(result)
+
+x,y = map(int,input().split()) 
+# x : 잔체 게임 y : 이긴 게임 
+avg = (y*100/x) ; findAvg = avg+1 
+
+if(avg>=100):
+    print(-1)
+    exit()
+
+start = 1 ; end = x 
+
+while start<=end:
+    mid = (start+end)//2
+    newAvg = (((y+mid)*100)/(x+mid))
+    if newAvg<findAvg:
+        start = mid+1 
+    else :
+        result = mid 
+        end = mid - 1 
+
+print(result)
+
