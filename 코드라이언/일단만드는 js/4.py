@@ -45,17 +45,20 @@
 
 from bisect import bisect_left, bisect_right 
 
-def count_by_range(a,left_value,right_value):
+def findRange(a,left_value,right_value):
     right_idx = bisect_right(a,right_value)
     left_idx = bisect_left(a,left_value)
     return right_idx - left_idx 
 
-n,x = map(int,input().split())
-arr = list(map(int,input().split())) 
+n = int(input())
+arr1 = list(map(int,input().split())) 
+arr1.sort()
+m = int(input())
+arr2 = list(map(int,input().split())) 
 
-# 값이 4인 데이터 개수 출력 
-result = count_by_range(arr,x,x)
-print(result if result else -1)
+for find in arr2:
+    print(findRange(arr1,find,find),end=" ")
+
 
 # -1~3범위에 있는 데이터 개수 출력 
 # print(count_by_range(a,-1,3)) 
