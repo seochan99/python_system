@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1><a href="index.html">WEB</a></h1>
+    <!-- <input type="button" value = "Night" onclick="
+    document.querySelector('body').style.backgroundColor='black';
+    document.querySelector('body').style.color='white';
+    ">
+    <input type="button" value = "day" onclick="
+    document.querySelector('body').style.backgroundColor='white';
+    document.querySelector('body').style.color='black';
+    ">  -->
+    <input id="night_day" type="button" value="night" onclick="
+
+        var target = document.querySelector('body') // target으로 변수안에 넣는다. 
+    if(document.querySelector('#night_day').value === 'night'){ 
+        target.style.backgroundColor='black';
+        target.style.color='white';
+        document.querySelector('#night_day').value = 'day';
+    }
+    else{
+        target.style.backgroundColor='white';
+        target.style.color='black';
+        document.querySelector('#night_day').value = 'night';
+    }
+    ">
+    <p>ㅋㅋㅋㅋ daskdnsa dksadnk asodasnjo cjzxn jdxcnaodnksadmkxsa mdㅋㅋㅋㅋ daskdnsa dksadnk asodasnjo cjzxn jdxcnaodnksadmkxsa mdㅋㅋㅋㅋ daskdnsa dksadnk asodasnjo cjzxn jdxcnaodnksadmkxsa mdㅋㅋㅋㅋ daskdnsa dksadnk asodasnjo cjzxn jdxcnaodnksadmkxsa mdㅋㅋㅋㅋ daskdnsa dksadnk asodasnjo cjzxn jdxcnaodnksadmkxsa mdㅋㅋㅋㅋ daskdnsa dksadnk asodasnjo cjzxn jdxcnaodnksadmkxsa mdㅋㅋㅋㅋ daskdnsa dksadnk asodasnjo cjzxn jdxcnaodnksadmkxsa mdㅋㅋㅋㅋ daskdnsa dksadnk asodasnjo cjzxn jdxcnaodnksadmkxsa md
+        ㅋㅋㅋㅋ daskdnsa dksadnk asodasnjo cjzxn jdxcnaodnksadmkxsa mdㅋㅋㅋㅋ daskdnsa dksadnk asodasnjo cjzxn jdxcnaodnksadmkxsa mdㅋㅋㅋㅋ daskdnsa dksadnk asodasnjo cjzxn jdxcnaodnksadmkxsa md</p>
+    </p>
+
+    <input type="button" value="night" onclick="
+        var target = document.querySelector('body')
+    if(this.value === 'night'){ 
+        target.style.backgroundColor='black';
+        target.style.color='white';
+        this.value = 'day';
+    }
+    else{
+        target.style.backgroundColor='white';
+        target.style.color='black';
+        this.value = 'night';
+    }
+    ">
+    <a href="ex1.html">ex1</a>
+    <a href="ex2.html">ex2</a>
+    <a href="ex3.html">ex3</a>
+
+        <input type="button" value="night" onclick="nightDayHandler(this);">
+        <script src="colors.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</body>
+</html>
