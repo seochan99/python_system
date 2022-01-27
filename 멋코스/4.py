@@ -117,25 +117,43 @@
 
     
 # print(result)
+# import math 
+# import sys 
+# input = sys.stdin.readline
 
-x,y = map(int,input().split()) 
-# x : 잔체 게임 y : 이긴 게임 
-avg = (y*100/x) ; findAvg = avg+1 
+# x,y = map(int,input().split()) 
+# # x : 잔체 게임 y : 이긴 게임 
+# avg = (y*100/x) ; findAvg = math.floor(avg)+1
 
-if(avg>=100):
-    print(-1)
-    exit()
+# if(avg>=100):
+#     print(-1)
+#     exit(0)
 
-start = 1 ; end = x 
+# start = 0 ; end = x 
 
+# while start<=end:
+#     mid = (start+end)//2
+#     newAvg = (((y+mid)*100)/(x+mid))
+#     if newAvg<findAvg:
+#         start = mid+1 
+#     else :
+#         result = mid 
+#         end = mid - 1 
+
+# print(result)
+
+
+n = int(input())
+
+start = 1
+end = n 
 while start<=end:
     mid = (start+end)//2
-    newAvg = (((y+mid)*100)/(x+mid))
-    if newAvg<findAvg:
-        start = mid+1 
+    find=mid*mid
+    if n==find:
+        print(mid)
+        break 
+    elif n>find:
+        start = mid + 1
     else :
-        result = mid 
         end = mid - 1 
-
-print(result)
-
