@@ -142,18 +142,37 @@
 
 # print(result)
 
+# 제곱근
+# n = int(input())
 
-n = int(input())
+# start = 1
+# end = n 
+# while start<=end:
+#     mid = (start+end)//2
+#     find=mid*mid
+#     if n==find:
+#         print(mid)
+#         break 
+#     elif n>find:
+#         start = mid + 1
+#     else :
+#         end = mid - 1 
+# 1654 : 랜선자르기 
+k,n = map(int,input().split())
+line = [] ; result = []
 
-start = 1
-end = n 
-while start<=end:
-    mid = (start+end)//2
-    find=mid*mid
-    if n==find:
-        print(mid)
-        break 
-    elif n>find:
-        start = mid + 1
-    else :
+for _ in range(k):
+    line.append(int(input()))
+
+start = 1 ; end = max(line)
+
+while start<=end:    
+    total = 0
+    mid =(start+end)//2 
+    for x in line: 
+            total += x//mid
+    if total>=n:
+        start = mid + 1 
+    else : #부족할때 
         end = mid - 1 
+print(end)
