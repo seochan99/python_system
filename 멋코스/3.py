@@ -170,28 +170,32 @@
 
 # print("숫자 두개를 입력하세요")
 # num1,num2 = map(int,input().split())
+# while choice != 6:
+#     print("----------계산기----------")
+#     print("1. 더하기")
+#     print("2. 빼기")
+#     print("3. 나누기")
+#     print("4. 곱하기")
+#     print("5. 나머지")
+#     print("6. 종료")
+#     print("----원하는 연산의 번호를 선택해주세요----")
+#     choice = int(input())
 
-# print("----------계산기----------")
-# print("1. 더하기")
-# print("2. 빼기")
-# print("3. 나누기")
-# print("4. 곱하기")
-# print("5. 나머지")
-# print("----원하는 연산의 번호를 선택해주세요----")
-# choice = int(input())
-
-# if choice==1:
-#     print("더하기 :",num1+num2)
-# elif choice==2:
-#     print("빼기 : ",num1-num2)
-# elif choice==3:
-#     print("나누기 : ", num1//num2)
-# elif choice==4:
-#     print("곱하기 : ", num1*num2)
-# elif choice==5:
-#     print("나머지 :",num1%num2)
-# else:
-#     print("잘못된 번호를 입력하셨습니다.")
+#     if choice==1:
+#         print("더하기 :",num1+num2)
+#     elif choice==2:
+#         print("빼기 : ",num1-num2)
+#     elif choice==3:
+#         print("나누기 : ", num1//num2)
+#     elif choice==4:
+#         print("곱하기 : ", num1*num2)
+#     elif choice==5:
+#         print("나머지 :",num1%num2)
+#     elif choice==6:
+#         print("프로그램을 종료합니다.")
+#         break 
+#     else:
+#         print("잘못된 번호를 입력하셨습니다.")
 
 
 
@@ -411,3 +415,35 @@
 #         print(i+1)
 #         break
 # ##################################################################
+# print("숫자 두개를 입력하세요")
+# num1,num2 = map(int,input().split())
+# while True:
+#     print("----------계산기----------")
+#     print("1. 더하기")
+#     print("2. 빼기")
+#     print("3. 나누기")
+#     print("4. 곱하기")
+#     print("5. 나머지")
+#     print("6. 종료")
+#     print("----원하는 연산의 번호를 선택해주세요----")
+#     choice = int(input())
+
+#     if choice==1:
+#         print("더하기 :",num1+num2)
+#     elif choice==2:
+#         print("빼기 : ",num1-num2)
+#     elif choice==3:
+#         print("나누기 : ", num1//num2)
+#     elif choice==4:
+#         print("곱하기 : ", num1*num2)
+#     elif choice==5:
+#         print("나머지 :",num1%num2)
+#     elif choice==6:
+#         print("프로그램을 종료합니다.")
+#         break 
+#     else:
+#         print("잘못된 번호를 입력하셨습니다.")
+
+num = int(input())
+for i in range(1,10):
+    print(f"{num} X {i} = {num*i}")

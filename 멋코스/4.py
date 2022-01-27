@@ -157,22 +157,51 @@
 #         start = mid + 1
 #     else :
 #         end = mid - 1 
+
 # 1654 : 랜선자르기 
-k,n = map(int,input().split())
-line = [] ; result = []
+# k,n = map(int,input().split())
+# line = [] ; result = []
 
-for _ in range(k):
-    line.append(int(input()))
+# for _ in range(k):
+#     line.append(int(input()))
 
-start = 1 ; end = max(line)
+# start = 1 ; end = max(line)
 
-while start<=end:    
-    total = 0
-    mid =(start+end)//2 
-    for x in line: 
-            total += x//mid
-    if total>=n:
-        start = mid + 1 
-    else : #부족할때 
-        end = mid - 1 
+# while start<=end:    
+#     total = 0
+#     mid =(start+end)//2 
+#     for x in line: 
+#             total += x//mid
+#     if total>=n:
+#         start = mid + 1 
+#     else : #부족할때 
+#         end = mid - 1 
+# print(end)
+
+# 2512 : 예산 
+# from re import T
+
+
+n = int(input())
+asset = list(map(int,input().split()))
+chongAsset = int(input())
+
+start,end = 0,max(asset)
+result = []
+while start<=end:
+        mid =(start+end)//2 
+        total =0 
+        for x in asset:
+            if x<mid:
+                total+=x   
+            else :                                 
+                total+=mid 
+        if total<=chongAsset:
+            start = mid + 1 
+        else : 
+            end = mid - 1
+            
+
 print(end)
+
+
