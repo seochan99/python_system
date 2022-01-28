@@ -291,21 +291,50 @@
 
 # print(end)
 
+# n = int(input())
+# start = 1 
+# end = n 
+
+# while start<=end:
+#     mid = (start+end)//2
+#     imFind = mid*mid
+#     if imFind == n :
+#         print(mid)
+#         break 
+#     elif imFind < n:
+#         start = mid + 1 
+#     else :
+#         end = mid - 1 
+
+
+
+# list = ["서희찬","이건회","박현준"]
+# ran_num = random.randint(1,3)
+
+# for i in range(3):
+#     while ran_num in list:
+#         ran_num = random.randint(1,3)
+#     list.append(ran_num)
+
+# print (list)
+
+
+
 n = int(input())
-start = 1 
+
+start = 1
 end = n 
 
 while start<=end:
     mid = (start+end)//2
-    imFind = mid*mid
-    if imFind == n :
+    target = mid**2 
+    if target==n:
         print(mid)
         break 
-    elif imFind < n:
+    elif n>target:
         start = mid + 1 
     else :
-        end = mid - 1 
-
+        end = mid - 1
 
 
 
