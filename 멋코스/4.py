@@ -203,31 +203,70 @@
             
 
 # print(end)
-n,m = map(int,input().split()) #강의수 #M개의 블루레이         .
-time = list(map(int,input().split()))
+# n,m = map(int,input().split()) #강의수 #M개의 블루레이         .
+# time = list(map(int,input().split()))
 
-# 블루레이크기를 이분탐색하자 ! 
-start,end = max(time),sum(time)
+# # 블루레이크기를 이분탐색하자 ! 
+# start,end = max(time),sum(time)
+# result = end
+
+# while start<=end:
+#     mid = (start+end)//2 
+    
+#     total =0 ; cnt = 0
+#     for times in time:
+#         if total+times > mid:
+#             cnt+=1 
+#             total=0 
+#         total += times 
+#     if total: # 토탈이 남아있다면 
+#         cnt+=1 #1개추가 
+
+#         # print(f"start : {start} mid : {mid} end : {end}, cnt {cnt}")
+#     if cnt<=m: #총 개수가 블루레이보다 작거나 같다 
+#         result = min(result,mid)
+#         end = mid - 1
+#     else :
+#         start = mid + 1
+        
+# print(result)
+    
+
+#2792 : 보석 상자 
+#질투심 = 가장 많은 보석을 가져간 애의 보석의 수  -> 질투심 최소가되게 찾자 
+# 보석 최소 
+# 항상 같은 색 보석만 
+n,m = map(int,input().split()) #학생의 수 n ->
+
+jew = []
+for i in range(m):
+    jew.append(int(input()))
+
+start,end = 1,max(jew) 
+
 result = end
 
 while start<=end:
     mid = (start+end)//2 
-    
-    total =0 ; cnt = 0
-    for times in time:
-        if total+times > mid:
-            cnt+=1 
-            total=0 
-        total += times 
-    if total: # 토탈이 남아있다면 
-        cnt+=1 #1개추가 
+    total=0;cnt = 0 # cnt = 아이 수 
+    for jews in jew:
+        for _ in range(jews):
+            one = 1
+            if total+one>mid:
+                cnt+=1
+                total=0
+            
+            total += i 
+        if total: # 토탈이 남아있다면 
+            total=0
+            cnt+=1 #1개추가 
 
-        # print(f"start : {start} mid : {mid} end : {end}, cnt {cnt}")
-    if cnt<=m: #총 개수가 블루레이보다 작거나 같다 
-        result = min(result,mid)
-        end = mid - 1
-    else :
+        print(f"start : {start} mid : {mid} end : {end}, cnt {cnt}")
+    if cnt<=n:
         start = mid + 1
+        result = min(result,mid)
+    else :
+        
+        end = mid - 1
         
 print(result)
-    
