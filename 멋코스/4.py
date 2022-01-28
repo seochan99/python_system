@@ -236,37 +236,80 @@
 #질투심 = 가장 많은 보석을 가져간 애의 보석의 수  -> 질투심 최소가되게 찾자 
 # 보석 최소 
 # 항상 같은 색 보석만 
-n,m = map(int,input().split()) #학생의 수 n ->
+# n,m = map(int,input().split()) #학생의 수 n ->
 
-jew = []
-for i in range(m):
-    jew.append(int(input()))
+# jew = []
+# for i in range(m):
+#     jew.append(int(input()))
 
-start,end = 1,max(jew) 
+# start,end = 1,max(jew) 
 
-result = end
+# result = end
+
+# while start<=end:
+#     mid = (start+end)//2 
+#     total=0;cnt = 0 # cnt = 아이 수 
+#     for jews in jew:
+#         for _ in range(jews):
+#             one = 1
+#             if total+one>mid:
+#                 cnt+=1
+#                 total=0
+            
+#             total += i 
+#         if total: # 토탈이 남아있다면 
+#             total=0
+#             cnt+=1 #1개추가 
+
+#         print(f"start : {start} mid : {mid} end : {end}, cnt {cnt}")
+#     if cnt<=n:
+#         start = mid + 1
+#         result = min(result,mid)
+#     else :
+        
+#         end = mid - 1
+        
+# print(result)
+# n = int(input())
+# yeahsan = list(map(int,input().split()))
+# chongYeahsan = int(input())
+
+# start,end = 0,max(yeahsan)
+
+# while start<=end:
+#     mid = (start+end)//2 
+#     total=0 
+#     for x in yeahsan:
+#         if x>=mid :
+#             total += mid 
+#         else : 
+#             total += x 
+#     if total<=chongYeahsan: 
+#         start = mid + 1 
+#     else :
+#         end = mid - 1 
+
+# print(end)
+
+n = int(input())
+start = 1 
+end = n 
 
 while start<=end:
-    mid = (start+end)//2 
-    total=0;cnt = 0 # cnt = 아이 수 
-    for jews in jew:
-        for _ in range(jews):
-            one = 1
-            if total+one>mid:
-                cnt+=1
-                total=0
-            
-            total += i 
-        if total: # 토탈이 남아있다면 
-            total=0
-            cnt+=1 #1개추가 
-
-        print(f"start : {start} mid : {mid} end : {end}, cnt {cnt}")
-    if cnt<=n:
-        start = mid + 1
-        result = min(result,mid)
+    mid = (start+end)//2
+    imFind = mid*mid
+    if imFind == n :
+        print(mid)
+        break 
+    elif imFind < n:
+        start = mid + 1 
     else :
-        
-        end = mid - 1
-        
-print(result)
+        end = mid - 1 
+
+
+
+
+
+
+
+
