@@ -182,26 +182,52 @@
 # from re import T
 
 
-n = int(input())
-asset = list(map(int,input().split()))
-chongAsset = int(input())
+# n = int(input())
+# asset = list(map(int,input().split()))
+# chongAsset = int(input())
 
-start,end = 0,max(asset)
-result = []
-while start<=end:
-        mid =(start+end)//2 
-        total =0 
-        for x in asset:
-            if x<mid:
-                total+=x   
-            else :                                 
-                total+=mid 
-        if total<=chongAsset:
-            start = mid + 1 
-        else : 
-            end = mid - 1
+# start,end = 0,max(asset)
+# result = []
+# while start<=end:
+#         mid =(start+end)//2 
+#         total =0 
+#         for x in asset:
+#             if x<mid:
+#                 total+=x   
+#             else :                                 
+#                 total+=mid 
+#         if total<=chongAsset:
+#             start = mid + 1 
+#         else : 
+#             end = mid - 1
             
 
-print(end)
+# print(end)
+n,m = map(int,input().split()) #강의수 #M개의 블루레이         .
+time = list(map(int,input().split()))
 
+# 블루레이크기를 이분탐색하자 ! 
+start,end = max(time),sum(time)
+result = end
 
+while start<=end:
+    mid = (start+end)//2 
+    
+    total =0 ; cnt = 0
+    for times in time:
+        if total+times > mid:
+            cnt+=1 
+            total=0 
+        total += times 
+    if total: # 토탈이 남아있다면 
+        cnt+=1 #1개추가 
+
+        # print(f"start : {start} mid : {mid} end : {end}, cnt {cnt}")
+    if cnt<=m: #총 개수가 블루레이보다 작거나 같다 
+        result = min(result,mid)
+        end = mid - 1
+    else :
+        start = mid + 1
+        
+print(result)
+    
