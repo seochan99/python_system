@@ -320,25 +320,33 @@
 
 
 
-n = int(input())
+# n = int(input())
 
-start = 1
-end = n 
+# start = 1
+# end = n 
 
-while start<=end:
-    mid = (start+end)//2
-    target = mid**2 
-    if target==n:
-        print(mid)
-        break 
-    elif n>target:
-        start = mid + 1 
-    else :
-        end = mid - 1
-
-
+# while start<=end:
+#     mid = (start+end)//2
+#     target = mid**2 
+#     if target==n:
+#         print(mid)
+#         break 
+#     elif n>target:
+#         start = mid + 1 
+#     else :
+#         end = mid - 1
 
 
 
 
 
+
+## 멘토-멘티 팀뽑기 
+import random
+
+arr1 = ["강동희","박상준","서희찬","정재혁","정준홍","이건회","안석환", "오광혁"] 
+arr2 = ["김태연","백지원","신예진","정민주","이슬기","이여원","안소은","정민경"]
+
+random.shuffle(arr1)
+random.shuffle(arr2)
+print(arr1) ; print(arr2)
