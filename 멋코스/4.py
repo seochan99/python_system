@@ -342,23 +342,23 @@
 
 
 ## 멘토-멘티 팀뽑기 
-# import random
+import random
 
-# arr1 = ["강동희","박상준","서희찬","정재혁","정준홍","이건회","안석환", "오광혁"] 
-# arr2 = ["김태연","백지원","신예진","정민주","이슬기","이여원","안소은","정민경"]
+arr1 = ["강동희","박상준","서희찬","정재혁","정준홍","이건회","안석환", "오광혁"] 
+arr2 = ["김태연","백지원","신예진","정민주","이슬기","이여원","안소은","정민경"]
 
-# random.shuffle(arr1)
-# random.shuffle(arr2)
-# print(arr1) ; print(arr2)
+random.shuffle(arr1)
+random.shuffle(arr2)
+print(arr1) ; print(arr2)
 
 
 ## 사다리타기 
-import random
+# import random
 
-arr1 = ["name1","name2","name3"]
-arr2 = [1,2,3]
+# arr1 = ["name1","name2","name3"]
+# arr2 = [1,2,3]
 
-random.shuffle(arr1)
+# random.shuffle(arr1)
 
-print(arr1) ; print(arr2)
+# print(arr1) ; print(arr2)
 
