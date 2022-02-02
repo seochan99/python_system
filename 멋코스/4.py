@@ -353,7 +353,6 @@
 
 
 ## 사다리타기 
-## 
 import random
 
 arr1 = ["name1","name2","name3"]
