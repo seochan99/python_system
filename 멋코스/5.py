@@ -113,3 +113,40 @@
 #         if arr[j]<arr[i]:
 #             dp[i] = max(dp[i],dp[j]+1)
 # print(n-max(dp))
+
+
+
+# for i in range (1,10) :
+#     print()
+#     for j in range (1,10) :
+#         print(f"{i} X {j} = {i*j}")
+
+# for i in range(1,10):
+#     for j in range(1,10):
+#         print(i,"X",j,"=",i*j)
+#     print()
+
+#for문 작성 코드 
+# for i in range(1,10):
+#     for j in range(1,10):
+#         print(f"{i} X {j} = {i*j}")
+#     print()
+
+# #while문 작성 코드 
+# i=1
+# True
+# False = 0
+# while 0:
+#     j=1 
+#     while j<10:
+#         print(f"{i} X {j} = {i*j}")
+#         j+=1 
+
+#     print()
+#     i+=1 
+
+
+# print(bool(""))
+# print(bool("abc"))
+# print(bool([]))
+# print(bool([1,23,4]))
