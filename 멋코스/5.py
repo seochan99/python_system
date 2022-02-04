@@ -150,3 +150,55 @@
 # print(bool("abc"))
 # print(bool([]))
 # print(bool([1,23,4]))
+
+# x = int(input())
+# d=[0]*30001 
+
+# for i in range(2,x+1):
+#     d[i] = d[i-1]+1 
+#     if i%2==0:
+#         d[i] = min(d[i],d[i//2]+1)
+#     if i%3==0:
+#         d[i] = min(d[i],d[i//3]+1)
+#     if i%5==0:
+#         d[i] = min(d[i],d[i//5]+1)
+# print(d[i])
+
+# n = int(input())
+# d = [0]*(n+1) 
+# t=[] ; p = []
+# for _ in range(n):
+#     t,p = map(int,input().split())
+#     tpList.append([t,p])
+
+# for i in range(2,n+1):
+#     d[i] = d[i-1]+tp
+
+# n 물건 갯수
+# k 최대무게 
+
+n,k = map(int,input().split())
+wvList =[[0,0]]
+dp = [[0]*(k+1) for _ in range((n+1))]
+
+for _ in range(n):
+    wvList.append(list(map(int,input().split())))
+
+
+#dp[n][k]는 n번째 물건까지 봤을때 무게가 k인 배낭의 최대가치 
+print(dp)
+for i in range(1,n+1):
+    for j in range(1,k+1):
+        w = wvList[i][0]
+        v = wvList[i][1] 
+
+        # 배낭 허용 무게보다 더 큰 무게를 가진아이는 넣지 않는다
+        if j<w: 
+            dp[i][j] = dp[i-1][j]
+        # 배낭허용무게보다 더 작은 무게를 가진 아이라면 ? 
+        else :
+            # 현재 넣을 무게 만큼 배낭에서 빼고 그 물건을 넣는다
+            # 물건 넣지 않고 그대로 가져간다 
+            # 둘중에 큰 가치를 가진 아이 
+            dp[i][j] = max(dp[i-1][j],dp[i-1][j-w]+v) 
+print(dp)            
