@@ -102,3 +102,62 @@
 #                         new_lock[x+i][y+j] -= key[i][j]
 #     return False 
 
+#3190 : 뱀 
+# from collections import deque
+
+# #상 우 하 좌
+# dy = [-1,0,1,0]
+# dx = [0,1,0,-1]
+# def change(direct,c):
+#     # 상 0 
+#     # 우 1
+#     # 하 2
+#     # 좌 3 
+#     # 시계방향 회전 : 상(0) -> 우(1) -> 하(2) -> 좌(3) -> 상(0) : +1 방향 
+#     # 반시꼐 방향 회전 : 상(0) -> 좌(3) ... 
+#     if c == "L":
+#         direct = (direct - 1) % 4 
+#     else :
+#         direct = (direct + 1) % 4 
+#     return direct
+
+# def start():
+#     direct = 1 #초기 방향 
+#     time = 1 #게임시간 
+#     y,x = 0,0 #초기 뱀 위치 
+#     visted = deque([[y,x]])
+#     matrix[y][x] = 2
+#     while True :
+#         y,x = y+dy[direct], x+dx[direct]
+#         if 0<=y<n and 0<=x<n and matrix[y][x] != 2:
+#             if not matrix[y][x] == 1: #apple X 
+#                 temp_y,temp_x = visted.popleft()
+#                 matrix[temp_y][temp_x] = 0 # del tail 
+#             matrix[y][x] = 2
+#             visted.append([y,x])
+#             if time in times.keys(): #시간초에 도달하면 
+#                 direct = change(direct,times[time]) #방향과 바꿔야하는 방향 전달 
+#             time += 1
+#         else : #벽에 부딪힘 ㅜㅜ 
+#             return time
+
+
+
+# n = int(input()) #보드크기 
+# k = int(input()) #사과 개수 
+
+# matrix = [[0]*n for _ in range(n)]
+# kXY =[]
+# for _ in range(k):
+#     x,y = map(int,input().split())
+#     matrix[x-1][y-1] = 1 #save apple 
+
+# l = int(input()) #방향전환 
+
+# times = {}
+
+# for _ in range(l):
+#     x,c = input().split()
+#     times[int(x)] = c 
+
+# print(start())

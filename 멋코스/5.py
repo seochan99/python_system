@@ -247,27 +247,27 @@
 #1. 계단 한개씩 또는 두개씩 
 #연속 세 계단 x 
 #마지막 계단 밟기 
-import sys 
-input = sys.stdin.readline
-n = int(input())
+# import sys 
+# input = sys.stdin.readline
+# n = int(input())
 
-score = [0 for _ in range(301)]
-dp = [0 for _ in range(301)]
+# score = [0 for _ in range(301)]
+# dp = [0 for _ in range(301)]
 
-for i in range(n):
-    score[i] = int(input())
+# for i in range(n):
+#     score[i] = int(input())
 
-#첫번째 계단 
-dp[0] = score[0]
-#두번째 계딴 
-dp[1] = score[0]+score[1]
-#세번째 계단 
-dp[2] = max(score[0]+score[2],score[1]+score[2])
+# #첫번째 계단 
+# dp[0] = score[0]
+# #두번째 계딴 
+# dp[1] = score[0]+score[1]
+# #세번째 계단 
+# dp[2] = max(score[0]+score[2],score[1]+score[2])
 
-#전계단을 밟을 경우 :
-#전계단을 밟지 않을 경우 :
-for i in range(3,n):
-    dp[i] = max(dp[i-3]+score[i-1]+score[i],dp[i-2]+score[i])
+# #전계단을 밟을 경우 :
+# #전계단을 밟지 않을 경우 :
+# for i in range(3,n):
+#     dp[i] = max(dp[i-3]+score[i-1]+score[i],dp[i-2]+score[i])
 
 
-print(dp[n-1])
+# print(dp[n-1])
