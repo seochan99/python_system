@@ -444,6 +444,9 @@
 #     else:
 #         print("잘못된 번호를 입력하셨습니다.")
 
-num = int(input())
-for i in range(1,10):
-    print(f"{num} X {i} = {num*i}")
+def add():
+    num = int(input())
+    for i in range(1,10):
+        print(f"{num} X {i} = {num*i}")
+
+add()
