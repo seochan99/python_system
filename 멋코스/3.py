@@ -415,6 +415,21 @@
 #         print(i+1)
 #         break
 # ##################################################################
+# def add(a,b):
+#     return a+b 
+
+# def minus(a,b):
+#     return a-b 
+
+# def nanoom(a,b):
+#     return a//b 
+
+# def gop(a,b):
+#     return a*b 
+
+# def namerge(a,b):
+#     return a%b 
+
 # print("숫자 두개를 입력하세요")
 # num1,num2 = map(int,input().split())
 # while True:
@@ -429,15 +444,15 @@
 #     choice = int(input())
 
 #     if choice==1:
-#         print("더하기 :",num1+num2)
+#         print(f"더하기 :{add(num1,num2)}")
 #     elif choice==2:
-#         print("빼기 : ",num1-num2)
+#         print("빼기 : ",minus(num1,num2))
 #     elif choice==3:
-#         print("나누기 : ", num1//num2)
+#         print("나누기 : ",nanoom(num1,num2))
 #     elif choice==4:
-#         print("곱하기 : ", num1*num2)
+#         print("곱하기 : ",gop(num1,num2))
 #     elif choice==5:
-#         print("나머지 :",num1%num2)
+#         print("나머지 :",namerge(num1,num2))
 #     elif choice==6:
 #         print("프로그램을 종료합니다.")
 #         break 
@@ -450,3 +465,25 @@
 #         print(f"{num} X {i} = {num*i}")
 
 # add()
+
+# num = 1
+# def hello(a):
+#     if a>10:
+#         print("num이 10이상입니다!")
+#         return False 
+#     print("hi")
+#     a+=1
+#     hello(a)
+    
+# hello(num)
+
+def fact(num):
+    if num==1 or num==0:
+        return 1 
+    return num * fact(num-1)
+
+
+num  = int(input())
+print(fact(num))
+
+

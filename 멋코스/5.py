@@ -271,3 +271,28 @@
 
 
 # print(dp[n-1])
+
+
+# list1 = [1,2,3]
+# print(list1)
+# list1[0] = 2
+# print(list1)
+
+
+# tuple1 = (201203,2,3)
+# print(tuple1)
+# tuple1[0] = 2
+# print(tuple1)
+
+# def hi(name):
+#     print(f"{name}님 안녕하세요!")
+#     print("반갑습니다!")
+
+# hi("서희찬")
+# hi("김민경")
+# hi("양지현")
+
+def add(a,b):
+    ar = a+b 
+    return ar  
+print(add(3,4))
