@@ -1,4 +1,5 @@
 from collections import deque 
+
 import copy
 
 dx = [0,0,1,-1]
@@ -28,7 +29,7 @@ def bfs():
     cnt = 0 
     for i in range(n):
         cnt+=copyGraph[i].count(0)
-        
+
     ans = max(ans,cnt)
 
 def wallMake(cnt):
