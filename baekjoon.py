@@ -3617,6 +3617,7 @@
 #     money%=coin 
 
 # print(cnt)
-n=1 
-for i in range(n-2):
-    print(i)
+# n=1 
+# for i in range(n-2):
+#     print(i)
+ㅇㄴㅁㅇㄴㅁ
