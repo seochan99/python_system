@@ -1,40 +1,12 @@
-# import random
+import random
 
-# arr1 = ["박현준","서희찬","이건회","이슬기"]
-# arr2 = [1,2,3,4]
+arr1 = ["서희찬" ,"김수영","이건회","정준홍","이여원","오광혁", "정민경","안석환","백지원"]
+arr2 = [1,1,2,2,3,3,4,4,4]
 
-# random.shuffle(arr1)
+random.shuffle(arr1)
 
-# print(arr1) ; print(arr2)
 
-# import random
+for i in range(9):
+    print(f"{arr2[i]}팀 : {arr1[i]}")
 
-# arr1 = ["박현준","서희찬","이슬기","이건회"] 
-# arr2 = ["박현준","서희찬","이슬기","이건회"]
-
-# random.shuffle(arr1)
-# random.shuffle(arr2)
-
-# print(arr1) ; print(arr2)
-
-# def fibo(n):
-#     if n==0:
-#         return 0
-#     if n==1:
-#         return 1
-#     return fibo(n-1)+fibo(n-2)
-
-# print(fibo(7))
-
-# def gop(x,y):
-#     return x*y 
-# print(gop(3,5))
-
-# print((lambda x,y : x*y)(3,5))
-
-# fruit = {'red':"apple,strewberry",'yellow':'banana'}
-# print(fruit['red'])
-listss = list([1,2,3,3,3,4,5])
-jiphap = set([1,2,3,3,3,5])
-
-print(listss) ; print(jiphap)
+## 화이팅~~~ 홧팅~~~~ 
