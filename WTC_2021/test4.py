@@ -20,14 +20,14 @@
 # print(seosul)
 # print(mokjeok)
 
-    
+
 # for i in range(arr[0]):
 #     for j in range(arr[1]):
 #         for k in range(arr[2]):
 #             print(f"{subject[i]} {seosul[j]} {mokjeok[k]};",end="")
 # print("")
 
-# def main(): 
+# def main():
 #     arr = list(input().split(';'))
 #     print(arr)
 #     for i in range(3):
@@ -45,16 +45,15 @@
 
 #     for i in range(3+arr[0]+arr[1],3+arr[0]+arr[1]+arr[2]):
 #         mokjeok.append(arr[i])
-        
+
 #     for i in range(arr[0]):
 #         for j in range(arr[1]):
 #             for k in range(arr[2]):
 #                 print(f"{subject[i]} {seosul[j]} {mokjeok[k]};",end="")
 #     print("")
 
-# if __name__=="__main__": 
+# if __name__=="__main__":
 #     main()
-
 
 
 # if value>4:
@@ -62,7 +61,7 @@
 
 # while value>2:
 #     print("4보다 큽니다.")
-#     value -= 1 
+#     value -= 1
 
 # fruits = ["apple","mango","orange"]
 
@@ -76,19 +75,11 @@
 
 # for line in lines:
 #     if line>1000:
-#         break 
+#         break
 #     print(line)
 
-fruits = ["apple","mango","orange","peach","lemon"]
+fruits = ["apple", "mango", "orange", "peach", "lemon"]
 for fruit in fruits:
-    if fruit=="peach":
+    if fruit == "peach":
         continue
     print(fruit)
-
-    
-    
-
-
-
-
-
