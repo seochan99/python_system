@@ -3606,18 +3606,17 @@
 #     print(i)
 # flag = 
 
-# #거스름돈 
+#거스름돈 
 
-# coins=[500,100,50,10,5,1]
-# money = int(input())
-# money = 1000-money ; cnt=0 
+coins=[500,100,50,10,5,1]
+money = int(input())
+money = 1000-money ; cnt=0 
 
-# for coin in coins:
-#     cnt=cnt+money//coin
-#     money%=coin 
+for coin in coins:
+    cnt=cnt+money//coin
+    money%=coin 
 
-# print(cnt)
-# n=1 
-# for i in range(n-2):
-#     print(i)
-# ㅇㄴㅁㅇㄴㅁ
+print(cnt)
+n=1 
+for i in range(n-2):
+    print(i)
