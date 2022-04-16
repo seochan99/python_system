@@ -1,1 +1,3 @@
-Read me plz
+# Python System 
+
+for study
