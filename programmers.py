@@ -268,9 +268,3 @@
 #     '48' : ['47','49'],
 #     '49' : ['48'],
 # }
-
-def print_again(word1,word2):
-    print(word1 + word2)
-    print(word1*2)
-
-print_again("spam","eggs")
