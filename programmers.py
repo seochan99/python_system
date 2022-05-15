@@ -286,6 +286,7 @@
 # print(f"제곱 결과는 : {a**2}")
 
 from ast import Or
+from cmath import pi
 
 
 a = 4
@@ -322,4 +323,79 @@ b = 6
 # \t : 탭
 
 
-print('hello world')
+# print("hello", "world", "world", "world",
+#       "world", "world", "world", end=" ", sep="#")
+
+
+# 산술연산자
+
+
+# print("더하기 계산 결과의 값은 : ", a+b)
+
+# print("빼기 계산 결과의 값은 : ", a-b)
+
+# print("곱하기 계산 결과의 값은 : ", a*b)
+
+# # print("나누기 계산 결과의 값은 : ",a/b)
+# print("나누기 계산 결과의 값은 : ", a//b)
+
+# print("나머지 계산 결과의 값은 : ", a % b)
+
+# 비교연산자
+# ==
+# !=
+# print(a != b)
+
+# 할당연산자
+# a = a + b
+# a += b
+# print(a)
+
+
+# AND : 모두 참인 경우에만 참
+# &&
+# OR : 모두 거짓인 경우멘 거짓
+# ||
+# NOT : 참->거짓, 거짓->참
+# a = 4
+# b = 7
+
+# print(a <= b)
+# # =<
+# # <=
+
+# print(a >= b)
+
+# 0 : False
+# 1,2,3,4,5 : True
+
+
+# print(bool(not a))
+
+# in, not in
+# a = [1, 3, 5, 6]
+# b = 4 in a
+# print(b)
+
+# a = 8
+# b = 4
+# c = a & b
+# d = a ^ b
+# print(c)
+# print(d)
+
+# identity
+# is, is not
+# a = "sdsad"
+# b = a
+# print(2 is not a)
+
+# \n : 개행
+# \t : 탭 띄우기
+# name = "chan"
+# \\
+# "
+# '
+# \t
+# print("good", name, "morning")
+# print(f"good {name} morning")
