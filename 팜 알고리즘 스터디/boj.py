@@ -174,13 +174,3 @@
 # munja = list(input())
 
 # print(solution(munja))
-
-
-# 문자열 압축
-# aabbaccc
-# 2a2ba3c
-# 반복적으면 압축률 낮음
-# 2개이상단위로 자르는 방법 생각
-# ababcdcdababcdcd
-# 2ab2cd2ab2cd(2개)
-# 2ababcdcd(8개) -> 제일 짧음
