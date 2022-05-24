@@ -392,22 +392,3 @@ b = 6
 
 # \n : 개행
 # \t : 탭 띄우기
-# name = "chan"
-# \\
-# "
-# '
-# \t
-# print("good", name, "morning")
-# print(f"good {name} morning")
-
-
-# print("이름을 입력해주세요 : ", end="")
-
-
-num1, num2 = map(int, input().split())
-
-print(f"덧셈 : {num1+num2}")
-print(f"뺄셈 : {num1-num2}")
-print(f"곱셈 : {num1*num2}")
-print(f"나머지 : {num1%num2}")
-print(f"나눗셈 : {num1//num2}")
