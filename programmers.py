@@ -285,12 +285,12 @@
 
 # print(f"제곱 결과는 : {a**2}")
 
-from ast import Or
-from cmath import pi
+# from ast import Or
+# from cmath import pi
 
 
-a = 4
-b = 6
+# a = 4
+# b = 6
 
 # 비교연산자
 # a랑 b비교 출력 코드
