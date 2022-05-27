@@ -392,3 +392,43 @@
 
 # \n : 개행
 # \t : 탭 띄우기
+
+
+# korea = int(input("국어 점수를 입력하세요 : "))
+# math = int(input("수학 점수를 입력하세요 : "))
+# english = int(input("영어 점수를 입력하세요 : "))
+
+# total = korea+math+english
+# avg = total/3
+
+# print(f"총점 : {total}")
+# print(f"평균 : {avg:.3f}")
+# # round(avg,2)
+
+
+from turtle import color
+
+
+univ = "peer"
+# 회문
+# 앞으로 읽어도 뒤로 읽어도 같은 문자열
+# peep
+# peer
+
+# print(univ[8:18])
+# print("역순 출력 : ", univ[::-1])
+# print("정상 출력 : ", univ[:])
+
+color1 = ["red", "blue", "orange"]
+color2 = ["black", "white", "purple"]
+
+# color1.append("black")
+# color1.extend(["balck", "white"])
+# color1.insert(1, "black")
+
+
+color1.remove("orange")
+
+del color1[2]
+
+print(color1)
