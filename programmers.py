@@ -427,8 +427,8 @@ color2 = ["black", "white", "purple"]
 # color1.insert(1, "black")
 
 
-color1.remove("orange")
+# color1.remove("orange")
 
-del color1[2]
+# del color1[2]
 
-print(color1)
+# print(color1)
