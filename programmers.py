@@ -409,26 +409,54 @@
 from turtle import color
 
 
-univ = "peer"
-# 회문
-# 앞으로 읽어도 뒤로 읽어도 같은 문자열
-# peep
-# peer
+# univ = "peer"
+# # 회문
+# # 앞으로 읽어도 뒤로 읽어도 같은 문자열
+# # peep
+# # peer
 
-# print(univ[8:18])
-# print("역순 출력 : ", univ[::-1])
-# print("정상 출력 : ", univ[:])
+# # print(univ[8:18])
+# # print("역순 출력 : ", univ[::-1])
+# # print("정상 출력 : ", univ[:])
 
-color1 = ["red", "blue", "orange"]
-color2 = ["black", "white", "purple"]
+# color1 = ["red", "blue", "orange"]
+# color2 = ["black", "white", "purple"]
 
-# color1.append("black")
-# color1.extend(["balck", "white"])
-# color1.insert(1, "black")
+# # color1.append("black")
+# # color1.extend(["balck", "white"])
+# # color1.insert(1, "black")
 
 
-# color1.remove("orange")
+# # color1.remove("orange")
 
-# del color1[2]
+# # del color1[2]
 
-# print(color1)
+# # print(color1)
+
+# arr = [1, 5, 3, 2, 4]
+
+# # .index
+# # print(arr.index(2))
+
+# # .count
+# # print(arr.count(1))
+
+# # .sort()
+# # .sort(reveresed=True)
+# print(arr)
+
+# #.reverse()
+# arr.reverse()
+# print(arr)
+
+
+# hour = int(input("현재 시간의 시를 입력해주세요"))
+
+# if 6 < hour < 12:
+#     print("오전입니다 !")
+# elif 12 < hour < 18:
+#     print("오후입니다.")
+# elif 18 < hour < 24:
+#     print("저녁입니다.")
+# else:
+#     print("새벽입니다.")
