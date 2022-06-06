@@ -30,6 +30,6 @@
 #     # 탈출 조건을 무조건 작성해줘야한다!
 #     val -= 1
 
-for _ in range(5):
-    print(val)
-    val -= 1
+# for _ in range(5):
+#     print(val)
+#     val -= 1
