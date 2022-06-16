@@ -1,28 +1,28 @@
 # 계산기
 
-print("---계산기---")
-print("1. 더하기")
-print("2. 빼기")
-print("3. 니누기")
-print("4. 곱하기")
-print("5. 나머지")
-print("----------")
+# print("---계산기---")
+# print("1. 더하기")
+# print("2. 빼기")
+# print("3. 니누기")
+# print("4. 곱하기")
+# print("5. 나머지")
+# print("----------")
 
-choice = int(input("선택지를 입력해주세요 : "))
-num1, num2 = map(int, input("정수 두개를 입력해주세요 : ").split())
+# num1, num2 = map(int, input("정수 두개를 입력해주세요 : ").split())
+# choice = int(input("선택지를 입력해주세요 : "))
 
-if choice == 1:
-    print(f"더하기 값 : {num1+num2}")
-elif choice == 2:
-    print(f"빼기 값 : {num1-num2}")
-elif choice == 3:
-    print(f"나누기 값 : {num1//num2}")
-elif choice == 4:
-    print(f"곱하기 값 : {num1*num2}")
-elif choice == 5:
-    print(f"나머지 값 : {num1%num2}")
-else:
-    print("1~5사이의 숫자를 입력해주세요.")
+# if choice == 1:
+#     print(f"더하기 값 : {num1+num2}")
+# elif choice == 2:
+#     print(f"빼기 값 : {num1-num2}")
+# elif choice == 3:
+#     print(f"나누기 값 : {num1//num2}")
+# elif choice == 4:
+#     print(f"곱하기 값 : {num1*num2}")
+# elif choice == 5:
+#     print(f"나머지 값 : {num1%num2}")
+# else:
+#     print("1~5사이의 숫자를 입력해주세요.")
 
 # val = 5
 # while val > 0:
@@ -91,3 +91,25 @@ else:
 #     print("5보다 작고 3보다 큽니다.")
 # else:
 #     print("3보다작습니다.")
+
+# sentence = "A picture is worth a thousand words."
+
+# table = {"alphas": 0, "digits": 0, "spaces": 0}
+
+# for i in sentence:
+#     if i.isalpha():
+#         table["alphas"] += 1
+#     if i.isdigit():
+#         table["digits"] += 1
+#     if i.isspace():
+#         table["spaces"] += 1
+# print(table)
+
+letter = "attacktonight"
+encodeLetter = ""
+for ch in letter:
+    num = ord(ch)
+    encodeLetter += chr(num+3)
+
+print("PlainText : ", letter)
+print("ChiperText : ", encodeLetter)
