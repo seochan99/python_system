@@ -1,3 +1,5 @@
+import re
+
 # 계산기
 
 # print("---계산기---")
@@ -105,11 +107,29 @@
 #         table["spaces"] += 1
 # print(table)
 
-letter = "attacktonight"
-encodeLetter = ""
-for ch in letter:
-    num = ord(ch)
-    encodeLetter += chr(num+3)
+# letter = "attacktonight"
+# encodeLetter = ""
+# for ch in letter:
+#     num = ord(ch)
+#     encodeLetter += chr(num+3)
 
-print("PlainText : ", letter)
-print("ChiperText : ", encodeLetter)
+# print("PlainText : ", letter)
+# print("ChiperText : ", encodeLetter)
+
+
+# p = re.compile('(1|2)9*\d')
+# print(p.findall("I was born in Seoul at 10 A.M. on 29th October 1992"))
+
+# p2 = re.compile('xy*')
+# print(p.findall("I was born in Seoul at 10 A.M. on 29th October 1992"))
+
+
+def find_o(search_str):
+    idx = 0
+    while:
+        idx += 1
+
+    retun idx
+
+
+print find_o("eeyore")
