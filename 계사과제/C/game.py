@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from tkinter import *
 import time
 
@@ -76,9 +75,9 @@ class Sprite:
     # 충돌을 처리한다. 현재는 아무 일도 하지 않는다. 자식 클래스에서 오버라이드된다.
     def handleCollision(self, other):
         pass
+
+
 # 우리의 우주선을 나타내는 클래스
-
-
 class StarShipSprite(Sprite):
     def __init__(self, game, image, x, y):
         super().__init__(image, x, y)
@@ -89,6 +88,7 @@ class StarShipSprite(Sprite):
     # 우주선을 움직인다. 만약 윈도우의 경계를 넘으려고 하면 움직이지 않는다.
     def move(self):
         if ((self.dx < 0) and (self.x < 10)):
+
             return
         if ((self.dx > 0) and (self.x > 800)):
             return
@@ -100,14 +100,13 @@ class StarShipSprite(Sprite):
         if type(other) is AlienSprite:
             self.game.endGame()
 
+
 # 외계인 우주선을 나타내는 클래스
-
-
 class AlienSprite(Sprite):
     def __init__(self, game, image, x, y):
         super().__init__(image, x, y)
         self.game = game
-        self.dx = -10		# x 방향으로만 움직인다.
+        self.dx = -5		# x 방향으로만 움직인다.
 
     # 외계인 우주선을 움직이는 메소드
     # 윈도우에 경계에 도달하면 한칸 아래로 이동한다.
@@ -118,14 +117,14 @@ class AlienSprite(Sprite):
             if (self.y > 600):
                 game.endGame()
         super().move()
+
+
 # 포탄을 나타내는 클래스
-
-
 class ShotSprite(Sprite):
     def __init__(self, game, image, x, y):
         super().__init__(image, x, y)
         self.game = game
-        self.dy = -20
+        self.dy = -50
 
     # 화면을 벗어나면 객체를 리스트에서 삭제한다.
     def move(self):
@@ -146,12 +145,12 @@ class GalagaGame():
 
     # 왼쪽 화살표 키 이벤트를 처리하는 함수
     def keyLeft(self, event):
-        self.starship.setDx(-10)
+        self.starship.setDx(-20)
         return
 
     # 오른쪽 화살표 키 이벤트를 처리하는 함수
     def keyRight(self, event):
-        self.starship.setDx(+10)
+        self.starship.setDx(+20)
         return
 
     # 스페이스 키 이벤트를 처리하는 함수
@@ -161,9 +160,9 @@ class GalagaGame():
 
     # 게임에 필요한 스프라이트를 생성하는 메소드
     def initSprites(self):
-        self.starship = StarShipSprite(self, self.shipImage, 370, 550)
+        self.starship = StarShipSprite(self, self.shipImage, 370, 500)
         self.sprites.append(self.starship)
-        for y in range(0, 2):
+        for y in range(0, 3):
             for x in range(0, 12):
                 alien = AlienSprite(self, self.alienImage,
                                     100 + (x * 50), (50) + y * 30)
@@ -190,7 +189,7 @@ class GalagaGame():
     # 게임을 시작하는 메소드
     def startGame(self):
         self.sprites.clear()
-        initSprites()
+        self.initSprites()
 
     # 게임을 종료하는 메소드
     def endGame(self):
@@ -206,7 +205,7 @@ class GalagaGame():
     # 포탄을 발사하는 메소드
     def fire(self):
         shot = ShotSprite(self, self.shotImage,
-                          self.starship.getX() + 10,	self.starship.getY() - 30)
+                          self.starship.getX() + 10,	self.starship.getY() - 40)
         self.sprites.append(shot)
 
     # 화면을 그리는 메소드
@@ -228,6 +227,7 @@ class GalagaGame():
                     if (me.checkCollision(other)):
                         me.handleCollision(other)
                         other.handleCollision(me)
+
         self.paint(self.canvas)
         if(self.running):
             self.master.after(10, self.gameLoop)
