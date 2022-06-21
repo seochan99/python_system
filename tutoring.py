@@ -124,12 +124,12 @@ import re
 # print(p.findall("I was born in Seoul at 10 A.M. on 29th October 1992"))
 
 
-def find_o(search_str):
-    idx = 0
-    while:
-        idx += 1
+# def find_o(search_str):
+#     idx = 0
+#     while:
+#         idx += 1
 
-    retun idx
+#     retun idx
 
 
-print find_o("eeyore")
+# print find_o("eeyore")
