@@ -94,42 +94,75 @@ import re
 # else:
 #     print("3보다작습니다.")
 
-# sentence = "A picture is worth a thousand words."
+# val = 5
 
-# table = {"alphas": 0, "digits": 0, "spaces": 0}
+# while val > 0:
+#     print(val)
+#     val -= 1
 
-# for i in sentence:
-#     if i.isalpha():
-#         table["alphas"] += 1
-#     if i.isdigit():
-#         table["digits"] += 1
-#     if i.isspace():
-#         table["spaces"] += 1
-# print(table)
+# for i in range(1, 10):
+#     print()
+# 0 : False
+# 1 2 3 ... : True
+# while True:
+#     print("---계산기---")
+#     print("1. 더하기")
+#     print("2. 빼기")
+#     print("3. 나누기")
+#     print("4. 곱하기")
+#     print("5. 나머지")
+#     print("6. 종료")
+#     print("----------")
 
-# letter = "attacktonight"
-# encodeLetter = ""
-# for ch in letter:
-#     num = ord(ch)
-#     encodeLetter += chr(num+3)
+#     num1, num2 = map(int, input("정수 두개를 입력해주세요 : ").split())
+#     choice = int(input("선택지를 입력해주세요 : "))
 
-# print("PlainText : ", letter)
-# print("ChiperText : ", encodeLetter)
+#     if choice == 1:
+#         print(f"더하기 값 : {num1+num2}")
+#     elif choice == 2:
+#         print(f"빼기 값 : {num1-num2}")
+#     elif choice == 3:
+#         print(f"나누기 값 : {num1//num2}")
+#     elif choice == 4:
+#         print(f"곱하기 값 : {num1*num2}")
+#     elif choice == 5:
+#         print(f"나머지 값 : {num1%num2}")
+#     elif choice == 6:
+#         print("프로그램을 종료합니다.")
+#     else:
+#         print("1~5사이의 숫자를 입력해주세요.")
 
+# for 구구단
+# for j in range(1, 10):
+#     for i in range(1, 10):
+#         print(f"{j} x {i} = {j*i}")
+#     print()
 
-# p = re.compile('(1|2)9*\d')
-# print(p.findall("I was born in Seoul at 10 A.M. on 29th October 1992"))
+# # while 구구단
+# val = 1
+# while val < 10:
+#     val2 = 1
+#     while val2 < 10:
+#         print(f"{val} x {val2} = {val2*val}")
+#         val2 += 1
+#     print()
+#     val += 1
 
-# p2 = re.compile('xy*')
-# print(p.findall("I was born in Seoul at 10 A.M. on 29th October 1992"))
+# arr1 = [1, 2, 3]
+# tu = (1, 2, 3)
 
+# print(arr1)
+# print(tu)
 
-# def find_o(search_str):
-#     idx = 0
-#     while:
-#         idx += 1
+# arr1[2] = 5
+# tu[1] = 5
 
-#     retun idx
+# print(arr1)
+# print(tu)
 
+# friends = [["동수", 13123], ["희찬", 123123], ["찬", 3132]]
 
-# print find_o("eeyore")
+# for i in range(3):
+#     print(friends[i][0])
+
+print(list(range(10, 2, -1)))
