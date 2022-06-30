@@ -165,4 +165,5 @@ import re
 # for i in range(3):
 #     print(friends[i][0])
 
-print(list(range(10, 2, -1)))
+# print(list(range(10, 2, -1)))
+# p
