@@ -308,9 +308,9 @@ import re
 # p
 
 
-n = int(input())
+# n = int(input())
 
-han = 0
+# han = 0
 
 # for i in range(1, n + 1):
 #     if i < 100:
@@ -321,3 +321,41 @@ han = 0
 #         if ns[0] - ns[1] == ns[1] - ns[2]:
 #             han += 1
 # print(han)
+
+
+# def hello(count):
+#     if count == 0:
+#         return
+#     print(f"hi {count}번째 재귀문 입니다.")
+#     count -= 1
+#     hello(count)
+#     print(f"{count}번째 재귀문이 끝났습니다.")
+
+
+# hello(5)
+
+# def fibo(n):
+#     if n == 0:
+#         return 0
+#     if n == 1:
+#         return 1
+#     return fibo(n-1) + fibo(n-2)
+
+
+# n = int(input())
+# print(fibo(n))
+
+n = int(input())  # n개수받기
+nums = list(map(int, input().split()))
+
+prime = 0
+for num in nums:
+    notPrime = 0
+    if num > 1:
+        for i in range(2, num):
+            if num % i == 0:
+                notPrime += 1  # 소수가 아닌 숫자를 발견하면 올라가는 카운트
+        if notPrime == 0:
+            prime += 1
+
+print(prime)
