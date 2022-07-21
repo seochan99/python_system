@@ -348,14 +348,14 @@ import re
 # n = int(input())  # n개수받기
 # nums = list(map(int, input().split()))
 
-prime = 0
-for num in nums:
-    notPrime = 0
-    if num > 1:
-        for i in range(2, num):
-            if num % i == 0:
-                notPrime += 1  # 소수가 아닌 숫자를 발견하면 올라가는 카운트
-        if notPrime == 0:
-            prime += 1
+# prime = 0
+# for num in nums:
+#     notPrime = 0
+#     if num > 1:
+#         for i in range(2, num):
+#             if num % i == 0:
+#                 notPrime += 1  # 소수가 아닌 숫자를 발견하면 올라가는 카운트
+#         if notPrime == 0:
+#             prime += 1
 
-print(prime)
+# print(prime)
