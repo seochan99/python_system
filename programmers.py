@@ -460,9 +460,3 @@ from turtle import color
 #     print("저녁입니다.")
 # else:
 #     print("새벽입니다.")
-
-def greetingName(name):
-    print(f"안녕하세요 ! {name}")
-
-
-print(greetingName())
