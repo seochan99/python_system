@@ -7,7 +7,3 @@
 ### SUMMER VAC
 
 ## Burn
-
-### like..lion
-
-## z....
