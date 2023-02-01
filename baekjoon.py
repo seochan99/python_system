@@ -3595,5 +3595,6 @@
 # for i in range(n-2):
 #     print(i)
 
-num1, num2 = input().split()
-print(num1+num2)
+# num1, num2 = input().split()
+# print(num1+num2)
+
