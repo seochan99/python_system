@@ -4,26 +4,33 @@ import random
 
 # 선발대 운영진
 # YB : 23명
-OBLikelion = ["김용현", "김은식", "노종원", "조지연", "김성준",
-              "서정연", "이광빈", "김범기", "김보배", "송수민",
-              "장성원", "정신우", "박현준", "이주영", "정미혜",
-              "강협", "송요민", "이소정", "윤상우", "이형석",
-              "임도연", "주현이", "양지우"]
+OBLikelion = ["1팀","2팀"]
 
 # 선발대 학생
 # OB : 20명
-YBLikelion = ["정준홍", "김태연", "강동희", "김수영", "이지영",
-              "신예진", "이건회", "안소은", "이여원", "정민주",
-              "정재혁", "김윤성", "김재니", "박영신", "안유성",
-              "오민영", "오준서", "윤영서", "이영서", "이예나",
-              "", ""]
+babyLion = ["김윤서(3)","곽호은(3)","이창준(4)","박지호(4)","심서현(3)","김동환(2)","오찬주(2)",
+            "김혜수(3)","차승민(2)","설현아(2)","이유진(3)","김민성(3)","김강민(2)","양지원(3)",
+            "박서희(4)","최준형(3)","윤혜정(3휴)","이주원(3)","박호연","배지현","정세윤","김민준",
+            "조민우","서지은","차은호","이상준","유수민","최나래","이종범","전병현"]
+
+# 7팀 : 4,4,4,4,5,5,4
 
 
-random.shuffle(OBLikelion)
-random.shuffle(YBLikelion)
+random.shuffle(babyLion)
 
-print("💡 짝 궁 💡")
-
-for i in range(1, 23):
-    print(f"{i}팀 : [OB]{OBLikelion[i]}, [YB]{YBLikelion[i]}")
-    # time.sleep(1)
+print("💡 짝 궁 💡\n")
+time.sleep(2)
+print(f"1팀 : {babyLion[0:4]}\n")
+time.sleep(2)
+print(f"2팀 : {babyLion[4:9]}\n")
+time.sleep(2)
+print(f"3팀 : {babyLion[9:13]}\n")
+time.sleep(2)
+print(f"4팀 : {babyLion[13:17]}\n")
+time.sleep(2)
+print(f"5팀 : {babyLion[17:22]}\n")
+time.sleep(2)
+print(f"6팀 : {babyLion[22:26]}\n")
+time.sleep(2)
+print(f"7팀 : {babyLion[26:30]}\n")
+time.sleep(2)
